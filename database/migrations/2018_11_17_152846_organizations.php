@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Clients extends Migration
+class Organizations extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class Clients extends Migration
      */
     public function up()
     {
-        Schema::create('clients',function (Blueprint $table){
+        Schema::create('organizations',function (Blueprint $table){
             $table->increments('id');
             $table->string('name');
-            $table->string('email');
-            $table->enum('gender',['male','female']);
-            $table->string('password');
-            $table->string('salt');
+            $table->string('profile');
+            $table->string('industry');
+            $table->string('offers');
+            $table->string('firms-aspiration');
+            $table->timestamps();
         });
     }
 
@@ -30,6 +31,6 @@ class Clients extends Migration
      */
     public function down()
     {
-        Schema::drop('clients');
+        Schema::drop('organizations');
     }
 }

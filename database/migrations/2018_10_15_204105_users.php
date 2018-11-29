@@ -18,16 +18,16 @@ class Users extends Migration
             $table->string('username');
             $table->string('firstname');
             $table->string('lastname');
-            $table->string('preferredemail');
+            $table->string('email');
             $table->string('backupemail');
             $table->string('employer');
-            $table->string('title');
+            $table->string('employertitle');
             $table->string('typeOfEmployer');
             $table->enum('gender',['male','female']);
             $table->string('mobile');
             $table->string('mailingaddress');
             $table->string('password');
-            $table->string('salt');
+            $table->timestamps();
         });
     }
 
