@@ -1,0 +1,5 @@
+@mixin mobile-only {
+  @media (max-width : $mq-mobile-portrait) {
+    @content;
+  }
+}

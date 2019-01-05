@@ -1,0 +1,110 @@
+.game-map {
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    .container {
+        margin:  auto;
+    }
+
+    &__map {
+        width: 1000px;
+        height: 720px;
+        margin: auto;
+        position: relative;
+        img {
+            width: 1000px;
+            margin: auto;
+        }
+    }
+
+    .horse {
+        position: absolute;
+        width: 60px;
+
+        &__position {
+
+            &--start {
+                bottom: 121px;
+                left: 154px;
+            }
+
+            &--landscapeIdentification {
+                bottom: 147px;
+                right: 234px;
+            }
+
+            &--marketAssessment {
+                bottom: 288px;
+                right: 525px;
+            }
+
+            &--productAssessment {
+                top: 295px;
+                left: 195px;
+            }
+
+            &--readyToStrategize {
+                right: 229px;
+                top: 189px;
+            }
+        }
+    }
+
+
+
+    &__link {
+        display: inline-block;
+        height: 65px;
+        padding-left: 100px;
+        width: auto;
+        color: $login-text-color;
+        font-size: 20px;
+        font-weight: 900;
+        &:hover {
+            cursor: pointer;
+        }
+
+        &--start {
+            position: absolute;
+            bottom: 70px;
+            left: 146px;
+        }
+
+        &--landscapeIdentification {
+            position: absolute;
+            padding: 80px 0 0 0;
+            height: 100px;
+            bottom: 88px;
+            right: 130px;
+        }
+
+        &--marketAssessment {
+            position: absolute;
+            height: 63px;
+            bottom: 261px;
+            left: 380px;
+        }
+
+        &--productAssessment {
+            top: 337px;
+            padding-left: 71px;
+            position: absolute;
+            height: 50px;
+            left: 212px;
+        }
+
+        &--readyToStrategize {
+            top: 165px;
+            padding-left: 0;
+            position: absolute;
+            height: 91px;
+            right: 134px;
+        }
+    }
+
+
+}

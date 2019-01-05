@@ -13899,7 +13899,7 @@ window.Vue = __webpack_require__(36);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
+ * the page. Then, you may begin adding pages to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
@@ -35474,7 +35474,7 @@ module.exports = (
     var originURL;
 
     /**
-    * Parse a URL to discover it's components
+    * Parse a URL to discover it's pages
     *
     * @param {String} url The URL to be parsed
     * @returns {Object}
@@ -37857,7 +37857,7 @@ if (true) {
     warn(
       "Property or method \"" + key + "\" is not defined on the instance but " +
       'referenced during render. Make sure that this property is reactive, ' +
-      'either in the data option, or for class-based components, by ' +
+      'either in the data option, or for class-based pages, by ' +
       'initializing the property. ' +
       'See: https://vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.',
       target
@@ -38137,11 +38137,11 @@ function checkProp (
 // generated render function is guaranteed to return Array<VNode>. There are
 // two cases where extra normalization is needed:
 
-// 1. When the children contains components - because a functional component
+// 1. When the children contains pages - because a functional component
 // may return an Array instead of a single root. In this case, just a simple
 // normalization is needed - if any child is an Array, we flatten the whole
 // thing with Array.prototype.concat. It is guaranteed to be only 1-level deep
-// because functional components already normalize their own children.
+// because functional pages already normalize their own children.
 function simpleNormalizeChildren (children) {
   for (var i = 0; i < children.length; i++) {
     if (Array.isArray(children[i])) {
@@ -38754,7 +38754,7 @@ function mountComponent (
   hydrating = false;
 
   // manually mounted instance, call mounted on self
-  // mounted is called for render-created child components in its inserted hook
+  // mounted is called for render-created child pages in its inserted hook
   if (vm.$vnode == null) {
     vm._isMounted = true;
     callHook(vm, 'mounted');
@@ -39335,7 +39335,7 @@ function initData (vm) {
     data = {};
     "development" !== 'production' && warn(
       'data functions should return an object:\n' +
-      'https://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function',
+      'https://vuejs.org/v2/guide/pages.html#data-Must-Be-a-Function',
       vm
     );
   }
@@ -39937,7 +39937,7 @@ function FunctionalRenderContext (
   Ctor
 ) {
   var options = Ctor.options;
-  // ensure the createElement function in functional components
+  // ensure the createElement function in functional pages
   // gets a unique context - this is necessary for correct named slot check
   var contextVm;
   if (hasOwn(parent, '_uid')) {
@@ -40082,7 +40082,7 @@ var componentVNodeHooks = {
       !vnode.componentInstance._isDestroyed &&
       vnode.data.keepAlive
     ) {
-      // kept-alive components, treat as a patch
+      // kept-alive pages, treat as a patch
       var mountedNode = vnode; // work around flow
       componentVNodeHooks.prepatch(mountedNode, mountedNode);
     } else {
@@ -40118,7 +40118,7 @@ var componentVNodeHooks = {
     if (vnode.data.keepAlive) {
       if (context._isMounted) {
         // vue-router#1212
-        // During updates, a kept-alive component's child components may
+        // During updates, a kept-alive component's child pages may
         // change, so directly walking the tree here may call activated hooks
         // on incorrect children. Instead we push them into a queue which will
         // be processed after the whole patch process ended.
@@ -40216,7 +40216,7 @@ function createComponent (
   data.on = data.nativeOn;
 
   if (isTrue(Ctor.options.abstract)) {
-    // abstract components do not keep anything
+    // abstract pages do not keep anything
     // other than props & listeners & slot
 
     // work around flow
@@ -40954,7 +40954,7 @@ var KeepAlive = {
       var cache = ref$1.cache;
       var keys = ref$1.keys;
       var key = vnode.key == null
-        // same constructor may get registered as different local components
+        // same constructor may get registered as different local pages
         // so cid alone is not enough (#3269)
         ? componentOptions.Ctor.cid + (componentOptions.tag ? ("::" + (componentOptions.tag)) : '')
         : vnode.key;
@@ -41017,7 +41017,7 @@ function initGlobalAPI (Vue) {
   });
 
   // this is used to identify the "base" constructor to extend all plain-object
-  // components with in Weex's multi-instance scenarios.
+  // pages with in Weex's multi-instance scenarios.
   Vue.options._base = Vue;
 
   extend(Vue.options.components, builtInComponents);
@@ -41525,7 +41525,7 @@ function createPatchFunction (backend) {
         if (isUnknownElement$$1(vnode, creatingElmInVPre)) {
           warn(
             'Unknown custom element: <' + tag + '> - did you ' +
-            'register the component correctly? For recursive components, ' +
+            'register the component correctly? For recursive pages, ' +
             'make sure to provide the "name" option.',
             vnode.context
           );
@@ -44230,7 +44230,7 @@ var Transition = {
     }
 
     // apply transition data to child
-    // use getRealChild() to ignore abstract components e.g. keep-alive
+    // use getRealChild() to ignore abstract pages e.g. keep-alive
     var child = getRealChild(rawChild);
     /* istanbul ignore if */
     if (!child) {
@@ -44482,7 +44482,7 @@ Vue.config.isReservedAttr = isReservedAttr;
 Vue.config.getTagNamespace = getTagNamespace;
 Vue.config.isUnknownElement = isUnknownElement;
 
-// install platform runtime directives & components
+// install platform runtime directives & pages
 extend(Vue.options.directives, platformDirectives);
 extend(Vue.options.components, platformComponents);
 
@@ -45822,7 +45822,7 @@ function markStatic$1 (node) {
   node.static = isStatic(node);
   if (node.type === 1) {
     // do not make component slot content static. this avoids
-    // 1. components not able to mutate slot nodes
+    // 1. pages not able to mutate slot nodes
     // 2. static slot content fails for hot-reloading
     if (
       !isPlatformReservedTag(node.tag) &&
@@ -46265,7 +46265,7 @@ function genData$2 (el, state) {
   if (el.pre) {
     data += "pre:true,";
   }
-  // record original tag name for components using "is" attribute
+  // record original tag name for pages using "is" attribute
   if (el.component) {
     data += "tag:\"" + (el.tag) + "\",";
   }
@@ -46350,7 +46350,7 @@ function genInlineTemplate (el, state) {
   if ("development" !== 'production' && (
     el.children.length !== 1 || ast.type !== 1
   )) {
-    state.warn('Inline-template components must have exactly one child element.');
+    state.warn('Inline-template pages must have exactly one child element.');
   }
   if (ast.type === 1) {
     var inlineRenderFns = generate(ast, state.options);
@@ -47206,7 +47206,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/components/ExampleComponent.vue"
+Component.options.__file = "resources/js/pages/ExampleComponent.vue"
 
 /* hot reload */
 if (false) {(function () {

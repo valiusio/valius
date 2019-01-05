@@ -1,0 +1,33 @@
+$information-banner-width: 600px;
+$information-banner-height: 100px;
+
+
+.information-banner {
+    width: $information-banner-width;
+    height: $information-banner-height;
+
+
+
+    &__parallelogram {
+        width: calc(95% - 20px);
+        margin: auto;
+        height: 100%;
+        transform: skew(-15deg);
+        border-left: 40px solid #17B6F0;
+        background-color: #F7F7F8;
+
+    }
+
+
+    &__text {
+        margin-left: 20px;
+        padding-left: 5px;
+        text-align: left;
+        height: 100%;
+        transform: skew(15deg);
+        color: #177CC5;
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+    }
+}

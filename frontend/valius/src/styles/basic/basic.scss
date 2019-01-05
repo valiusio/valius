@@ -1,0 +1,39 @@
+$mq-mobile-portrait	: 350px !default;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body {
+    height: 100%;
+}
+#app {
+    height: 100%;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    height: auto;
+
+    &--lg {
+        max-width: 900px;
+    }
+    &--exlg {
+        max-width: 1100px;
+    }
+    @include mobile-only {
+        max-width: calc(100% - 10px);
+    }
+}
+
+
+//error span color
+span.md-helper-text {
+    color: #ef000d;
+    &:before {
+        content: '';
+    }
+}

@@ -1,0 +1,44 @@
+.profile-navigation {
+    width: 150px;
+    text-align: center;
+    &:hover {
+        cursor: pointer;
+    }
+
+    &__preview {
+        width: 100px;
+        height: auto;
+        display: inline-block;
+        background-color: white;
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+
+        &:hover {
+            box-shadow: 9px 15px 11px rgba(33,33,33,.2);
+        }
+    }
+
+    &__type {
+        width: 50px;
+        margin: 10px auto 5px auto;
+    }
+
+    &__rating {
+        width: 60px;
+        margin: 0 0 5px 0;
+    }
+
+    &__label {
+        padding: 5px 0 0 0;
+        font-size: 16px;
+    }
+
+    &__locked {
+        position: absolute;
+        left: 24px;
+        top: 25px;
+        width: 50px;
+    }
+
+}

@@ -1,0 +1,52 @@
+.welcome-page {
+    height: 100%;
+    overflow-y: auto;
+    background-color: $basic-app-color;
+    padding: 70px 0 0 0;
+
+    &__header {
+        color: $login-text-color;
+        font-size: 40px;
+        line-height: 47px;
+    }
+
+
+    &__description-container {
+        display: flex;
+        margin: 50px 0 0 0;
+        min-height: 400px;
+    }
+
+
+    &__description {
+        flex:3;
+        font-size: 20px;
+        color: $login-text-color;
+
+        p {
+            margin-top: 30px;
+        }
+    }
+
+    &__image {
+        flex:2;
+        margin-left: 40px;
+    }
+
+    &__button {
+        width: 200px;
+        height: 50px;
+        margin: 50px auto;
+        display: block;
+        outline: none;
+        background-color: rgba(255, 148, 37, 0.93);
+        border: none;
+        border-radius: 10px;
+        font-size: 20px;
+        color: $login-text-color;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
