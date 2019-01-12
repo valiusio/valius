@@ -1,0 +1,70 @@
+.valius-form {
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid #17B6F0;
+    border-radius: 20px;
+    background-color: white;
+
+
+    &__row {
+        display: flex;
+    }
+
+    &__column {
+        &--left {
+            flex: 1;
+            &--image {
+                flex: 0.2;
+            }
+        }
+
+        &--right {
+            flex: 1;
+        }
+    }
+
+    &__submit {
+        margin: 20px 0;
+        text-align: center;
+        button {
+            display: block;
+            margin: auto;
+            width: 150px;
+            height: 50px;
+            border: 0;
+            border-radius: 0.25rem;
+            background: #fdaf6d;
+            color: white;
+            font-family: system-ui, sans-serif;
+            font-size: 1rem;
+            line-height: 1.2;
+            white-space: nowrap;
+            text-decoration: none;
+            padding: 0.25rem 0.5rem;
+            cursor: pointer;
+        }
+    }
+
+    .input-field, .input-field{
+        input, textarea{
+            padding-left: 10px;
+            border: 1px solid #EDEDEE;
+            background-color: #F3F3F4;
+            border-radius: 4px;
+        }
+        label{
+            left: 10px;
+            color: #7AA2CB;
+            font-weight: bold;
+        }
+    }
+    .md-field.input-field.md-has-textarea.md-focused {
+        label {
+            top: -3px;
+        }
+
+    }
+
+
+
+}

@@ -10,6 +10,11 @@
         line-height: 47px;
     }
 
+    &__subheader {
+        color: $login-text-color;
+        font-size: 20px;
+        line-height: 20px;
+    }
 
     &__description-container {
         display: flex;
@@ -32,6 +37,25 @@
         flex:2;
         margin-left: 40px;
     }
+
+    &__Mihaly-container {
+        flex:2;
+        margin-left: 40px;
+        text-align: center;
+        img {
+            width: 200px;
+        }
+        h3 {
+            padding: 20px 0;
+            color: $login-text-color;
+            font-size: 20px;
+        }
+        p {
+            color: $login-text-color;
+        }
+    }
+
+
 
     &__button {
         width: 200px;

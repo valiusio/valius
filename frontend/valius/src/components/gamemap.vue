@@ -20,13 +20,12 @@
 
         </div>
     </div>
-
 </template>
 
 
 <script>
     import router from "../router";
-    import InformationBanner from "../components/InformationBanner.vue";
+    import InformationBanner from "./InformationBanner.vue";
 
     export default {
         name: 'GameMap',
@@ -35,20 +34,18 @@
         },
         data(){
             return {
-                currentStatus:'start'
+                currentStatus: this.$store.getters.currentLevel
             }
         },
         components:{
             "InformationBanner" : InformationBanner
-        },
-        created() {
         },
         methods:{
             getPic() {
                 return require('../assets/images/gamemapings/game-map__status--' + this.currentStatus + '.png');
             },
             action(name) {
-                this.$router.push('/game-navigation');
+                !this.$store.getters.levels[name].locked &&  this.$router.push('/game-navigation');
             }
         }
     }

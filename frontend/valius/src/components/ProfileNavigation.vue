@@ -28,7 +28,8 @@
         props: [
             "locked",
             "rating",
-            "type"
+            "type",
+            "link"
         ],
         data(){
             return {
@@ -65,7 +66,7 @@
             },
 
             goTouserProfile() {
-               !this.locked  && this.$router.push('/user-profile');
+               !this.locked  && this.$router.push(`/${this.link}`);
             }
         }
     }

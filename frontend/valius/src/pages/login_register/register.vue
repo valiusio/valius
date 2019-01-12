@@ -51,7 +51,7 @@
 
 
 <script>
-    import AuthTemplate from "../components/AuthTemplate.vue";
+    import AuthTemplate from "../../components/AuthTemplate.vue";
 
     export default {
         name: 'Register',

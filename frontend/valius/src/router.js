@@ -1,13 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from './pages/login';
-import Register from './pages/register';
-import WelcomePage from './pages/welcomescreen.vue';
-import WelcomeStrategy from './pages/welcomescreen-strategy.vue';
-import StartGame  from './pages/startGame.vue';
-import GameMap  from './pages/gamemap.vue';
-import GameNavigation  from './pages/gameNavigation.vue';
-import UserProfile  from './pages/userProfile.vue';
+import Login from './pages/login_register/login';
+import Register from './pages/login_register/register';
+import WelcomePage from './pages/level_1/welcomescreen.vue';
+import WelcomeStrategy from './pages/level_1/welcomescreen-strategy.vue';
+import StartGame  from './pages/level_1/startGame.vue';
+import GameMap  from './components/gamemap.vue';
+import GameNavigation  from './components/gameNavigation.vue';
+import UserProfile  from './pages/level_1/userProfile.vue';
+import BusinessProfile from './pages/level_1/businessProfile.vue';
+import ProductProfile from './pages/level_1/productProfile';
 import testpage  from './pages/test.vue';
 
 Vue.use(Router)
@@ -21,7 +23,7 @@ export default new Router({
     },
     {
       path: '/register',
-      name: 'register',
+      name: 'valius.src.pages.login_register.register',
       component: Register
     },
     {
@@ -58,6 +60,16 @@ export default new Router({
       path: '/test',
       name: 'testpage',
       component: testpage
+    },
+    {
+      path: '/business-profile',
+      name: 'businessProfile',
+      component: BusinessProfile
+    },
+    {
+      path: '/product-profile',
+      name: 'productProfile',
+      component: ProductProfile
     }
 
   ]

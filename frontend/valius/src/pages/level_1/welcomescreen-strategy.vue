@@ -7,11 +7,11 @@
 
             <div class="welcome-page__description-container">
                 <div class="welcome-page__description">
-                    <p>Ο Βάλιος ήταν ένα από τα αθάνατα άλογα του Αχιλλέα, ενός από τους καλύτερους πολεμιστές στην Αρχαία Ελληνική Μυθολογία.</p>
-                    <p>Ο Βάλιος ήταν το μέσο για εκείνον, για να πετύχει σημαντικές νίκες στη μάχη.</p>
+                    <p>Η στρατηγική λειτουργεί με τον ίδιο τρόπο, αντιπροσωπεύει το μέσο για την επίτευξη στόχων.</p>
+                    <p>Η χρησιμοποίηση της στρατηγικής είναι ένας τρόπος για να διαμορφώνεις το μέλλον!</p>
                 </div>
                 <div class="welcome-page__image  welcome-page__image--strategy">
-                    <img src="../assets/images/horse.png">
+                    <img src="../../assets/images/strategy.png">
                 </div>
             </div>
 
@@ -19,7 +19,6 @@
                 Next
             </button>
         </div>
-
     </div>
 
 </template>
@@ -28,10 +27,10 @@
 
 <script>
 
-    import router from "../router";
+    import router from "../../router";
 
     export default {
-        name: 'Login',
+        name: 'welcome-strategy',
         props: {
 
         },
@@ -40,12 +39,9 @@
 
             }
         },
-        components:{
-
-        },
         methods:{
             nextPage() {
-                this.$router.push("/welcome-strategy")
+                this.$router.push("/start-game")
             }
 
         }

@@ -27,5 +27,17 @@
         justify-content: space-between;
     }
 
+    &__next-level {
+        margin: 20px auto 0 auto;
+        padding: 15px 30px;
+        font-size: 1em;
+        color: $login-text-color;
+        border-radius: 5px;
+        border: 1px solid gray;
+        background-color: #FDAD6D;
+        display: block;
+        cursor: pointer;
+    }
+
 
 }

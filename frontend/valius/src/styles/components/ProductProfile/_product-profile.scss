@@ -1,0 +1,38 @@
+.product-profile {
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__icon {
+        padding: 18px 10px 0 0;
+        width: 50px;
+        height: 50px;
+    }
+    .valius-form__column--left--image {
+        text-align: right;
+    }
+
+    &__action-btn {
+        padding: 5px 10px;
+        border: none;
+        color: $login-text-color;
+        background: #ff4d5a;
+        margin-left: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    &__actions-list {
+        padding-left: 40px;
+
+        &--strengths {
+            color: #1c7430;
+        }
+
+        &--weaknesses {
+            color: #ff526c;
+        }
+    }
+}

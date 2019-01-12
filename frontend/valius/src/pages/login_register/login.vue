@@ -24,21 +24,27 @@
                 <router-link to="/register">Forgot Password</router-link>
             </md-field>
         </form>
-    </auth-template>
 
+        {{ users }}
+    </auth-template>
 </template>
 
 
 
 <script>
 
-import router from "../router";
-import AuthTemplate from "../components/AuthTemplate.vue";
+import router from "../../router";
+import AuthTemplate from "../../components/AuthTemplate.vue";
 
 export default {
     name: 'Login',
     props: {
 
+    },
+    computed: {
+        users() {
+
+        }
     },
     data(){
         return {

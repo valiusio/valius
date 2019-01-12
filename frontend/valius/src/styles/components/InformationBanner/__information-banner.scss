@@ -1,4 +1,4 @@
-$information-banner-width: 600px;
+$information-banner-width: 800px;
 $information-banner-height: 100px;
 
 
@@ -28,6 +28,17 @@ $information-banner-height: 100px;
         color: #177CC5;
         font-weight: 900;
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    h1 {
+        font-size: 25px;
+        padding: 20px 0 0 0;
+        display: inline-block;
+    }
+
+    p {
+        padding: 5px 0 0 0;
     }
 }

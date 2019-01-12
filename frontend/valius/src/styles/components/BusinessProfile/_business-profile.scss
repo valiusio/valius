@@ -1,0 +1,44 @@
+.business-profile {
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    &__form-container {
+        display: flex;
+
+        &__left {
+            flex: 1;
+        }
+
+        &__right {
+            flex: 2;
+        }
+    }
+
+    &__form {
+        padding: 20px;
+
+        &__submit {
+            margin: 20px auto 0 auto;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            color: #FFFFFF;
+            border-radius: 5px;
+            border: 1px solid gray;
+            background-color: #FDAD6D;
+            display: block;
+            cursor: pointer;
+        }
+    }
+
+    &__image {
+        margin: 50px auto;
+        display: block;
+        width: 250px;
+        height: auto;
+    }
+
+}

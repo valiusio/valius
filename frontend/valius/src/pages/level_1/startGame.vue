@@ -1,21 +1,18 @@
 <template>
 
-    <div class="start-game">
+    <div class="welcome-page">
         <div class="container container--lg">
-            <h2 class="start-game__header">Καλώς ήρθες στο «παιχνίδι» στρατηγικής!</h2>
+            <h2 class="welcome-page__header">Καλώς ήρθες στο «παιχνίδι» στρατηγικής!</h2>
 
-
-            <h3 class="start-game__subheader">Παιχνιδοποίηση διαδικασιών & ψυχολογική ροή</h3>
-
-
-            <div class="start-game__description-container">
-                <div class="start-game__description">
+            <div class="welcome-page__description-container">
+                <div class="welcome-page__description">
+                    <h3 class="welcome-page__subheader">Παιχνιδοποίηση διαδικασιών & ψυχολογική ροή</h3>
                     <p>«Δεν υπάρχει λόγος να πιστεύουμε πια ότι μόνο το παιχνίδι μπορεί είναι κάτι διασκεδαστικό, ενώ για παράδειγμα η εργασία πρέπει να θεωρείται κάτι μονότονο και βαρετό».</p>
                     <p>«Μόλις συνειδητοποιήσουμε ότι τα όρια μεταξύ εργασίας και παιχνιδιού είναι τεχνητά, μπορούμε να πάρουμε τον έλεγχο στην καθημερινότητα μας και να την κάνουμε πιο ζωντανή και ευχάριστη»</p>
                     <p>Mihaly Csikszentimihalyi</p>
                 </div>
-                <div class="start-game__image">
-                    <img src="../assets/images/Csikszentmihalyi.png">
+                <div class="welcome-page__Mihaly-container">
+                    <img src="../../assets/images/Csikszentmihalyi.png">
                     <h3>Mihaly Csikszentmihalyi</h3>
                     <p>
                         Διακεκριμένος καθηγητής Ψυχολογίας και Μανατζμεντ.
@@ -26,7 +23,7 @@
                 </div>
             </div>
 
-            <button class="start-game__button" v-on:click="nextPage">
+            <button class="welcome-page__button" v-on:click="nextPage">
                 Let's Start
             </button>
         </div>
@@ -39,7 +36,7 @@
 
 <script>
 
-    import router from "../router";
+    import router from "../../router";
 
     export default {
         name: 'start-game',
