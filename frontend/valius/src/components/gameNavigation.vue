@@ -4,28 +4,16 @@
         <div class="container container--lg">
 
             <div class="game-navigation__current-level">
-                <img src="../assets/images/gameNavigation/level1/start.png" class="game-navigation__icon">
+                <img :src=" backgroundImg " class="game-navigation__icon">
                 Start
-
 
                 <div class="game-navigation__actions-container">
                     <profile-navigation
-                        type="user"
-                        :rating="levels[0].start.subLevels.userProfile.rating"
-                        :locked="levels[0].start.subLevels.userProfile.locked"
+                        v-for=" (level , key)  in levels[0][currentLevel].subLevels "
+                        :type="key"
+                        :rating="level.rating"
+                        :locked="level.locked"
                         link="user-profile"
-                    />
-                    <profile-navigation
-                        type="organization"
-                        :rating="levels[0].start.subLevels.organizationProfile.rating"
-                        :locked="levels[0].start.subLevels.organizationProfile.locked"
-                        link="business-profile"
-                    />
-                    <profile-navigation
-                        type="product"
-                        :rating="levels[0].start.subLevels.productProfile.rating"
-                        :locked="levels[0].start.subLevels.productProfile.locked"
-                        link="product-profile"
                     />
                 </div>
                 <button
@@ -64,11 +52,17 @@
             "ProfileNavigation" : ProfileNavigation
         },
         computed:{
+
+            backgroundImg () {
+                return require("../assets/images/gameNavigation/backgroundImages/level__" + this.currentLevel + ".png");
+            },
+
             isLevelCompleted () {
                return this.levels[0][this.currentLevel].completed;
             }
         },
         methods: {
+
             goToGameMap(){
                 this.$router.push("/game-map");
             }

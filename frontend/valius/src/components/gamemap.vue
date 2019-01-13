@@ -8,7 +8,7 @@
 
                 <img
                     src="../assets/images/gamemapings/horse.png"
-                    :class="'horse horse__position--' +  currentStatus "
+                    :class=" !startAnimation ? `horse horse__position--${previusStatus}` : `horse horse__position--${currentStatus}`"
                 >
 
                 <div class="game-map__link  game-map__link--start" @click="action('start')">Start</div>
@@ -34,7 +34,12 @@
         },
         data(){
             return {
-                currentStatus: this.$store.getters.currentLevel
+                allLevels : [
+                    "start", "landscapeIdentification", "marketAssessment", "productAssessment" , "readyToStrategize"
+                ],
+                previusStatus : '',
+                currentStatus : this.$store.getters.currentLevel,
+                startAnimation :false
             }
         },
         components:{
@@ -45,8 +50,18 @@
                 return require('../assets/images/gamemapings/game-map__status--' + this.currentStatus + '.png');
             },
             action(name) {
-                !this.$store.getters.levels[name].locked &&  this.$router.push('/game-navigation');
+                !this.$store.getters.levels[0][name].locked &&  this.$router.push('/game-navigation');
             }
+        },
+        created () {
+
+            ( this.currentStatus == 'start')
+                ? this.previusStatus = this.currentStatus
+                : this.previusStatus = this.allLevels[ this.allLevels.indexOf(this.currentStatus) - 1  ];
+
+            setTimeout( () => {
+                this.startAnimation = true;
+            }, 3000)
         }
     }
 </script>

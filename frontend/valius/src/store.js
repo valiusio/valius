@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
+import { IntangibleFactors } from "./services/IntangibleFactorsService";
 Vue.use(Vuex);
 
 export const store =  new  Vuex.Store({
@@ -37,6 +38,7 @@ export const store =  new  Vuex.Store({
             weaknesses: []
         },
         currentLevel: 'start' ,
+        IntangibleFactors: IntangibleFactors,
         levels: [
                 {
                     start: {
@@ -87,6 +89,9 @@ export const store =  new  Vuex.Store({
         },
         product(state) {
             return state.product;
+        },
+        IntangibleFactors(state) {
+            return state.IntangibleFactors;
         }
     },
     mutations: {

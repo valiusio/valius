@@ -8,45 +8,66 @@
             <form class="valius-form" @submit="submitform()">
                 <div class="user-profile__section">
                     <div class="user-profile__section--left">
-                        <md-field class="input-field">
+                        <md-field
+                            class="input-field"
+                            :class=" errors.has('username') && 'input-field--has-error' "
+                        >
                             <label>Username</label>
                             <md-input name="username" v-validate="'required|min:5'" v-model="user.username"/>
                             <span class="md-helper-text" v-show="errors.has('username')">{{ errors.first('username') }}</span>
                         </md-field>
 
 
-                        <md-field class="input-field">
+                        <md-field
+                            class="input-field"
+                            :class=" errors.has('firstname') && 'input-field--has-error' "
+                        >
                             <label>Firstname</label>
                             <md-input name="firstname"  v-validate="'required|min:5'" v-model="user.firstname"/>
                             <span class="md-helper-text" v-show="errors.has('firstname')">{{ errors.first('firstname') }}</span>
                         </md-field>
 
-                        <md-field class="input-field">
+                        <md-field
+                            class="input-field"
+                            :class=" errors.has('lastname') && 'input-field--has-error' "
+                        >
                             <label>Lastname</label>
                             <md-input name="lastname"  v-validate="'required'" v-model="user.lastname"/>
                             <span class="md-helper-text" v-show="errors.has('lastname')">{{ errors.first('lastname') }}</span>
                         </md-field>
 
-                        <md-field class="input-field">
+                        <md-field
+                            class="input-field"
+                            :class=" errors.has('email') && 'input-field--has-error' "
+                        >
                             <label>Email</label>
                             <md-input name="email"  v-validate="'required|email'" v-model="user.email"/>
                             <span class="md-helper-text" v-show="errors.has('email')">{{ errors.first('email') }}</span>
                         </md-field>
 
-                        <md-field class="input-field">
+                        <md-field
+                            class="input-field"
+                            :class=" errors.has('password') && 'input-field--has-error' "
+                        >
                             <label>Password</label>
                             <md-input name="password"  v-validate="'required'" v-model="user.password"/>
                             <span class="md-helper-text" v-show="errors.has('password')">{{ errors.first('password') }}</span>
                         </md-field>
 
 
-                        <md-field class="input-field">
+                        <md-field
+                            class="input-field"
+                            :class=" errors.has('phone') && 'input-field--has-error' "
+                        >
                             <label>Day phone & Extension</label>
                             <md-input name="phone"  v-validate="'required'" v-model="user.phone"/>
                             <span class="md-helper-text" v-show="errors.has('phone')">{{ errors.first('phone') }}</span>
                         </md-field>
 
-                        <md-field class="input-field">
+                        <md-field
+                            class="input-field"
+                            :class=" errors.has('mobile') && 'input-field--has-error' "
+                        >
                             <label>Mobile phone</label>
                             <md-input name="mobile"  v-validate="'required'" v-model="user.mobile"/>
                             <span class="md-helper-text" v-show="errors.has('mobile')">{{ errors.first('mobile') }}</span>
@@ -55,40 +76,61 @@
 
                     </div>
                     <div class="user-profile__section--right">
-                        <md-field class="input-field">
+                        <md-field
+                            class="input-field"
+                            :class=" errors.has('backupemail') && 'input-field--has-error' "
+                        >
                             <label>Preferred Email</label>
                             <md-input name="backupemail"  v-validate="'required|email'" v-model="user.backupemail"/>
                             <span class="md-helper-text" v-show="errors.has('backupemail')">{{ errors.first('backupemail') }}</span>
                         </md-field>
 
-                        <md-field class="input-field">
+                        <md-field
+                            class="input-field"
+                            :class=" errors.has('maillingaddress') && 'input-field--has-error' "
+                        >
                             <label>Mailing Address</label>
                             <md-input name="maillingaddress"  v-validate="'required'" v-model="user.maillingaddress"/>
                             <span class="md-helper-text" v-show="errors.has('maillingaddress')">{{ errors.first('maillingaddress') }}</span>
                         </md-field>
 
-                        <md-field class="input-field">
+                        <md-field
+                            class="input-field"
+                            :class=" errors.has('city') && 'input-field--has-error' "
+                        >
                             <label>City</label>
                             <md-input name="city"  v-validate="'required'" v-model="user.city"/>
                             <span class="md-helper-text" v-show="errors.has('city')">{{ errors.first('city') }}</span>
                         </md-field>
-                        <md-field class="input-field">
+                        <md-field
+                            class="input-field"
+                            :class=" errors.has('state') && 'input-field--has-error' "
+                        >
                             <label>State</label>
                             <md-input name="state"  v-validate="'required'" v-model="user.state"/>
                             <span class="md-helper-text" v-show="errors.has('state')">{{ errors.first('state') }}</span>
                         </md-field>
-                        <md-field class="input-field">
+                        <md-field
+                            class="input-field"
+                            :class=" errors.has('employer') && 'input-field--has-error' "
+                        >
                             <label>Employer</label>
                             <md-input name="employer"  v-validate="'required'" v-model="user.employer"/>
                             <span class="md-helper-text" v-show="errors.has('employer')">{{ errors.first('employer') }}</span>
                         </md-field>
-                        <md-field class="input-field">
+                        <md-field
+                            class="input-field"
+                            :class=" errors.has('title') && 'input-field--has-error' "
+                        >
                             <label>Title</label>
                             <md-input name="title"  v-validate="'required'" v-model="user.title"/>
                             <span class="md-helper-text" v-show="errors.has('title')">{{ errors.first('title') }}</span>
                         </md-field>
 
-                        <md-field class="input-field">
+                        <md-field
+                            class="input-field"
+                            :class=" errors.has('typeofemployer') && 'input-field--has-error' "
+                        >
                             <label>Employer Type</label>
                             <md-select v-model="user.typeofemployer" name="typeofemployer" v-validate="'required'">
                                 <md-optgroup>

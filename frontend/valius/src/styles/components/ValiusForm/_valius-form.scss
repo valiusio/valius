@@ -1,7 +1,7 @@
 .valius-form {
     margin: 10px 0;
     padding: 10px;
-    border: 2px solid #17B6F0;
+    border: 2px solid #F1F1F2;
     border-radius: 20px;
     background-color: white;
 
@@ -45,7 +45,7 @@
         }
     }
 
-    .input-field, .input-field{
+    .input-field {
         input, textarea{
             padding-left: 10px;
             border: 1px solid #EDEDEE;
@@ -57,7 +57,21 @@
             color: #7AA2CB;
             font-weight: bold;
         }
+        &--has-error {
+            input, textarea {
+                border: 1px solid #ef000d;
+            }
+            label {
+                color: #ef000d;
+            }
+
+        }
+
+
     }
+
+
+
     .md-field.input-field.md-has-textarea.md-focused {
         label {
             top: -3px;

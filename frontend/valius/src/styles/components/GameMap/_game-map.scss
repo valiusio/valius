@@ -22,8 +22,17 @@
     }
 
     .horse {
+        $animation-delay: 3s;
+
         position: absolute;
         width: 60px;
+        z-index: 100;
+        -webkit-transition: all $animation-delay ease;
+        -moz-transition: all $animation-delay ease;
+        -o-transition: all $animation-delay ease;
+        -ms-transition: all $animation-delay ease;
+        transition: all $animation-delay ease;
+
 
         &__position {
 
@@ -34,22 +43,22 @@
 
             &--landscapeIdentification {
                 bottom: 147px;
-                right: 234px;
+                left: 700px;
             }
 
             &--marketAssessment {
                 bottom: 288px;
-                right: 525px;
+                left: 418px;
             }
 
             &--productAssessment {
-                top: 295px;
+                bottom: 355px;
                 left: 195px;
             }
 
             &--readyToStrategize {
-                right: 229px;
-                top: 189px;
+                bottom: 472px;
+                left: 707px;
             }
         }
     }
@@ -64,14 +73,16 @@
         color: $login-text-color;
         font-size: 20px;
         font-weight: 900;
+
         &:hover {
             cursor: pointer;
         }
 
         &--start {
             position: absolute;
-            bottom: 70px;
-            left: 146px;
+            height: 100px;
+            bottom: 98px;
+            left: 121px;
         }
 
         &--landscapeIdentification {
@@ -90,11 +101,11 @@
         }
 
         &--productAssessment {
-            top: 337px;
-            padding-left: 71px;
+            top: 301px;
+            padding-left: 110px;
             position: absolute;
-            height: 50px;
-            left: 212px;
+            height: 87px;
+            left: 155px;
         }
 
         &--readyToStrategize {

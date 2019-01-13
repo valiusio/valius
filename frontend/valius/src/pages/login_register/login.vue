@@ -25,7 +25,6 @@
             </md-field>
         </form>
 
-        {{ users }}
     </auth-template>
 </template>
 

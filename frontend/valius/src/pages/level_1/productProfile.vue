@@ -12,7 +12,10 @@
                         <img :src=" brandIcon " class="product-profile__icon"/>
                     </div>
                     <div class="valius-form__column--right">
-                        <md-field class="input-field">
+                        <md-field
+                            class="input-field"
+                            :class=" errors.has('brandName') && 'input-field--has-error' "
+                        >
                             <label>Brand Name</label>
                             <md-input name="brandName" v-validate="'required'" v-model="product.brandName"></md-input>
                             <span class="md-helper-text" v-show="errors.has('brandName')">{{ errors.first('brandName') }}</span>
@@ -25,7 +28,10 @@
                     </div>
                     <div class="valius-form__column--right">
 
-                        <md-field class="input-field">
+                        <md-field
+                            class="input-field"
+                            :class=" errors.has('offers') && 'input-field--has-error' "
+                        >
                             <label>Τι προσφέρει (What it does)</label>
                             <md-input name="offers" v-validate="'required'" v-model="product.offers"></md-input>
                             <span class="md-helper-text" v-show="errors.has('offers')">{{ errors.first('offers') }}</span>
@@ -37,7 +43,10 @@
                         <img :src=" brandIcon " class="product-profile__icon"/>
                     </div>
                     <div class="valius-form__column--right">
-                        <md-field class="input-field">
+                        <md-field
+                            class="input-field"
+                            :class=" errors.has('targetMarket') && 'input-field--has-error' "
+                        >
                             <label>Σε ποιούς απευθύνεται (Target Market)</label>
                             <md-input name="targetMarket" v-validate="'required'" v-model="product.targetMarket"></md-input>
                             <span class="md-helper-text" v-show="errors.has('targetMarket')">{{ errors.first('targetMarket') }}</span>
@@ -58,7 +67,10 @@
                         <img :src=" PlusIcon " class="product-profile__icon"/>
                     </div>
                     <div class="valius-form__column--right">
-                        <md-field class="input-field">
+                        <md-field
+                            class="input-field"
+                            :class=" errors.has('strengths') && 'input-field--has-error' "
+                        >
                             <label>Δυνατά σημέια (Strengths)</label>
                             <md-input name="services"  v-model="newstrength"></md-input>
                             <button class="product-profile__action-btn" @click="addNewStrength()">Add new strength</button>
@@ -82,7 +94,10 @@
                         <img :src="NegativeIcon" class="product-profile__icon"/>
                     </div>
                     <div class="valius-form__column--right">
-                        <md-field class="input-field">
+                        <md-field
+                            class="input-field"
+                            :class=" errors.has('weaknesses') && 'input-field--has-error' "
+                        >
                             <label>Αδύνατα σημεία (Weaknesses)</label>
                             <md-input name="weaknesses"  v-model="newweakness"></md-input>
                             <button class="product-profile__action-btn" @click="addNewWeakness()">Add new weakness</button>

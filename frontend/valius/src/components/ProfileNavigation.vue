@@ -1,6 +1,6 @@
 <template>
     <div class="profile-navigation"
-        @click="goTouserProfile()"
+        @click="goToActionPage"
     >
         <div class="profile-navigation__preview">
             <img :src="getTypeImg()" class="profile-navigation__type"/>
@@ -12,7 +12,7 @@
         </div>
 
         <div class="profile-navigation__label">
-            {{ getLabel() }}
+            {{ label }}
         </div>
     </div>
 </template>
@@ -20,8 +20,7 @@
 
 
 <script>
-
-    import router from "../router";
+    import { ProfileNavigationNameMapping }from "../services/LocalizationMappingService";
 
     export default {
         name: 'ProfileNavigation',
@@ -29,7 +28,6 @@
             "locked",
             "rating",
             "type",
-            "link"
         ],
         data(){
             return {
@@ -37,6 +35,12 @@
             }
         },
         components:{
+        },
+        computed : {
+
+            label() {
+                return ProfileNavigationNameMapping[this.type].name;
+            }
         },
         methods:{
             getRating() {
@@ -51,22 +55,9 @@
             getRatingImg() {
                 return require('../assets/images/gameNavigation/rating/' + this.getRating() +'.png');
             },
-            getLabel() {
-                switch (this.type){
-                    case "user" :
-                        return "Προφίλ Χρήστη";
-                    break;
-                    case "product" :
-                        return "Περιγραφή Προιόντος";
-                    break;
-                    case "organization" :
-                        return "Προφίλ Οργανισμού";
-                    break;
-                }
-            },
 
-            goTouserProfile() {
-               !this.locked  && this.$router.push(`/${this.link}`);
+            goToActionPage() {
+               !this.locked  && this.$router.push(ProfileNavigationNameMapping[this.type].link);
             }
         }
     }
