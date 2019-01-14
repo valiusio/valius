@@ -2,7 +2,7 @@
     <auth-template
         header="Login to your Valius Account"
     >
-        <form class="valius-auth-page__login" v-on:submit="submit()">
+        <form class="valius-auth-page__login" v-on:submit="submit">
             <md-field class="valius-auth-page__input">
                 <label>Email</label>
                 <md-input name="email"  v-validate="'required|email'" v-model="user.email"></md-input>

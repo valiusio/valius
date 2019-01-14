@@ -6,7 +6,7 @@
                 <h1>Πόσο καλά γνωρίζεις την επίχειρηση σου;</h1>
                 <p>Aπάντησε στις ερωτήσεις που γνωρίζεις συμπληρώνοντας τα παρακάτω κενά.</p>
             </information-banner>
-            <form class="valius-form" @submit="register()">
+            <form class="valius-form" @submit="register">
                 <div class="valius-form__row">
                     <div class="valius-form__column--left valius-form__column--left--image">
                         <img :src=" brandIcon " class="product-profile__icon"/>
@@ -152,7 +152,7 @@
             }
         },
         methods:{
-            register() {
+            register(event) {
                 event.preventDefault();
                 this.$validator.validate().then(valid=>{
 
@@ -168,7 +168,7 @@
 
                 });
             },
-            addNewStrength() {
+            addNewStrength(event) {
                 event.preventDefault();
                 if(this.newstrength.length >= 5) {
                     this.product.strengths.push(this.newstrength);

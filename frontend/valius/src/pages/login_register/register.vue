@@ -2,7 +2,7 @@
     <auth-template
         header="Create your Valius Account"
     >
-        <form class="valius-auth-page__login" v-on:submit="register(event)">
+        <form class="valius-auth-page__login" v-on:submit="register">
             <md-field class="valius-auth-page__input">
                 <label>Username</label>
                 <md-input name="username" v-validate="'required|min:5'" v-model="user.username"></md-input>

@@ -5,7 +5,7 @@
                 <h2>Ας ξεκινήσουμε με το προφίλ σου</h2>
             </information-banner>
 
-            <form class="valius-form" @submit.prevent="submitform">
+            <form class="valius-form" @submit="submitform">
                 <div class="user-profile__section">
                     <div class="user-profile__section--left">
                         <md-field
@@ -188,7 +188,8 @@
             "information-banner":InformationBanner
         },
         methods:{
-            submitform(){
+            submitform(event){
+                event.preventDefault();
                 this.$validator.validate().then( valid => {
                      if(valid){
                          this.$store.dispatch('saveUser', this.user);
