@@ -94,7 +94,7 @@
             }
         },
         methods:{
-            register() {
+            register(event) {
                 event.preventDefault();
                 this.$validator.validate().then(valid=>{
                     if(valid){

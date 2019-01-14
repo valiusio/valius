@@ -2,7 +2,7 @@
     <auth-template
         header="Create your Valius Account"
     >
-        <form class="valius-auth-page__login" v-on:submit="register">
+        <form class="valius-auth-page__login" v-on:submit="register(event)">
             <md-field class="valius-auth-page__input">
                 <label>Username</label>
                 <md-input name="username" v-validate="'required|min:5'" v-model="user.username"></md-input>
@@ -74,16 +74,16 @@
             }
         },
         methods:{
-            submit(e){
-                e.preventDefault();
+            submit(event){
+                event.preventDefault();
                 this.$validator.validate().then(valid => {
                     if(valid) {
 
                     }
                 });
             },
-            register(e){
-                e.preventDefault();
+            register(event){
+                event.preventDefault();
                 this.$validator.validate().then(valid=>{
 
                 });
