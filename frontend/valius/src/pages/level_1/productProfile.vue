@@ -73,7 +73,7 @@
                         >
                             <label>Δυνατά σημέια (Strengths)</label>
                             <md-input name="services"  v-model="newstrength"></md-input>
-                            <button class="product-profile__action-btn" @click="addNewStrength()">Add new strength</button>
+                            <button class="product-profile__action-btn" @click="addNewStrength">Add new strength</button>
                             <span class="md-helper-text" v-show="errors.has('strengths')">{{ errors.first('strengths') }}</span>
                         </md-field>
                     </div>
@@ -84,7 +84,7 @@
                     <div class="valius-form__column--left valius-form__column--left--image"/>
                     <div class="valius-form__column--right">
                         <ul class="product-profile__actions-list product-profile__actions-list--weaknesses">
-                            <li v-for="weakness in product.weaknesses">{{weakness}}</li>
+                            <li v-for="weakness in product.weaknesses">{{weakness}} <span>x</span></li>
                         </ul>
                     </div>
 
@@ -100,7 +100,7 @@
                         >
                             <label>Αδύνατα σημεία (Weaknesses)</label>
                             <md-input name="weaknesses"  v-model="newweakness"></md-input>
-                            <button class="product-profile__action-btn" @click="addNewWeakness()">Add new weakness</button>
+                            <button class="product-profile__action-btn" @click="addNewWeakness">Add new weakness</button>
                             <span class="md-helper-text" v-show="errors.has('weaknesses')">{{ errors.first('weaknesses') }}</span>
                         </md-field>
                     </div>
@@ -123,11 +123,13 @@
 
     import router from "../../router";
     import InformationBanner from "../../components/InformationBanner.vue";
+    import axios from "axios";
 
     import BrandIcon from "../../assets/images/brand.png";
     import LightingIcon from "../../assets/images/lightning.png";
     import PlusIcon from "../../assets/images/plus.png";
     import NegativeIcon from "../../assets/images/negative.png";
+
 
     export default {
         name: 'product-profile',
@@ -160,9 +162,9 @@
                         this.$store.dispatch('updateProduct', this.product);
                         this.levels[0].start.subLevels.productProfile.rating = 3;
                         this.levels[0].landscapeIdentification.locked = false;
-                        this.levels[0].landscapeIdentification.completed = true;
-                        this.$store.dispatch('setCurrentLevel','landscapeIdentification');
+                        this.levels[0].start.completed = true;
                         this.$store.dispatch('setLevels', this.levels);
+                        axios.post("/savedata",{ store: this.$store });
                         router.push('/game-navigation');
                     }
 
@@ -176,7 +178,7 @@
                 }
             },
 
-            addNewWeakness(){
+            addNewWeakness(event){
                 if(this.newweakness.length >= 5) {
                     event.preventDefault();
                     this.product.weaknesses.push(this.newweakness);

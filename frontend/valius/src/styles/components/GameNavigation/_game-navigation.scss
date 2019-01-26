@@ -1,41 +1,62 @@
 .game-navigation {
     height: 100%;
     overflow-y: auto;
-    background-image: url("./assets/images/gameNavigation/game-navigation.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
+    justify-content: center;
+    align-items: center;
 
-    &__current-level {
+    &__container {
         color: $login-text-color;
         font-weight: 800;
         font-size: 30px;
+        width: 1000px;
+        height: 720px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+
     }
 
 
-    &__icon {
-        width: 120px;
+    &__coverImg {
+        position: absolute;
+        width: 1000px;
+        height: 720px;
     }
 
+    &__level {
+
+        position: absolute;
+        top: 220px;
+        left: 60px;
+
+        img {
+            width: 100px;
+        }
+
+        span {
+            padding-left: 20px;
+            font-size: 30px;
+        }
+
+    }
 
     &__actions-container {
-        width: 60%;
-        min-width: 350px;
-        margin: 50px auto 0 auto;
+        position: absolute;
+        top: 50%;
         display: flex;
         justify-content: space-between;
     }
 
     &__next-level {
-        margin: 20px auto 0 auto;
-        padding: 15px 30px;
+        position: absolute;
+        bottom: 140px;
+        padding: 10px 30px;
         font-size: 1em;
         color: $login-text-color;
         border-radius: 5px;
         border: 1px solid gray;
         background-color: #FDAD6D;
-        display: block;
         cursor: pointer;
     }
 

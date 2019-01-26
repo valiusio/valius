@@ -55,22 +55,26 @@
         label{
             left: 10px;
             color: #7AA2CB;
-            font-weight: bold;
+            font-weight: 800;
+        }
+
+
+        //error span color
+        span.md-helper-text {
+            color: #ef000d;
+            &:before {
+                content: '';
+            }
         }
         &--has-error {
             input, textarea {
                 border: 1px solid #ef000d;
-            }
-            label {
-                color: #ef000d;
             }
 
         }
 
 
     }
-
-
 
     .md-field.input-field.md-has-textarea.md-focused {
         label {
@@ -79,6 +83,20 @@
 
     }
 
-
-
 }
+
+//remove white background on autofill places
+input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+@-webkit-keyframes autofill {
+    to {
+        background: transparent;
+    }
+}
+
+.md-select-menu{
+    background-color: white;
+}
+

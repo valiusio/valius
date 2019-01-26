@@ -50,7 +50,7 @@
                             :class=" errors.has('password') && 'input-field--has-error' "
                         >
                             <label>Password</label>
-                            <md-input name="password"  v-validate="'required'" v-model="user.password"/>
+                            <md-input name="password" type="password" v-validate="'required'" v-model="user.password"/>
                             <span class="md-helper-text" v-show="errors.has('password')">{{ errors.first('password') }}</span>
                         </md-field>
 

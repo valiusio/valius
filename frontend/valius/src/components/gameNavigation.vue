@@ -1,30 +1,30 @@
 <template>
 
     <div class="game-navigation">
-        <div class="container container--lg">
+        <div class="game-navigation__container">
+            <img :src="backgroundCover" class="game-navigation__coverImg"/>
 
-            <div class="game-navigation__current-level">
-                <img :src=" backgroundImg " class="game-navigation__icon">
-                Start
-
-                <div class="game-navigation__actions-container">
-                    <profile-navigation
-                        v-for=" (level , key)  in levels[0][currentLevel].subLevels "
-                        :type="key"
-                        :rating="level.rating"
-                        :locked="level.locked"
-                        link="user-profile"
-                    />
-                </div>
-                <button
-                    v-if="isLevelCompleted"
-                    class="game-navigation__next-level"
-                    @click="goToGameMap"
-                >
-                    Next Level
-                </button>
+            <div class="game-navigation__level">
+                <img :src=" backgroundImg">
+                <span>Start</span>
             </div>
 
+            <div class="game-navigation__actions-container">
+                <profile-navigation
+                    v-for=" (level , key)  in levels[0][currentLevel].subLevels "
+                    :type="key"
+                    :rating="level.rating"
+                    :locked="level.locked"
+                    link="user-profile"
+                />
+            </div>
+            <button
+                v-if="isLevelCompleted"
+                class="game-navigation__next-level"
+                @click="goToGameMap"
+            >
+                Next Level
+            </button>
         </div>
     </div>
 
@@ -56,6 +56,9 @@
             backgroundImg () {
                 return require("../assets/images/gameNavigation/backgroundImages/level__" + this.currentLevel + ".png");
             },
+            backgroundCover () {
+                return require("../assets/images/gameNavigation/covers/level__" + this.currentLevel + ".png");
+            },
 
             isLevelCompleted () {
                return this.levels[0][this.currentLevel].completed;
@@ -64,6 +67,8 @@
         methods: {
 
             goToGameMap(){
+                //updateNextLevel
+                this.$store.dispatch('setCurrentLevel','landscapeIdentification');
                 this.$router.push("/game-map");
             }
         }
