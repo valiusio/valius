@@ -60,7 +60,7 @@
                             :class=" errors.has('phone') && 'input-field--has-error' "
                         >
                             <label>Day phone & Extension</label>
-                            <md-input name="phone"  v-validate="'required'" v-model="user.phone"/>
+                            <md-input name="phone"  v-validate="" v-model="user.phone"/>
                             <span class="md-helper-text" v-show="errors.has('phone')">{{ errors.first('phone') }}</span>
                         </md-field>
 
@@ -69,7 +69,7 @@
                             :class=" errors.has('mobile') && 'input-field--has-error' "
                         >
                             <label>Mobile phone</label>
-                            <md-input name="mobile"  v-validate="'required'" v-model="user.mobile"/>
+                            <md-input name="mobile"  v-validate="" v-model="user.mobile"/>
                             <span class="md-helper-text" v-show="errors.has('mobile')">{{ errors.first('mobile') }}</span>
                         </md-field>
 
@@ -81,7 +81,7 @@
                             :class=" errors.has('backupemail') && 'input-field--has-error' "
                         >
                             <label>Preferred Email</label>
-                            <md-input name="backupemail"  v-validate="'required|email'" v-model="user.backupemail"/>
+                            <md-input name="backupemail"  v-validate="'email'" v-model="user.backupemail"/>
                             <span class="md-helper-text" v-show="errors.has('backupemail')">{{ errors.first('backupemail') }}</span>
                         </md-field>
 
@@ -90,7 +90,7 @@
                             :class=" errors.has('maillingaddress') && 'input-field--has-error' "
                         >
                             <label>Mailing Address</label>
-                            <md-input name="maillingaddress"  v-validate="'required'" v-model="user.maillingaddress"/>
+                            <md-input name="maillingaddress"  v-validate="" v-model="user.maillingaddress"/>
                             <span class="md-helper-text" v-show="errors.has('maillingaddress')">{{ errors.first('maillingaddress') }}</span>
                         </md-field>
 
@@ -99,7 +99,7 @@
                             :class=" errors.has('city') && 'input-field--has-error' "
                         >
                             <label>City</label>
-                            <md-input name="city"  v-validate="'required'" v-model="user.city"/>
+                            <md-input name="city"  v-validate="" v-model="user.city"/>
                             <span class="md-helper-text" v-show="errors.has('city')">{{ errors.first('city') }}</span>
                         </md-field>
                         <md-field
@@ -107,7 +107,7 @@
                             :class=" errors.has('state') && 'input-field--has-error' "
                         >
                             <label>State</label>
-                            <md-input name="state"  v-validate="'required'" v-model="user.state"/>
+                            <md-input name="state"  v-validate="" v-model="user.state"/>
                             <span class="md-helper-text" v-show="errors.has('state')">{{ errors.first('state') }}</span>
                         </md-field>
                         <md-field
@@ -115,7 +115,7 @@
                             :class=" errors.has('employer') && 'input-field--has-error' "
                         >
                             <label>Employer</label>
-                            <md-input name="employer"  v-validate="'required'" v-model="user.employer"/>
+                            <md-input name="employer"  v-validate="" v-model="user.employer"/>
                             <span class="md-helper-text" v-show="errors.has('employer')">{{ errors.first('employer') }}</span>
                         </md-field>
                         <md-field
@@ -123,7 +123,7 @@
                             :class=" errors.has('title') && 'input-field--has-error' "
                         >
                             <label>Title</label>
-                            <md-input name="title"  v-validate="'required'" v-model="user.title"/>
+                            <md-input name="title"  v-validate="" v-model="user.title"/>
                             <span class="md-helper-text" v-show="errors.has('title')">{{ errors.first('title') }}</span>
                         </md-field>
 

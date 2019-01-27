@@ -160,12 +160,11 @@
 
                     if(valid){
                         this.$store.dispatch('updateProduct', this.product);
-                        this.levels[0].start.subLevels.productProfile.rating = 3;
-                        this.levels[0].landscapeIdentification.locked = false;
-                        this.levels[0].start.completed = true;
-                        this.$store.dispatch('setLevels', this.levels);
-                        axios.post("/savedata",{ store: this.$store });
-                        router.push('/game-navigation');
+                         this.levels[0].start.subLevels.productProfile.rating = 3;
+                         this.levels[0].landscapeIdentification.locked = false;
+                         this.levels[0].start.completed = true;
+                         this.$store.dispatch('setLevels', this.levels);
+                         router.push('/game-navigation');
                     }
 
                 });

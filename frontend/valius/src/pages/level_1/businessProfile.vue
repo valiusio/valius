@@ -28,7 +28,7 @@
                             :class="errors.has('profile') && 'input-field--has-error' "
                         >
                             <label>Προφίλ</label>
-                            <md-input name="profile" v-validate="'required'" v-model="business.profile"></md-input>
+                            <md-input name="profile" v-validate="" v-model="business.profile"></md-input>
                             <span class="md-helper-text" v-show="errors.has('profile')">{{ errors.first('profile') }}</span>
                         </md-field>
                         <md-field
@@ -44,7 +44,7 @@
                             :class="errors.has('services') && 'input-field--has-error' "
                         >
                             <label>Προϊόντα και Υπηρεσίες</label>
-                            <md-textarea name="services" v-validate="'required'" v-model="business.services"></md-textarea>
+                            <md-textarea name="services" v-validate="" v-model="business.services"></md-textarea>
                             <span class="md-helper-text" v-show="errors.has('services')">{{ errors.first('services') }}</span>
                         </md-field>
                         <md-field
@@ -52,7 +52,7 @@
                             :class="errors.has('vision') && 'input-field--has-error' "
                         >
                             <label>Όραμα της εταιρίας (Vision)</label>
-                            <md-input name="vision" v-validate="'required'" v-model="business.vision"></md-input>
+                            <md-input name="vision" v-validate="" v-model="business.vision"></md-input>
                             <span class="md-helper-text" v-show="errors.has('vision')">{{ errors.first('vision') }}</span>
                         </md-field>
                     </div>

@@ -37,7 +37,7 @@ export const store =  new  Vuex.Store({
             strengths: [],
             weaknesses: []
         },
-        currentLevel: 'start' ,
+        currentLevel: 'landscapeIdentification' ,
         IntangibleFactors: IntangibleFactors,
         levels: [
                 {
@@ -55,6 +55,12 @@ export const store =  new  Vuex.Store({
                     landscapeIdentification: {
                         locked: true,
                         completed: false,
+                        subLevels:
+                            {
+                                offerOfValue : {locked : true, rating: 0},
+                                competitors : {locked : true, rating: 0},
+                                marketObjective : {locked : true, rating: 0},
+                            }
                     },
                     marketAssessment: {
                         locked: true,
