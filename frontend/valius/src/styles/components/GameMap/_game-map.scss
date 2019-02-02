@@ -26,7 +26,7 @@
 
         position: absolute;
         width: 60px;
-        z-index: 100;
+        z-index: 1;
         -webkit-transition: all $animation-delay ease;
         -moz-transition: all $animation-delay ease;
         -o-transition: all $animation-delay ease;
@@ -73,6 +73,7 @@
         color: $login-text-color;
         font-size: 20px;
         font-weight: 900;
+        z-index: 2;
 
         &:hover {
             cursor: pointer;

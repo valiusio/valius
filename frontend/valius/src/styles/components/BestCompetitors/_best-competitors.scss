@@ -1,0 +1,82 @@
+.best-competitors {
+    height: 100%;
+    overflow-y: auto;
+
+    &_-form {
+        border: 1px solid black;
+    }
+
+    .row {
+        display: flex;
+    }
+
+    .column {
+        &--left {
+            flex: .3;
+            &--big {
+                flex: .6;
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+
+        &--right {
+            padding-left: 40px;
+            flex: .7;
+            &--small{
+                flex: .4;
+            }
+        }
+    }
+
+    .chessIcon {
+        position: relative;
+        width: 350px;
+        height: 260px;
+
+        &__panel {
+            position: absolute;
+            bottom: 20px;
+            width: 340px;
+        }
+
+        &__piece {
+            position: absolute;
+            bottom: 109px;
+            left: 104px;
+            height: 136px;
+        }
+    }
+
+    &__submit {
+        cursor: pointer;
+        width: 200px;
+        height: 50px;
+        margin: 50px auto;
+        display: block;
+        outline: none;
+        background-color: rgba(255, 148, 37, 0.93);
+        border: none;
+        border-radius: 10px;
+        font-size: 20px;
+        color: $login-text-color;
+    }
+    .md-field input,.md-field textarea{
+        border: 1px solid gray;
+        background-color: #F3F3F4;
+        border-radius: 5px;
+        padding: 5px 10px;
+        color: #89898A;
+        font-weight: bold;
+
+        &::placeholder {
+            font-family: cursive;
+            font-size: 15px;
+        }
+    }
+
+    .md-field label {
+        font-size: 25px;
+        color: blue;
+    }
+}

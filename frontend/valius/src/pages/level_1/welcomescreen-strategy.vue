@@ -41,7 +41,7 @@
         },
         methods:{
             nextPage() {
-                this.$router.push("/start-game")
+                this.$router.push("/game-map")
             }
 
         }

@@ -5,7 +5,7 @@ const ProfileNavigationNameMapping = {
 
     offerOfValue: {name:"Προσφορά αξίας" ,link :"/offer"},
     competitors : {name:"Κύριοι Ανταγωνιστές", link:"/competitors"},
-    marketObjective : {name:"Αγορά - Στόχος", link:"/competitors"}
+    marketObjective : {name:"Αγορά - Στόχος", link:"/market"}
 
 };
 

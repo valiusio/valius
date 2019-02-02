@@ -10,12 +10,12 @@
             </div>
 
             <div class="game-navigation__actions-container">
+
                 <profile-navigation
-                    v-for=" (level , key)  in levels[0][currentLevel].subLevels "
+                    v-for="(level, key) in levels[currentLevel].subLevels "
                     :type="key"
                     :rating="level.rating"
                     :locked="level.locked"
-                    link="user-profile"
                 />
             </div>
             <button
@@ -61,13 +61,12 @@
             },
 
             isLevelCompleted () {
-               return this.levels[0][this.currentLevel].completed;
+               return this.levels[this.currentLevel].completed;
             }
         },
         methods: {
 
             goToGameMap(){
-                //updateNextLevel
                 this.$store.dispatch('setCurrentLevel','landscapeIdentification');
                 this.$router.push("/game-map");
             }

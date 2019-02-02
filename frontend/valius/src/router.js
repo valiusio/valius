@@ -4,13 +4,17 @@ import Login from './pages/login_register/login';
 import Register from './pages/login_register/register';
 import WelcomePage from './pages/level_1/welcomescreen.vue';
 import WelcomeStrategy from './pages/level_1/welcomescreen-strategy.vue';
-import StartGame  from './pages/level_1/startGame.vue';
 import GameMap  from './components/gamemap.vue';
 import GameNavigation  from './components/gameNavigation.vue';
 import UserProfile  from './pages/level_1/userProfile.vue';
 import BusinessProfile from './pages/level_1/businessProfile.vue';
 import ProductProfile from './pages/level_1/productProfile';
-import testpage  from './pages/test.vue';
+import Offer from './pages/level_2/offer';
+import PyramidOfValue from './pages/level_2/pyramidOfValue';
+import Competitors from './pages/level_2/competitors';
+import BestCompetitors from './pages/level_2/bestCompetitors';
+import Market from './pages/level_2/market';
+import MarketFocus from './pages/level_2/marketFocus';
 
 Vue.use(Router)
 
@@ -37,11 +41,6 @@ export default new Router({
       component: WelcomeStrategy
     },
     {
-      path: '/start-game',
-      name: 'start-game',
-      component: StartGame
-    },
-    {
       path: '/game-map',
       name: 'game-map',
       component: GameMap
@@ -57,11 +56,6 @@ export default new Router({
       component: UserProfile
     },
     {
-      path: '/test',
-      name: 'testpage',
-      component: testpage
-    },
-    {
       path: '/business-profile',
       name: 'businessProfile',
       component: BusinessProfile
@@ -70,7 +64,39 @@ export default new Router({
       path: '/product-profile',
       name: 'productProfile',
       component: ProductProfile
-    }
+    },
+    {
+      path: '/offer',
+      name: 'offer',
+      component: Offer
+    },
+    {
+      path: '/pyramid-of-value',
+      name: 'pyramid',
+      component: PyramidOfValue
+    },
+    {
+      path: '/competitors',
+      name: 'competitors',
+      component: Competitors
+    },
+    {
+      path: '/best-competitors',
+      name: 'bestCompetitors',
+      component: BestCompetitors
+    },
+    {
+      path: '/market',
+      name: 'market',
+      component: Market
+    },
+    {
+      path: '/market-focus',
+      name: 'marketFocus',
+      component: MarketFocus
+    },
+
+
 
   ]
 })

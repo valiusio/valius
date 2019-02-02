@@ -1,0 +1,63 @@
+.market-focus {
+    height: 100%;
+    overflow-y: auto;
+
+    &__container {
+        position: relative;
+        width: 1000px;
+        height: 500px;
+        margin: 50px auto 0 auto;
+    }
+
+    &__input {
+        position: absolute;
+        padding: 5px 3px;
+        outline: none;
+        border: 2px solid gray;
+        border-radius: 5px;
+        font-size: 16px;
+
+        &::placeholder {
+            font-family: cursive;
+        }
+
+        &--1 {
+            position: absolute;
+            right: 120px;
+            top: 50px;
+        }
+
+
+        &--2 {
+            position: absolute;
+            right: 122px;
+            bottom: 174px;
+        }
+
+        &--3 {
+            position: absolute;
+            left: 16px;
+            top: 92px;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        width: 750px;
+        left: 120px;
+    }
+
+    &__button {
+        width: 200px;
+        height: 50px;
+        margin: 50px auto;
+        display: block;
+        outline: none;
+        background-color: rgba(255, 148, 37, 0.93);
+        border: none;
+        border-radius: 10px;
+        font-size: 20px;
+        color: $login-text-color;
+        cursor: pointer;
+    }
+}

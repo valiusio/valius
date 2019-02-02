@@ -1,6 +1,9 @@
 <template>
     <div class="information-banner">
-        <div class="information-banner__parallelogram">
+        <div
+            class="information-banner__parallelogram"
+            :class="type && 'information-banner__parallelogram--' + type"
+        >
             <div class="information-banner__text">
                 <slot></slot>
             </div>
@@ -17,7 +20,7 @@
     export default {
         name: 'InformationBanner',
         props: [
-
+            "type"
         ],
         data(){
             return {

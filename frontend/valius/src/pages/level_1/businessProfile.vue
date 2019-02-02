@@ -99,8 +99,9 @@
                 this.$validator.validate().then(valid=>{
                     if(valid){
                         this.$store.dispatch('updateBusiness', this.business);
-                        this.levels[0].start.subLevels.organizationProfile.rating = 3;
-                        this.levels[0].start.subLevels.productProfile.locked = false;
+                        this.levels.start.subLevels.organizationProfile.rating = 3;
+                        this.levels.start.subLevels.organizationProfile.completed = true;
+                        this.levels.start.subLevels.productProfile.locked = false;
                         this.$store.dispatch('setLevels', this.levels);
                         router.push('/game-navigation');
                     }

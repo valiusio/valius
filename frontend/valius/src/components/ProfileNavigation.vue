@@ -3,7 +3,7 @@
         @click="goToActionPage"
     >
         <div class="profile-navigation__preview">
-            <img :src="getTypeImg()" class="profile-navigation__type"/>
+            <img :src="getTypeImg()" class="md-image profile-navigation__type"/>
             <img :src="getRatingImg()" class="profile-navigation__rating"/>
 
             <img v-if="locked == true "

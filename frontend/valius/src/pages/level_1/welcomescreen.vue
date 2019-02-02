@@ -8,7 +8,7 @@
             <div class="welcome-page__description-container">
                 <div class="welcome-page__description">
                     <p>Ο Βάλιος ήταν ένα από τα αθάνατα άλογα του Αχιλλέα, ενός από τους καλύτερους πολεμιστές στην Αρχαία Ελληνική Μυθολογία.</p>
-                    <p>Ο Βάλιος ήταν το μέσο για εκείνον, για να πετύχει σημαντικές νίκες στη μάχη.</p>
+                    <p>Ο Βάλιος ήταν για εκείνον το μέσο, για να πετύχει σημαντικές νίκες στη μάχη.</p>
                 </div>
                 <div class="welcome-page__image  welcome-page__image--strategy">
                     <img src="../../assets/images/horse.png">

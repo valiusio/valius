@@ -132,7 +132,7 @@
                             :class=" errors.has('typeofemployer') && 'input-field--has-error' "
                         >
                             <label>Employer Type</label>
-                            <md-select v-model="user.typeofemployer" name="typeofemployer" v-validate="'required'">
+                            <md-select v-model="user.typeofemployer" name="typeofemployer" v-validate="">
                                 <md-optgroup>
                                     <md-option v-for="(type , key) in employertypes" :value="type" :key="key">{{ type }}</md-option>
                                 </md-optgroup>
@@ -193,8 +193,9 @@
                 this.$validator.validate().then( valid => {
                      if(valid){
                          this.$store.dispatch('saveUser', this.user);
-                         this.levels[0].start.subLevels.userProfile.rating = 3;
-                         this.levels[0].start.subLevels.organizationProfile.locked = false;
+                         this.levels.start.subLevels.userProfile.rating = 3;
+                         this.levels.start.subLevels.userProfile.completed = true;
+                         this.levels.start.subLevels.organizationProfile.locked = false;
                          this.$store.dispatch('setLevels', this.levels);
                          router.push('/game-navigation');
                      }

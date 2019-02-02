@@ -17,7 +17,7 @@
                             :class=" errors.has('brandName') && 'input-field--has-error' "
                         >
                             <label>Brand Name</label>
-                            <md-input name="brandName" v-validate="'required'" v-model="product.brandName"></md-input>
+                            <md-input name="brandName" v-validate="" v-model="product.brandName"></md-input>
                             <span class="md-helper-text" v-show="errors.has('brandName')">{{ errors.first('brandName') }}</span>
                         </md-field>
                     </div>
@@ -33,7 +33,7 @@
                             :class=" errors.has('offers') && 'input-field--has-error' "
                         >
                             <label>Τι προσφέρει (What it does)</label>
-                            <md-input name="offers" v-validate="'required'" v-model="product.offers"></md-input>
+                            <md-input name="offers" v-validate="" v-model="product.offers"></md-input>
                             <span class="md-helper-text" v-show="errors.has('offers')">{{ errors.first('offers') }}</span>
                         </md-field>
                     </div>
@@ -48,19 +48,10 @@
                             :class=" errors.has('targetMarket') && 'input-field--has-error' "
                         >
                             <label>Σε ποιούς απευθύνεται (Target Market)</label>
-                            <md-input name="targetMarket" v-validate="'required'" v-model="product.targetMarket"></md-input>
+                            <md-input name="targetMarket" v-validate="" v-model="product.targetMarket"></md-input>
                             <span class="md-helper-text" v-show="errors.has('targetMarket')">{{ errors.first('targetMarket') }}</span>
                         </md-field>
                     </div>
-                </div>
-                <div class="valius-form__row">
-                    <div class="valius-form__column--left valius-form__column--left--image"/>
-                    <div class="valius-form__column--right">
-                        <ul class="product-profile__actions-list product-profile__actions-list--strengths ">
-                            <li v-for="strength in product.strengths">{{strength}}</li>
-                        </ul>
-                    </div>
-
                 </div>
                 <div class="valius-form__row">
                     <div class="valius-form__column--left valius-form__column--left--image">
@@ -79,16 +70,16 @@
                     </div>
                 </div>
 
-
                 <div class="valius-form__row">
                     <div class="valius-form__column--left valius-form__column--left--image"/>
                     <div class="valius-form__column--right">
-                        <ul class="product-profile__actions-list product-profile__actions-list--weaknesses">
-                            <li v-for="weakness in product.weaknesses">{{weakness}} <span>x</span></li>
+                        <ul class="product-profile__actions-list product-profile__actions-list--strengths ">
+                            <li v-for="strength in product.strengths">{{strength}}</li>
                         </ul>
                     </div>
 
                 </div>
+
                 <div class="valius-form__row">
                     <div class="valius-form__column--left valius-form__column--left--image">
                         <img :src="NegativeIcon" class="product-profile__icon"/>
@@ -104,6 +95,15 @@
                             <span class="md-helper-text" v-show="errors.has('weaknesses')">{{ errors.first('weaknesses') }}</span>
                         </md-field>
                     </div>
+                </div>
+                <div class="valius-form__row">
+                    <div class="valius-form__column--left valius-form__column--left--image"/>
+                    <div class="valius-form__column--right">
+                        <ul class="product-profile__actions-list product-profile__actions-list--weaknesses">
+                            <li v-for="weakness in product.weaknesses">{{weakness}} <span>x</span></li>
+                        </ul>
+                    </div>
+
                 </div>
                 <md-field class="input-field">
                     <button type="submit" class="business-profile__form__submit">
@@ -123,7 +123,6 @@
 
     import router from "../../router";
     import InformationBanner from "../../components/InformationBanner.vue";
-    import axios from "axios";
 
     import BrandIcon from "../../assets/images/brand.png";
     import LightingIcon from "../../assets/images/lightning.png";
@@ -160,9 +159,11 @@
 
                     if(valid){
                         this.$store.dispatch('updateProduct', this.product);
-                         this.levels[0].start.subLevels.productProfile.rating = 3;
-                         this.levels[0].landscapeIdentification.locked = false;
-                         this.levels[0].start.completed = true;
+                         this.levels.start.subLevels.productProfile.rating = 3;
+                         this.levels.start.subLevels.productProfile.completed = true;
+                         this.levels.landscapeIdentification.locked = false;
+                         this.levels.landscapeIdentification.subLevels.offerOfValue.locked = false;
+                         this.levels.start.completed = true;
                          this.$store.dispatch('setLevels', this.levels);
                          router.push('/game-navigation');
                     }
