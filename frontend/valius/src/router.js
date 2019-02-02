@@ -15,6 +15,7 @@ import Competitors from './pages/level_2/competitors';
 import BestCompetitors from './pages/level_2/bestCompetitors';
 import Market from './pages/level_2/market';
 import MarketFocus from './pages/level_2/marketFocus';
+import ChooseMarket from './pages/level_2/chooseMarket';
 
 Vue.use(Router)
 
@@ -94,6 +95,11 @@ export default new Router({
       path: '/market-focus',
       name: 'marketFocus',
       component: MarketFocus
+    },
+    {
+      path: '/choose-market',
+      name: 'chooseMarket',
+      component: ChooseMarket
     },
 
 

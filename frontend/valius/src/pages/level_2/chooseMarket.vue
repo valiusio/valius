@@ -1,6 +1,20 @@
 <template>
 
-    <div class="market-focus">
+    <div class="choose-market">
+        <div class="container container--lg">
+            <information-banner>
+                <h1>Σε ποια αγορά ανήκουν αυτά τα τμήματα-στόχοι;</h1>
+                <p>Επίλεξε μια από τις παρακάτω αγορές.</p>
+            </information-banner>
+            <div class="choose-market__banner">
+                <div class="choose-market__option-wrapper choose-market__option-wrapper--b2c">
+                    <div class="choose-market__option option">Καταναλοτική αγορά (B2C)</div>
+                </div>
+                <div class="choose-market__option-wrapper choose-market__option-wrapper--b2b">
+                    <div class="choose-market__option option">Βιομηχανική αγορά (B2B)</div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </template>
@@ -8,6 +22,7 @@
 
 
 <script>
+    import InformationBanner from './../../components/InformationBanner';
 
     export default {
         name: 'MarketFocus',
