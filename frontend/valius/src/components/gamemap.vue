@@ -47,7 +47,7 @@
             action(name) {
                 this.$store.getters.levels[name]
                 && !this.$store.getters.levels[name].locked
-                &&  this.$router.push('/game-navigation');
+                &&  this.$router.push('/game-navigation/'+ name);
             }
         },
         created () {

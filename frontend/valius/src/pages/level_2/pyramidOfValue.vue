@@ -55,7 +55,7 @@
                                 :src="getIntangibleFactorImg(IntangibleFactor)"
                                 class="pyramid-game__intangible-factors--img"
                                 draggable="true"
-                                v-on:dragstart="drag(IntangibleFactor)"
+                                v-on:dragstart="drag($event, IntangibleFactor)"
                             >
                         </template>
                     </div>
@@ -95,9 +95,6 @@
                 pyramicIntangibleFactors : this.$store.getters.pyramicIntangibleFactors
             }
         },
-        created(){
-            console.log(process.env.VUE_APP_NAME)
-        },
         components:{
             "informationBanner" : informationBanner
         },
@@ -116,7 +113,7 @@
             getIntangibleFactorImg(img) {
                 return require("./../../assets/images/IntangibleFactors/" + img + '.png');
             },
-            drag(IntangibleFactor) {
+            drag(event,IntangibleFactor) {
                 event.dataTransfer.setData("tntangible-factor", IntangibleFactor);
             },
             drop(event) {

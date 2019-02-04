@@ -1,0 +1,47 @@
+.customer-profile {
+    height: 100%;
+    overflow-y: auto;
+
+    &__forms {
+        margin-top: 50px;
+        display: flex;
+        //.customer-profile__form-container {
+        //    border-right: 1px solid gray;
+        //}
+    }
+
+    &__form-container {
+        flex: 1;
+        padding: 10px 20px;
+
+    }
+    .md-field input,.md-field textarea{
+        border: 1px solid gray;
+        background-color: #F3F3F4;
+        border-radius: 5px;
+        padding: 5px 10px;
+        color: #89898A;
+        font-weight: bold;
+
+        &::placeholder {
+            font-family: cursive;
+            font-size: 15px;
+        }
+    }
+
+    .md-field label {
+        font-size: 16px;
+        color: blue;
+        left: 10px;
+
+    }
+
+
+}
+.md-checkbox .md-checkbox-container {
+   border: 1px solid gray!important;
+}
+.md-checkbox.md-checked .md-checkbox-container:after {
+   border-bottom: 2px solid black;
+   border-right: 2px solid black;
+}

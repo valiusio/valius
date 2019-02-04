@@ -27,7 +27,7 @@
                                 <md-input
                                     name="name"
                                     placeholder="Name:  e.g. Lucozade"
-                                    v-model="competitor1.name" ></md-input>
+                                    v-model="competitors.competitor1.name" ></md-input>
                                 <span class="md-helper-text" v-show="errors.has('name')"></span>
                             </md-field>
 
@@ -38,7 +38,7 @@
                                     name="name"
                                     placeholder="Profile:  e.g. Lucozade is a soft drink manufactured by the Japanese company Suntory and marketed as a range of sports and energy drinks."
                                     v-validate="'required'"
-                                    v-model="competitor1.profile" ></md-textarea>
+                                    v-model="competitors.competitor1.profile" ></md-textarea>
                                 <span class="md-helper-text"></span>
                             </md-field>
                     </div>
@@ -57,7 +57,7 @@
                                 <md-input
                                     name="name"
                                     placeholder="Name:  e.g. Lucozade"
-                                    v-model="competitor2.name" ></md-input>
+                                    v-model="competitors.competitor2.name" ></md-input>
                                 <span class="md-helper-text" v-show="errors.has('name')"></span>
                             </md-field>
 
@@ -68,7 +68,7 @@
                                     name="name"
                                     placeholder="Profile:  e.g. Lucozade is a soft drink manufactured by the Japanese company Suntory and marketed as a range of sports and energy drinks."
                                     v-validate="'required'"
-                                    v-model="competitor2.profile" ></md-textarea>
+                                    v-model="competitors.competitor2.profile" ></md-textarea>
                                 <span class="md-helper-text"></span>
                             </md-field>
                     </div>
@@ -87,7 +87,7 @@
                                 <md-input
                                     name="name"
                                     placeholder="Name:  e.g. Lucozade"
-                                    v-model="competitor3.name" ></md-input>
+                                    v-model="competitors.competitor3.name" ></md-input>
                                 <span class="md-helper-text" v-show="errors.has('name')"></span>
                             </md-field>
 
@@ -98,7 +98,7 @@
                                     name="name"
                                     placeholder="Profile:  e.g. Lucozade is a soft drink manufactured by the Japanese company Suntory and marketed as a range of sports and energy drinks."
                                     v-validate="'required'"
-                                    v-model="competitor3.profile" ></md-textarea>
+                                    v-model="competitors.competitor3.profile" ></md-textarea>
                                 <span class="md-helper-text"></span>
                             </md-field>
                     </div>
@@ -132,21 +132,9 @@
             return {
                 levels : this.$store.getters.levels,
                 currentLevel : this.$store.getters.currentLevel,
-                competitors : [],
                 chessPanel: chessPanel,
                 chessPiece: chessPiece,
-                competitor1: {
-                    name:'',
-                    profile: ''
-                },
-                competitor2: {
-                    name:'',
-                    profile: ''
-                },
-                competitor3: {
-                    name:'',
-                    profile: ''
-                },
+                competitors: this.$store.getters.competitors
             }
         },
         components:{
@@ -159,15 +147,6 @@
         methods: {
             nextPage(event) {
                 event.preventDefault();
-                if(this.competitor1.name && this.competitor1.profile ) {
-                    this.competitors.push({...this.competitor1})
-                }
-                if(this.competitor2.name && this.competitor2.profile ){
-                    this.competitors.push({...this.competitor2})
-                }
-                if(this.competitor3.name && this.competitor3.profile ){
-                    this.competitors.push({...this.competitor3})
-                }
                 this.$store.commit('updateCompetitors', this.competitors);
                 this.levels.landscapeIdentification.subLevels.competitors.completed = true;
                 this.levels.landscapeIdentification.subLevels.competitors.rating = 3;

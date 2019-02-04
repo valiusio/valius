@@ -13,7 +13,7 @@
                             :class=" errors.has('username') && 'input-field--has-error' "
                         >
                             <label>Username</label>
-                            <md-input name="username" v-validate="'required|min:5'" v-model="user.username"/>
+                            <md-input name="username" v-validate="'min:5'" v-model="user.username"/>
                             <span class="md-helper-text" v-show="errors.has('username')">{{ errors.first('username') }}</span>
                         </md-field>
 
@@ -23,7 +23,7 @@
                             :class=" errors.has('firstname') && 'input-field--has-error' "
                         >
                             <label>Firstname</label>
-                            <md-input name="firstname"  v-validate="'required|min:5'" v-model="user.firstname"/>
+                            <md-input name="firstname"  v-validate="'|min:5'" v-model="user.firstname"/>
                             <span class="md-helper-text" v-show="errors.has('firstname')">{{ errors.first('firstname') }}</span>
                         </md-field>
 
@@ -32,7 +32,7 @@
                             :class=" errors.has('lastname') && 'input-field--has-error' "
                         >
                             <label>Lastname</label>
-                            <md-input name="lastname"  v-validate="'required'" v-model="user.lastname"/>
+                            <md-input name="lastname"  v-validate="" v-model="user.lastname"/>
                             <span class="md-helper-text" v-show="errors.has('lastname')">{{ errors.first('lastname') }}</span>
                         </md-field>
 
@@ -41,7 +41,7 @@
                             :class=" errors.has('email') && 'input-field--has-error' "
                         >
                             <label>Email</label>
-                            <md-input name="email"  v-validate="'required|email'" v-model="user.email"/>
+                            <md-input name="email"  v-validate="'|email'" v-model="user.email"/>
                             <span class="md-helper-text" v-show="errors.has('email')">{{ errors.first('email') }}</span>
                         </md-field>
 
@@ -50,7 +50,7 @@
                             :class=" errors.has('password') && 'input-field--has-error' "
                         >
                             <label>Password</label>
-                            <md-input name="password" type="password" v-validate="'required'" v-model="user.password"/>
+                            <md-input name="password" type="password" v-validate="" v-model="user.password"/>
                             <span class="md-helper-text" v-show="errors.has('password')">{{ errors.first('password') }}</span>
                         </md-field>
 
@@ -197,7 +197,7 @@
                          this.levels.start.subLevels.userProfile.completed = true;
                          this.levels.start.subLevels.organizationProfile.locked = false;
                          this.$store.dispatch('setLevels', this.levels);
-                         router.push('/game-navigation');
+                         router.push('/game-navigation/');
                      }
                 });
             }

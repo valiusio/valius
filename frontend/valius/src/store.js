@@ -40,8 +40,84 @@ export const store =  new  Vuex.Store({
         currentLevel: 'start' ,
         IntangibleFactors: IntangibleFactors,
         pyramicIntangibleFactors : [],
-        competitors: [],
+        competitors: {
+            competitor1: {
+                name:'',
+                profile: '',
+            },
+            competitor2: {
+                name:'',
+                profile: ''
+            },
+            competitor3: {
+                name:'',
+                profile: ''
+            },
+        },
         markets:[],
+        marketCategories : {
+            b2b : [
+                "Χρήσης προϊόντος (user-rate)",
+                "Ευαισθησία στην τιμή (sensitivity)",
+                "Αντιλαμβανόμενα Οφέλη",
+                "Πιστότητα στη μάρκα (loyality)",
+                "Δημογραφικά",
+                "Κοινωνικό - Οικονομικό",
+                "Γεωγραφικά",
+                "Τρόπου ζωής",
+                "Κανάλι αγοράς",
+                "Μέσο ενημέρωσης",
+                "Άλλο"
+            ],
+            b2c : [
+                "Πιστότητα στη μάρκα (loyality)",
+                "Χρήσης προϊόντος (user-rate)",
+                "Ευαισθησία στην τιμή (sensitivity)",
+                "Αντιλαμβανόμενα Οφέλη",
+                "Μέγεθος αγορών",
+                "Τομέας",
+                "Status Χρήστη",
+                "Γεωγραφικά",
+                "Μέγεθος εταιρίας",
+                "Σχέση μεταξύ αγοραστή/πωλητή",
+                "Πολιτικές αγορών",
+                "Πρόσωπα λήψης αποφάσεων (Key decision marker)"
+            ]
+        },
+        marketCategory : '',
+        selectedMarket: '',
+        departments : {
+            department1 : {
+                name : '',
+                demographicItem: '',
+                productUsage: '',
+                desiredFeature: '',
+                brandFidelity: '',
+                communicationMeans: [],
+                distributionChannel: '',
+                lifeStyle: []
+            },
+            department2 : {
+                name : '',
+                demographicItem: '',
+                productUsage: '',
+                desiredFeature: '',
+                brandFidelity: '',
+                communicationMeans: [],
+                distributionChannel: '',
+                lifeStyle: []
+            },
+            department3 : {
+                name : '',
+                demographicItem: '',
+                productUsage: '',
+                desiredFeature: '',
+                brandFidelity: '',
+                communicationMeans: [],
+                distributionChannel: '',
+                lifeStyle: []
+            }
+        },
         levels:
                 {
                     start: {
@@ -108,6 +184,15 @@ export const store =  new  Vuex.Store({
         },
         markets(state) {
             return state.markets;
+        },
+        marketCategories(state) {
+            return state.marketCategories;
+        },
+        marketCategory(state) {
+            return state.marketCategory;
+        },
+        selectedMarket(state) {
+            return state.selectedMarket;
         }
     },
     mutations: {
@@ -135,6 +220,12 @@ export const store =  new  Vuex.Store({
         },
         updateMarkets(state, payload) {
             state.markets = payload;
+        },
+        updateMarketCategory(state, payload) {
+            state.marketCategory = payload;
+        },
+        updateSelectedMarket(state, payload) {
+            state.selectedMarket = payload;
         }
     },
     actions: {
@@ -161,6 +252,12 @@ export const store =  new  Vuex.Store({
         },
         updateMarkets(context, payload) {
             context.commit('updateMarkets', payload);
+        },
+        updateMarketCategory(context, payload) {
+            context.commit('updateMarketCategory', payload);
+        },
+        updateSelectedMarket(context, payload) {
+            context.commit('updateSelectedMarket', payload);
         }
     }
 });

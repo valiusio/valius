@@ -45,7 +45,7 @@
         data(){
             return {
                 levels : this.$store.getters.levels,
-                currentLevel : this.$store.getters.currentLevel
+                currentLevel : this.$route.params.level || this.$store.getters.currentLevel
             }
         },
         components:{

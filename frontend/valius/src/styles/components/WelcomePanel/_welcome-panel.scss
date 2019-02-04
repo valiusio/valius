@@ -55,6 +55,29 @@
         }
     }
 
+    &__paragraph {
+        &--welcome-to-strategy {
+            padding: 150px 0 0 0;
+        }
+    }
+
+    &__how-it-works-container {
+        .row {
+            display: flex;
+            margin: 50px 0;
+            img {
+                width: 50px;
+                height: 50px;
+            }
+            p {
+                color: $login-text-color;
+                font-size: 18px;
+                padding-left: 100px;
+            }
+        }
+
+    }
+
 
 
     &__button {

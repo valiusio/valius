@@ -2,7 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from './pages/login_register/login';
 import Register from './pages/login_register/register';
-import WelcomePage from './pages/level_1/welcomescreen.vue';
+import welcomeToStrategy from './pages/level_1/welcomeToStrategyGame';
+import howItWorks from './pages/level_1/howItWorks';
+import valius from './pages/level_1/valius.vue';
 import WelcomeStrategy from './pages/level_1/welcomescreen-strategy.vue';
 import GameMap  from './components/gamemap.vue';
 import GameNavigation  from './components/gameNavigation.vue';
@@ -16,6 +18,10 @@ import BestCompetitors from './pages/level_2/bestCompetitors';
 import Market from './pages/level_2/market';
 import MarketFocus from './pages/level_2/marketFocus';
 import ChooseMarket from './pages/level_2/chooseMarket';
+import MarketCategories from './pages/level_2/marketCategories';
+import CustomerProfileIntro from './pages/level_2/customerProfileIntro';
+import CustomerProfileB2B from './pages/level_2/customerProfileB2B';
+
 
 Vue.use(Router)
 
@@ -34,7 +40,16 @@ export default new Router({
     {
       path: '/welcome',
       name: 'welcome',
-      component: WelcomePage
+      component: welcomeToStrategy
+    },
+    {
+      path: '/how-it-works',
+      name: 'howItWorks',
+      component: howItWorks
+    }, {
+      path: '/valius',
+      name: 'valius',
+      component: valius
     },
     {
       path: '/welcome-strategy',
@@ -47,9 +62,14 @@ export default new Router({
       component: GameMap
     },
     {
-      path: '/game-navigation/',
+      path: '/game-navigation/:level?',
       name: 'gameNavigation',
       component: GameNavigation
+    },
+    {
+        path: '/did-you-know',
+        name: 'didYouKnow',
+        component: GameNavigation
     },
     {
       path: '/user-profile',
@@ -100,6 +120,21 @@ export default new Router({
       path: '/choose-market',
       name: 'chooseMarket',
       component: ChooseMarket
+    },
+    {
+      path: '/market-categories/:filter?',
+      name: 'marketCategories',
+      component: MarketCategories
+    },
+      {
+      path: '/customer-profile-intro/:market?',
+      name: 'customerProfileIntro',
+      component: CustomerProfileIntro
+    },
+    {
+      path: '/customer-profile-b2b',
+      name: 'customerProfile',
+      component: CustomerProfileB2B
     },
 
 

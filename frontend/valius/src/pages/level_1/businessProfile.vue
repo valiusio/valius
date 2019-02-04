@@ -20,7 +20,7 @@
                             :class="errors.has('business') && 'input-field--has-error' "
                         >
                             <label>Εταιρία</label>
-                            <md-input name="business" v-validate="'required'" v-model="business.business"></md-input>
+                            <md-input name="business" v-validate="''" v-model="business.business"></md-input>
                             <span class="md-helper-text" v-show="errors.has('business')">{{ errors.first('business') }}</span>
                         </md-field>
                         <md-field
@@ -36,7 +36,7 @@
                             :class="errors.has('subject') && 'input-field--has-error' "
                         >
                             <label>Τομέας</label>
-                            <md-input name="subject" v-validate="'required'" v-model="business.subject"></md-input>
+                            <md-input name="subject" v-validate="''" v-model="business.subject"></md-input>
                             <span class="md-helper-text" v-show="errors.has('subject')">{{ errors.first('subject') }}</span>
                         </md-field>
                         <md-field

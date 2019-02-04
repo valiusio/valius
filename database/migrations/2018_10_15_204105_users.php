@@ -15,18 +15,9 @@ class Users extends Migration
     {
         Schema::create('users',function (Blueprint $table){
             $table->increments('id');
-            $table->string('username');
-            $table->string('firstname');
-            $table->string('lastname');
             $table->string('email');
-            $table->string('backupemail');
-            $table->string('employer');
-            $table->string('employertitle');
-            $table->string('typeOfEmployer');
-            $table->enum('gender',['male','female']);
-            $table->string('mobile');
-            $table->string('mailingaddress');
             $table->string('password');
+            $table->longText('state')->nullable();
             $table->timestamps();
         });
     }

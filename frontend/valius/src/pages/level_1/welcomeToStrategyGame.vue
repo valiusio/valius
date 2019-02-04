@@ -2,16 +2,19 @@
 
     <div class="welcome-page">
         <div class="container container--lg">
-            <h2 class="welcome-page__header">Did you know?</h2>
+            <h2 class="welcome-page__header">Καλώς ήρθες στο «παιχνίδι» στρατηγικής!</h2>
 
 
             <div class="welcome-page__description-container">
                 <div class="welcome-page__description">
-                    <p>Ο Βάλιος ήταν ένα από τα αθάνατα άλογα του Αχιλλέα, ενός από τους καλύτερους πολεμιστές στην Αρχαία Ελληνική Μυθολογία.</p>
-                    <p>Ο Βάλιος ήταν για εκείνον το μέσο, για να πετύχει σημαντικές νίκες στη μάχη.</p>
+                    <p class="welcome-page__paragraph--welcome-to-strategy">
+                        Το Valius μπορεί να σε βοηθήσει να δομήσεις τις ιδέες σου,
+                        να αναλύσεις τα δεδομένα σου και να λάβεις
+                        ολοκληρωμένες προτάσεις στρατηγικής marketing!
+                    </p>
                 </div>
                 <div class="welcome-page__image  welcome-page__image--strategy">
-                    <img src="../../assets/images/horse.png">
+                    <img src="../../assets/images/mountain.png">
                 </div>
             </div>
 
@@ -28,10 +31,8 @@
 
 <script>
 
-    import router from "../../router";
-
     export default {
-        name: 'Login',
+        name: 'welcomeToStrategy',
         props: {
 
         },
@@ -45,7 +46,7 @@
         },
         methods:{
             nextPage() {
-                this.$router.push("/welcome-strategy")
+                this.$router.push("/how-it-works")
             }
 
         }
