@@ -8,21 +8,21 @@
                 <h1>Ας χτίσουμε το προφίλ των πελατών σου για κάθε τμήμα της αγοράς!</h1>
                 <p>Συμπλήρωσε τα παρακάτω κενά ή επίλεξε την κατάλληλο στοιχείο.</p>
             </information-banner>
-            <form>
+            <form @submit="saveCustomers">
             <div class="customer-profile__forms">
 
                     <div class="customer-profile__form-container">
                         <md-field>
                             <label>Όνομα τμήματος</label>
-                            <md-input name="name" v-validate="''" v-model="department1.name"></md-input>
+                            <md-input name="name" v-validate="''" v-model="customer1.name"></md-input>
                         </md-field>
                         <md-field>
                             <label>Κύριο Δημογραφικό στοιχείο</label>
-                            <md-input name="demographicItem" v-validate="''" v-model="department1.demographicItem"></md-input>
+                            <md-input name="demographicItem" v-validate="''" v-model="customer1.demographicItem"></md-input>
                         </md-field>
                         <md-field>
                             <label>Βαθμός χρήσης προϊόντος μας</label>
-                            <md-select name="productUsage" v-validate="''" v-model="department1.productUsage">
+                            <md-select name="productUsage" v-validate="''" v-model="customer1.productUsage">
                                 <md-optgroup>
                                     <md-option value="Υψηλή χρήση" >Υψηλή χρήση</md-option>
                                     <md-option value="Τακτική χρήση" >Τακτική χρήση</md-option>
@@ -34,12 +34,12 @@
                         </md-field>
                         <md-field>
                             <label>Επιθυμητό χαρακτηριστικό</label>
-                            <md-input name="desiredFeature" v-validate="''" v-model="department1.desiredFeature"></md-input>
+                            <md-input name="desiredFeature" v-validate="''" v-model="customer1.desiredFeature"></md-input>
                         </md-field>
 
                         <md-field>
                             <label>Πιστότητα στη μάρκα</label>
-                            <md-select name="brandFidelity" v-validate="''" v-model="department1.brandFidelity">
+                            <md-select name="brandFidelity" v-validate="''" v-model="customer1.brandFidelity">
                                 <md-optgroup>
                                     <md-option value="Πιστοί/ Ικανοποιημένοι" >Πιστοί/ Ικανοποιημένοι</md-option>
                                     <md-option value="Πρώιμοι πελάτες" >Πρώιμοι πελάτες</md-option>
@@ -52,7 +52,7 @@
 
                         <md-field>
                             <label>Mέσα επικοινωνίας</label>
-                            <md-select name="communicationMeans" v-validate="''" v-model="department1.communicationMeans" multiple >
+                            <md-select name="communicationMeans" v-validate="''" v-model="customer1.communicationMeans" multiple >
                                     <md-option value="TV" >TV</md-option>
                                     <md-option value="Ραδιόφωνο" >Ραδιόφωνο</md-option>
                                     <md-option value="Διαφήμιση Online" >Διαφήμιση Online</md-option>
@@ -69,11 +69,11 @@
 
                         <md-field>
                             <label>Κανάλι διανομής</label>
-                            <md-input name="distributionChannel" v-validate="''" v-model="department1.distributionChannel"></md-input>
+                            <md-input name="distributionChannel" v-validate="''" v-model="customer1.distributionChannel"></md-input>
                         </md-field>
                         <md-field>
                             <label>Τρόπος ζωής</label>
-                            <md-select name="communicationMeans" v-validate="''" v-model="department1.lifeStyle" multiple >
+                            <md-select name="communicationMeans" v-validate="''" v-model="customer1.lifeStyle" multiple >
                                 <md-option value="Αθλητικοί" >Αθλητικοί</md-option>
                                 <md-option value="Αισθητικοί" >Αισθητικοί</md-option>
                                 <md-option value="Αισιόδοξοι" >Αισιόδοξοι</md-option>
@@ -90,15 +90,15 @@
                     <div class="customer-profile__form-container">
                         <md-field>
                             <label>Όνομα τμήματος</label>
-                            <md-input name="name" v-validate="''" v-model="department2.name"></md-input>
+                            <md-input name="name" v-validate="''" v-model="customer2.name"></md-input>
                         </md-field>
                         <md-field>
                             <label>Κύριο Δημογραφικό στοιχείο</label>
-                            <md-input name="demographicItem" v-validate="''" v-model="department2.demographicItem"></md-input>
+                            <md-input name="demographicItem" v-validate="''" v-model="customer2.demographicItem"></md-input>
                         </md-field>
                         <md-field>
                             <label>Βαθμός χρήσης προϊόντος μας</label>
-                            <md-select name="productUsage" v-validate="''" v-model="department2.productUsage">
+                            <md-select name="productUsage" v-validate="''" v-model="customer2.productUsage">
                                 <md-optgroup>
                                     <md-option value="Υψηλή χρήση" >Υψηλή χρήση</md-option>
                                     <md-option value="Τακτική χρήση" >Τακτική χρήση</md-option>
@@ -110,12 +110,12 @@
                         </md-field>
                         <md-field>
                             <label>Επιθυμητό χαρακτηριστικό</label>
-                            <md-input name="desiredFeature" v-validate="''" v-model="department2.desiredFeature"></md-input>
+                            <md-input name="desiredFeature" v-validate="''" v-model="customer2.desiredFeature"></md-input>
                         </md-field>
 
                         <md-field>
                             <label>Πιστότητα στη μάρκα</label>
-                            <md-select name="brandFidelity" v-validate="''" v-model="department2.brandFidelity">
+                            <md-select name="brandFidelity" v-validate="''" v-model="customer2.brandFidelity">
                                 <md-optgroup>
                                     <md-option value="Πιστοί/ Ικανοποιημένοι" >Πιστοί/ Ικανοποιημένοι</md-option>
                                     <md-option value="Πρώιμοι πελάτες" >Πρώιμοι πελάτες</md-option>
@@ -128,7 +128,7 @@
 
                         <md-field>
                             <label>Mέσα επικοινωνίας</label>
-                            <md-select name="communicationMeans" v-validate="''" v-model="department2.communicationMeans" multiple >
+                            <md-select name="communicationMeans" v-validate="''" v-model="customer2.communicationMeans" multiple >
                                     <md-option value="TV" >TV</md-option>
                                     <md-option value="Ραδιόφωνο" >Ραδιόφωνο</md-option>
                                     <md-option value="Διαφήμιση Online" >Διαφήμιση Online</md-option>
@@ -145,11 +145,11 @@
 
                         <md-field>
                             <label>Κανάλι διανομής</label>
-                            <md-input name="distributionChannel" v-validate="''" v-model="department2.distributionChannel"></md-input>
+                            <md-input name="distributionChannel" v-validate="''" v-model="customer2.distributionChannel"></md-input>
                         </md-field>
                         <md-field>
                             <label>Τρόπος ζωής</label>
-                            <md-select name="communicationMeans" v-validate="''" v-model="department2.lifeStyle" multiple >
+                            <md-select name="communicationMeans" v-validate="''" v-model="customer2.lifeStyle" multiple >
                                 <md-option value="Αθλητικοί" >Αθλητικοί</md-option>
                                 <md-option value="Αισθητικοί" >Αισθητικοί</md-option>
                                 <md-option value="Αισιόδοξοι" >Αισιόδοξοι</md-option>
@@ -166,15 +166,15 @@
                     <div class="customer-profile__form-container">
                         <md-field>
                             <label>Όνομα τμήματος</label>
-                            <md-input name="name" v-validate="''" v-model="department3.name"></md-input>
+                            <md-input name="name" v-validate="''" v-model="customer3.name"></md-input>
                         </md-field>
                         <md-field>
                             <label>Κύριο Δημογραφικό στοιχείο</label>
-                            <md-input name="demographicItem" v-validate="''" v-model="department3.demographicItem"></md-input>
+                            <md-input name="demographicItem" v-validate="''" v-model="customer3.demographicItem"></md-input>
                         </md-field>
                         <md-field>
                             <label>Βαθμός χρήσης προϊόντος μας</label>
-                            <md-select name="productUsage" v-validate="''" v-model="department3.productUsage">
+                            <md-select name="productUsage" v-validate="''" v-model="customer3.productUsage">
                                 <md-optgroup>
                                     <md-option value="Υψηλή χρήση" >Υψηλή χρήση</md-option>
                                     <md-option value="Τακτική χρήση" >Τακτική χρήση</md-option>
@@ -186,12 +186,12 @@
                         </md-field>
                         <md-field>
                             <label>Επιθυμητό χαρακτηριστικό</label>
-                            <md-input name="desiredFeature" v-validate="''" v-model="department3.desiredFeature"></md-input>
+                            <md-input name="desiredFeature" v-validate="''" v-model="customer3.desiredFeature"></md-input>
                         </md-field>
 
                         <md-field>
                             <label>Πιστότητα στη μάρκα</label>
-                            <md-select name="brandFidelity" v-validate="''" v-model="department3.brandFidelity">
+                            <md-select name="brandFidelity" v-validate="''" v-model="customer3.brandFidelity">
                                 <md-optgroup>
                                     <md-option value="Πιστοί/ Ικανοποιημένοι" >Πιστοί/ Ικανοποιημένοι</md-option>
                                     <md-option value="Πρώιμοι πελάτες" >Πρώιμοι πελάτες</md-option>
@@ -204,7 +204,7 @@
 
                         <md-field>
                             <label>Mέσα επικοινωνίας</label>
-                            <md-select name="communicationMeans" v-validate="''" v-model="department3.communicationMeans" multiple >
+                            <md-select name="communicationMeans" v-validate="''" v-model="customer3.communicationMeans" multiple >
                                     <md-option value="TV" >TV</md-option>
                                     <md-option value="Ραδιόφωνο" >Ραδιόφωνο</md-option>
                                     <md-option value="Διαφήμιση Online" >Διαφήμιση Online</md-option>
@@ -221,11 +221,11 @@
 
                         <md-field>
                             <label>Κανάλι διανομής</label>
-                            <md-input name="distributionChannel" v-validate="''" v-model="department3.distributionChannel"></md-input>
+                            <md-input name="distributionChannel" v-validate="''" v-model="customer3.distributionChannel"></md-input>
                         </md-field>
                         <md-field>
                             <label>Τρόπος ζωής</label>
-                            <md-select name="communicationMeans" v-validate="''" v-model="department3.lifeStyle" multiple >
+                            <md-select name="communicationMeans" v-validate="''" v-model="customer3.lifeStyle" multiple >
                                 <md-option value="Αθλητικοί" >Αθλητικοί</md-option>
                                 <md-option value="Αισθητικοί" >Αισθητικοί</md-option>
                                 <md-option value="Αισιόδοξοι" >Αισιόδοξοι</md-option>
@@ -241,6 +241,12 @@
                 </div>
 
             </div>
+            <button
+                class="customer-profile__form-container__submit"
+                type="submit"
+            >
+                Save Customers
+            </button>
             </form>
         </div>
 
@@ -258,10 +264,10 @@
         props: [
 
         ],
-        data(){
+        data() {
             return {
-                department1 : {
-                    name : '',
+                customer1 : {
+                    name : this.$store.getters.competitors.competitor1.name,
                     demographicItem: '',
                     productUsage: '',
                     desiredFeature: '',
@@ -270,8 +276,8 @@
                     distributionChannel: '',
                     lifeStyle: []
                 },
-                department2 : {
-                    name : '',
+                customer2 : {
+                    name : this.$store.getters.competitors.competitor2.name,
                     demographicItem: '',
                     productUsage: '',
                     desiredFeature: '',
@@ -280,8 +286,8 @@
                     distributionChannel: '',
                     lifeStyle: []
                 },
-                department3 : {
-                    name : '',
+                customer3 : {
+                    name : this.$store.getters.competitors.competitor3.name,
                     demographicItem: '',
                     productUsage: '',
                     desiredFeature: '',
@@ -290,6 +296,8 @@
                     distributionChannel: '',
                     lifeStyle: []
                 },
+                customers : this.$store.getters.customers,
+                levels: this.$store.getters.levels
             }
         },
         components:{
@@ -301,8 +309,22 @@
         },
         methods: {
             nextPage(event) {
-                event.preventDefault();
+
                 this.$router.push('/market-focus');
+            },
+            saveCustomers(event) {
+                event.preventDefault();
+                this.customers.customer1 = this.customer1;
+                this.customers.customer2 = this.customer2;
+                this.customers.customer3 = this.customer3;
+                event.preventDefault();
+                this.levels.landscapeIdentification.subLevels.marketObjective.completed = true;
+                this.levels.landscapeIdentification.subLevels.marketObjective.rating= 3;
+                this.levels.landscapeIdentification.completed = true;
+
+                this.$store.dispatch('updateLevels', this.levels);
+                this.$store.dispatch('updateCustomers', this.customers);
+                this.$router.push('/game-navigation/landscapeIdentification');
             }
         }
 

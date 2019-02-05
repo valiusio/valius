@@ -102,7 +102,7 @@
                         this.levels.start.subLevels.organizationProfile.rating = 3;
                         this.levels.start.subLevels.organizationProfile.completed = true;
                         this.levels.start.subLevels.productProfile.locked = false;
-                        this.$store.dispatch('setLevels', this.levels);
+                        this.$store.dispatch('updateLevels', this.levels);
                         router.push('/game-navigation');
                     }
                 });

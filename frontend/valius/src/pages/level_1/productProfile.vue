@@ -164,7 +164,7 @@
                          this.levels.landscapeIdentification.locked = false;
                          this.levels.landscapeIdentification.subLevels.offerOfValue.locked = false;
                          this.levels.start.completed = true;
-                         this.$store.dispatch('setLevels', this.levels);
+                         this.$store.dispatch('updateLevels', this.levels);
                          router.push('/game-navigation');
                     }
 

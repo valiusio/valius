@@ -5,14 +5,26 @@
     &__forms {
         margin-top: 50px;
         display: flex;
-        //.customer-profile__form-container {
-        //    border-right: 1px solid gray;
-        //}
+
     }
 
     &__form-container {
         flex: 1;
         padding: 10px 20px;
+
+        &__submit {
+            width: 200px;
+            height: 50px;
+            margin: 50px auto;
+            display: block;
+            outline: none;
+            background-color: rgba(255, 148, 37, 0.93);
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            color: $login-text-color;
+            cursor: pointer;
+        }
 
     }
     .md-field input,.md-field textarea{
@@ -33,7 +45,6 @@
         font-size: 16px;
         color: blue;
         left: 10px;
-
     }
 
 

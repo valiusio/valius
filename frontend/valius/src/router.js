@@ -20,7 +20,8 @@ import MarketFocus from './pages/level_2/marketFocus';
 import ChooseMarket from './pages/level_2/chooseMarket';
 import MarketCategories from './pages/level_2/marketCategories';
 import CustomerProfileIntro from './pages/level_2/customerProfileIntro';
-import CustomerProfileB2B from './pages/level_2/customerProfileB2B';
+import CustomerProfileB2C from './pages/level_2/customerProfileB2C';
+import BusinessProfileB2B from './pages/level_2/businessProfileB2B';
 
 
 Vue.use(Router)
@@ -132,9 +133,14 @@ export default new Router({
       component: CustomerProfileIntro
     },
     {
-      path: '/customer-profile-b2b',
-      name: 'customerProfile',
-      component: CustomerProfileB2B
+      path: '/customer-profile-b2c',
+      name: 'customerProfileB2C',
+      component: CustomerProfileB2C
+    },
+    {
+      path: '/business-profile-b2b',
+      name: 'businessProfileB2B',
+      component: BusinessProfileB2B
     },
 
 

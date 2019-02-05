@@ -56,7 +56,8 @@
         ],
         data(){
             return {
-                idCardImg : idCardImg
+                idCardImg : idCardImg,
+                market: this.$route.params.market
             }
         },
         components:{
@@ -68,7 +69,13 @@
         methods: {
             nextPage(event) {
                 event.preventDefault();
-                this.$router.push('/customer-profile');
+                var newPage = '';
+                if(this.marker == 'b2b'){
+                    newPage = 'business-profile-b2b'
+                }else {
+                    newPage = 'customer-profile-b2c'
+                }
+                this.$router.push('/' + newPage);
             }
         }
 

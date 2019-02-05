@@ -160,7 +160,7 @@
 
     import router from "../../router";
     import InformationBanner from "../../components/InformationBanner.vue";
-
+    import axiosService from './../../services/axiosService';
 
     export default {
         name: 'userprofile',
@@ -196,7 +196,21 @@
                          this.levels.start.subLevels.userProfile.rating = 3;
                          this.levels.start.subLevels.userProfile.completed = true;
                          this.levels.start.subLevels.organizationProfile.locked = false;
-                         this.$store.dispatch('setLevels', this.levels);
+                         this.$store.dispatch('updateLevels', this.levels);
+
+
+                         const stateToSave = this.$store.state;
+                         stateToSave.user.password = '';
+                         stateToSave.token = null;
+
+                         axiosService.axiosInstance.post('/saveState', { state : JSON.stringify(stateToSave) })
+                         .then((res) => {
+                             console.log(res)
+                         }).catch( (err) => {
+                             console.log(err);
+                         });
+
+
                          router.push('/game-navigation/');
                      }
                 });

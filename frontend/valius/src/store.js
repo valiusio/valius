@@ -2,10 +2,12 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import _ from 'lodash';
 import { IntangibleFactors } from "./services/IntangibleFactorsService";
+import send from './../src/services/axiosService';
 Vue.use(Vuex);
 
 export const store =  new  Vuex.Store({
     state : {
+        token : '' ,
         user: {
             username:'',
             firstname:'',
@@ -86,8 +88,8 @@ export const store =  new  Vuex.Store({
         },
         marketCategory : '',
         selectedMarket: '',
-        departments : {
-            department1 : {
+        customers : {
+            customer1 : {
                 name : '',
                 demographicItem: '',
                 productUsage: '',
@@ -97,7 +99,7 @@ export const store =  new  Vuex.Store({
                 distributionChannel: '',
                 lifeStyle: []
             },
-            department2 : {
+            customer2 : {
                 name : '',
                 demographicItem: '',
                 productUsage: '',
@@ -107,7 +109,7 @@ export const store =  new  Vuex.Store({
                 distributionChannel: '',
                 lifeStyle: []
             },
-            department3 : {
+            customer3 : {
                 name : '',
                 demographicItem: '',
                 productUsage: '',
@@ -117,6 +119,39 @@ export const store =  new  Vuex.Store({
                 distributionChannel: '',
                 lifeStyle: []
             }
+        },
+        businesses: {
+            business1 : {
+                name: '',
+                category: '',
+                productUsage: '',
+                desiredFeature: '',
+                brandFidelity: '',
+                communicationMeans: [],
+                distributionChannel: '',
+                businessSize: []
+            },
+            business2 : {
+                name: '',
+                category: '',
+                productUsage: '',
+                desiredFeature: '',
+                brandFidelity: '',
+                communicationMeans: [],
+                distributionChannel: '',
+                businessSize: []
+            },
+            business3 : {
+                name: '',
+                category: '',
+                productUsage: '',
+                desiredFeature: '',
+                brandFidelity: '',
+                communicationMeans: [],
+                distributionChannel: '',
+                businessSize: []
+            },
+
         },
         levels:
                 {
@@ -156,6 +191,9 @@ export const store =  new  Vuex.Store({
                 }
     },
     getters: {
+        token(state) {
+          return state.token;
+        },
         levels(state) {
             return state.levels;
         },
@@ -193,10 +231,19 @@ export const store =  new  Vuex.Store({
         },
         selectedMarket(state) {
             return state.selectedMarket;
+        },
+        customers(state) {
+            return state.customers;
+        },
+        businesses(state) {
+            return state.businesses;
         }
     },
     mutations: {
-        setLevels (state, payload) {
+        updateToken(state, payload) {
+          state.token = payload;
+        },
+        updateLevels (state, payload) {
             state.levels = payload
         },
         setCurrentLevel (state, payload) {
@@ -226,11 +273,20 @@ export const store =  new  Vuex.Store({
         },
         updateSelectedMarket(state, payload) {
             state.selectedMarket = payload;
-        }
+        },
+        updateCustomers(state, payload) {
+            state.customers = payload;
+        },
+        updateBusinesses(state, payload) {
+            state.businesses = payload;
+        },
     },
     actions: {
-        setLevels(context, payload) {
-            context.commit('setLevels', payload);
+        updateToken(context, payload) {
+          context.commit('updateToken', payload);
+        },
+        updateLevels(context, payload) {
+            context.commit('updateLevels', payload);
         },
         setCurrentLevel (context, payload) {
             context.commit('setCurrentLevel', payload);
@@ -258,6 +314,12 @@ export const store =  new  Vuex.Store({
         },
         updateSelectedMarket(context, payload) {
             context.commit('updateSelectedMarket', payload);
+        },
+        updateCustomers(context, payload) {
+            context.commit('updateCustomers', payload);
+        },
+        updateBusinesses(context, payload) {
+            context.commit('updateBusinesses', payload);
         }
     }
 });

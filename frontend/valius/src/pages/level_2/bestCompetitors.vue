@@ -151,7 +151,7 @@
                 this.levels.landscapeIdentification.subLevels.competitors.completed = true;
                 this.levels.landscapeIdentification.subLevels.competitors.rating = 3;
                 this.levels.landscapeIdentification.subLevels.marketObjective.locked = false;
-                this.$store.dispatch('setLevels',this.levels).then(()=>{
+                this.$store.dispatch('updateLevels',this.levels).then(()=>{
                     this.$router.push('game-navigation');
                 });
             }

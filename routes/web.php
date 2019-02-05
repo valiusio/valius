@@ -8,6 +8,8 @@
 | This configuration routes serves all the spas's files from frontend folder build
 |
 */
+use Illuminate\Support\Facades\DB;
+use JWTAuth;
 Route::get("/",function(){
      $index =  \Illuminate\Support\Facades\File::get(public_path() . '/../frontend/valius/dist/index.html');
     return   response($index, 200)->header('Content-Type', 'text/html');
@@ -33,13 +35,56 @@ Route::get("/favicon.ico",function(){
 });
 
 
-Route::post("/savedata", function(\Illuminate\Http\Request $request){
+Route::fallback(function(){
+       return redirect('/');
+});
 
-    error_log($request);
+
+
+
+
+
+Route::post("/api/test", function(\Illuminate\Http\Request $request){
+
+    error_log('works');
 
 });
 
-Route::fallback(function(){
-       return redirect('/');
+Route::post("/api/register", function(\Illuminate\Http\Request $request){
+
+    try {
+        
+        DB::beginTransaction();
+
+        $newUser = new \App\User();
+        $newUser->email = $request->get('email');
+        $newUser->password = Hash::make($request->get('password'));
+        $newUserSaved = $newUser->save();
+        $token =JWTAuth::FromUser($newUser,['exp' => \Carbon\Carbon::now()->addDays(1)->timestamp]);
+        if ($newUserSaved) {
+            DB::commit();
+            return response()->json('ok');
+        }
+        throw new Exception('error', 500);
+
+
+    } catch (Exception $e) {
+        return response()->json([ 'code'=> $e->getCode(), 'message' => $e->getMessage() ], $e->getCode());
+    }catch (Throwable $th){
+        return response()->json([ 'code'=> $th->getCode(), 'message' => $th->getMessage() ], 500);
+    }
+
+});
+Route::post("/api/login", "AuthController@login");
+
+Route::post("/api/saveState", function(\Illuminate\Http\Request $request){
+    $user = JWTAuth::parseToken()->authenticate();
+    if(!$user){
+        return response()->json('Need authorization', 422);
+    }
+
+    $newState = $request->input('state');
+    $user->state = $newState;
+    $user->update();
 });
 

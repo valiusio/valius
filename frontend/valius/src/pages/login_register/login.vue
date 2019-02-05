@@ -34,6 +34,7 @@
 
 import router from "../../router";
 import AuthTemplate from "../../components/AuthTemplate.vue";
+import AxiosInstance from './../../services/axiosService';
 
 export default {
     name: 'Login',
@@ -61,8 +62,16 @@ export default {
             event.preventDefault();
             this.$validator.validate().then(valid => {
                 if(valid ) {
-                    this.user.email == 'test@test.com' && this.user.password == "testtest" && router.push("/welcome")
+                    AxiosInstance.axiosInstance.post('/login', {
+                        email : this.user.email,
+                        password : this.user.password
+                    }).then((res) => {
+                        router.push("/welcome")
+                    }).catch( (er) => {
+                        console.log(er);
+                    })
                 }
+
             });
         },
         goToRegister(){

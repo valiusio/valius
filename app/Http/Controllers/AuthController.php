@@ -1,103 +1,45 @@
 <?php namespace App\Http\Controllers;
-use \App\authendication as authendication;
-use \App\User as User;
+
+use App\authentication;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Mockery\Exception;
+use Tymon\JWTAuth\Exceptions\JWTException;
+use JWTAuth;
 
 
 
 class AuthController extends Controller
 {
-    private  $firstCredential  = 'email';
-    private  $secondCredential = 'password';
-    private  static $expiredInSHours = 24*15;
-
-    public function login(Request $request){
-
+    final public function login(Request $request){
+        $credentials = $request->only('email','password');
         try {
-
-            if(self::CheckAuth($request)){
-                throw new Exception("You're already logged in",203);
+            if ( !$token = JWTAuth::attempt($credentials)) {
+                return response()->json(['error'=> 'Invalid Credentials'],400);
             }
-
-            $user = User::where($this->firstCredential, '=', $request->input($this->firstCredential))
-                ->where($this->secondCredential, '=', hash('sha256', $request->input($this->secondCredential)))->first();
-
-            if ($user) {
-
-                $Authtoken = new authendication();
-                $Authtoken->user()->associate($user);
-                $Authtoken->_token = uniqid(base64_encode(str_random(60)));
-                $Authtoken->created_at = Carbon::now();
-                $Authtoken->expire_at = Carbon::now()->addHour(self::$expiredInSHours);
-                $Authtoken->save();
-
-                return response()->json(['code'=>200,'message'=>'You are logged in', 'token'=>$Authtoken->_token],200);
-
-            }else{
-
-                throw new Exception('Invalid Credentials',422);
-            }
-
-
-        }catch (Exception $e){
-
-            return response()->json(['code'=>$e->getCode(), 'message'=>$e->getMessage()],422);
-
-        }catch (\Throwable $th){
-
-            return
-                json_encode([
-                    'code'=>$th->getCode(),
-                    'message'=>$th->getMessage()
-                ]);
+        }catch(JWTException $e) {
+            return response()->json(['code'=>$e->getCode(), 'message'=> $e->getMessage()],$e->getCode());
+        }catch(\Throwable $th) {
+            return response()->json(['code'=>$th->getCode(), 'message'=> $th->getMessage()],500);
         }
 
+
+        $User = User::where('email', $request->input('email'))->first();
+        return response()->json(compact('User','token'));
     }
 
-    public function logout(Request $request){
+    final public function logout(Request $request){
         try {
-
-            if(!self::CheckAuth($request)){
-                throw new Exception("You have to log in first",203);
-            }
-
-            $token = authentication::where('_token','=',$request->header('Authorization'))->first();
-            $token->delete();
-
-            return  response()->json(['code'=>200,'message'=>'You are succesfully logged out'],200);
-
-        }catch (Exception $e){
-
-            return response()->json(['code'=>$e->getCode(),'message'=>$e->getMessage()],203);
-
-        }catch (\Throwable $th){
-
-            return json_encode([
-                'code'=>$th->getCode(),
-                'message'=>$th->getMessage()
-            ]);
+            JWTAuth::invalidate(JWTAuth::getToken());
+            return response()->json(['code' => 200, 'message' => 'Logout successful'], 200);
+        } catch (JWTException $e) {
+            return response()->json(['code' =>$e->getCode(),'message'=>$e->getMessage()], 500);
+        }catch (\Throwable $th) {
+            return response()->json(['code' =>$th->getCode(),'message'=>$th->getMessage()], 500);
         }
-
-
     }
 
 
-    public static function CheckAuth(Request $request){
-
-        $token = $request->header('Authorization');
-
-        if(!$token){
-            return false;
-        }
-
-        $AuthendicationUser = authendication::where('_token','=',$token)->first();
-        if( ! ($AuthendicationUser && $AuthendicationUser->expire_at > Carbon::now() )){
-            return false;
-        }
-
-        return true;
-    }
 }
