@@ -9,7 +9,7 @@
 |
 */
 use Illuminate\Support\Facades\DB;
-use JWTAuth;
+
 Route::get("/",function(){
      $index =  \Illuminate\Support\Facades\File::get(public_path() . '/../frontend/valius/dist/index.html');
     return   response($index, 200)->header('Content-Type', 'text/html');
