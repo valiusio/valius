@@ -80,7 +80,7 @@
 <script>
     import informationBanner from "./../../components/InformationBanner";
     import pyramidImg from "./../../assets/images/pyramid.png";
-    import IntangibleFactors from "./../../services/IntangibleFactorsService";
+    import { IntangibleFactors } from "./../../services/IntangibleFactorsService";
 
     export default {
         name: 'GameNavigation',
@@ -91,7 +91,7 @@
             return {
                 levels : this.$store.getters.levels,
                 currentLevel : this.$store.getters.currentLevel,
-                IntangibleFactors : IntangibleFactors.IntangibleFactors,
+                IntangibleFactors : IntangibleFactors,
                 pyramicIntangibleFactors : this.$store.getters.pyramicIntangibleFactors
             }
         },

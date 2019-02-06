@@ -1,5 +1,6 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from 'vue';
+import store from './store';
+import Router from 'vue-router';
 import Login from './pages/login_register/login';
 import Register from './pages/login_register/register';
 import welcomeToStrategy from './pages/level_1/welcomeToStrategyGame';
@@ -26,7 +27,7 @@ import BusinessProfileB2B from './pages/level_2/businessProfileB2B';
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -41,7 +42,10 @@ export default new Router({
     {
       path: '/welcome',
       name: 'welcome',
-      component: welcomeToStrategy
+      component: welcomeToStrategy,
+        meta : {
+            requiresAuth: true
+       }
     },
     {
       path: '/how-it-works',
@@ -50,100 +54,158 @@ export default new Router({
     }, {
       path: '/valius',
       name: 'valius',
-      component: valius
+      component: valius,
+          meta : {
+              requiresAuth: true
+          }
     },
     {
       path: '/welcome-strategy',
       name: 'welcome-strategy',
-      component: WelcomeStrategy
+      component: WelcomeStrategy,
+        meta : {
+            requiresAuth: true
+        }
     },
     {
       path: '/game-map',
       name: 'game-map',
-      component: GameMap
+      component: GameMap,
+        meta : {
+            requiresAuth: true
+        }
     },
     {
       path: '/game-navigation/:level?',
       name: 'gameNavigation',
-      component: GameNavigation
+      component: GameNavigation,
+        meta : {
+            requiresAuth: true
+        }
     },
     {
         path: '/did-you-know',
         name: 'didYouKnow',
-        component: GameNavigation
+        component: GameNavigation,
+        meta : {
+            requiresAuth: true
+        }
     },
     {
       path: '/user-profile',
       name: 'userProfile',
-      component: UserProfile
+      component: UserProfile,
+        meta : {
+            requiresAuth: true
+        }
     },
     {
       path: '/business-profile',
       name: 'businessProfile',
-      component: BusinessProfile
+      component: BusinessProfile,
+        meta : {
+            requiresAuth: true
+        }
     },
     {
       path: '/product-profile',
       name: 'productProfile',
-      component: ProductProfile
+      component: ProductProfile,
+        meta : {
+            requiresAuth: true
+        }
     },
     {
       path: '/offer',
       name: 'offer',
-      component: Offer
+      component: Offer,
+        meta : {
+            requiresAuth: true
+        }
     },
     {
       path: '/pyramid-of-value',
       name: 'pyramid',
-      component: PyramidOfValue
+      component: PyramidOfValue,
+        meta : {
+            requiresAuth: true
+        }
     },
     {
       path: '/competitors',
       name: 'competitors',
-      component: Competitors
+      component: Competitors,
+        meta : {
+            requiresAuth: true
+        }
     },
     {
       path: '/best-competitors',
       name: 'bestCompetitors',
-      component: BestCompetitors
+      component: BestCompetitors,
+        meta : {
+            requiresAuth: true
+        }
     },
     {
       path: '/market',
       name: 'market',
-      component: Market
+      component: Market,
+        meta : {
+            requiresAuth: true
+        }
     },
     {
       path: '/market-focus',
       name: 'marketFocus',
-      component: MarketFocus
+      component: MarketFocus,
+        meta : {
+            requiresAuth: true
+        }
     },
     {
       path: '/choose-market',
       name: 'chooseMarket',
-      component: ChooseMarket
+      component: ChooseMarket,
+        meta : {
+            requiresAuth: true
+        }
     },
     {
       path: '/market-categories/:filter?',
       name: 'marketCategories',
-      component: MarketCategories
+      component: MarketCategories,
+        meta : {
+            requiresAuth: true
+        }
     },
       {
       path: '/customer-profile-intro/:market?',
       name: 'customerProfileIntro',
-      component: CustomerProfileIntro
+      component: CustomerProfileIntro,
+          meta : {
+              requiresAuth: true
+          }
     },
     {
       path: '/customer-profile-b2c',
       name: 'customerProfileB2C',
-      component: CustomerProfileB2C
+      component: CustomerProfileB2C,
+        meta : {
+            requiresAuth: true
+        }
     },
     {
       path: '/business-profile-b2b',
       name: 'businessProfileB2B',
-      component: BusinessProfileB2B
+      component: BusinessProfileB2B,
+        meta : {
+            requiresAuth: true
+        }
     },
 
 
 
   ]
-})
+});
+export default router;

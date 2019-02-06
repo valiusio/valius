@@ -1,8 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import _ from 'lodash';
 import { IntangibleFactors } from "./services/IntangibleFactorsService";
-import send from './../src/services/axiosService';
+import axios from 'axios';
 Vue.use(Vuex);
 
 export const store =  new  Vuex.Store({
@@ -194,6 +193,8 @@ export const store =  new  Vuex.Store({
         token(state) {
           return state.token;
         },
+        isLoggedIn : state => !!state.token,
+
         levels(state) {
             return state.levels;
         },
@@ -240,6 +241,13 @@ export const store =  new  Vuex.Store({
         }
     },
     mutations: {
+        auth_success(state, token){
+            state.token = token
+        },
+        logout(state){
+            state.token = ''
+        },
+
         updateToken(state, payload) {
           state.token = payload;
         },
@@ -282,6 +290,31 @@ export const store =  new  Vuex.Store({
         },
     },
     actions: {
+        login({commit}, user){
+            return new Promise((resolve, reject) => {
+               axios.post( process.env.VUE_APP_API_BASE_URL +'/login', {email : user.email , password : user.password})
+                    .then(resp => {
+                        const token = resp.data.token
+                        localStorage.setItem('token', token);
+                        commit('auth_success', token);
+                        resolve(resp);
+                    })
+                    .catch(err => {
+                        localStorage.removeItem('token')
+                        reject(err);
+                    })
+            })
+        },
+        logout(context){
+            return new Promise((resolve, reject) => {
+                localStorage.removeItem('token');
+                context.commit('logout');
+                resolve();
+            })
+        },
+        auth_success(context, payload){
+            context.commit('auth_success', payload);
+        },
         updateToken(context, payload) {
           context.commit('updateToken', payload);
         },

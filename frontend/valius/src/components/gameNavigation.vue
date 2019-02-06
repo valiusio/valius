@@ -33,8 +33,8 @@
 
 
 <script>
-
     import router from "../router";
+    import statePersistor from './../services/statePersistor';
     import ProfileNavigation from "./ProfileNavigation.vue";
 
     export default {
@@ -68,7 +68,13 @@
 
             goToGameMap(){
                 this.$store.dispatch('setCurrentLevel','landscapeIdentification');
-                this.$router.push("/game-map");
+                statePersistor().then(() => {
+                    this.$router.push("/game-map");
+                }).catch(() => {
+
+                })
+
+
             }
         }
     }

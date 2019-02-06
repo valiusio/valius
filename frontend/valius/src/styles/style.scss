@@ -6,3 +6,28 @@
 
 [v-cloak] { display:none; }
 
+.logout-panel {
+    height: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        button {
+            margin: 5px 0 ;
+            width: 80px;
+            height: 30px;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-size: 16px;
+            color: black;
+            background-color: white;
+            cursor: pointer;
+        }
+    }
+}

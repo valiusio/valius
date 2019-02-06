@@ -56,4 +56,4 @@ const IntangibleFactors = [
     "warranties"
 ];
 
-export  default { IntangibleFactors };
+export  {IntangibleFactors} ;
