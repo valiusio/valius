@@ -57,7 +57,7 @@ export const store =  new  Vuex.Store({
         },
         markets:[],
         marketCategories : {
-            b2b : [
+            b2c : [
                 "Χρήσης προϊόντος (user-rate)",
                 "Ευαισθησία στην τιμή (sensitivity)",
                 "Αντιλαμβανόμενα Οφέλη",
@@ -70,7 +70,7 @@ export const store =  new  Vuex.Store({
                 "Μέσο ενημέρωσης",
                 "Άλλο"
             ],
-            b2c : [
+            b2b : [
                 "Πιστότητα στη μάρκα (loyality)",
                 "Χρήσης προϊόντος (user-rate)",
                 "Ευαισθησία στην τιμή (sensitivity)",

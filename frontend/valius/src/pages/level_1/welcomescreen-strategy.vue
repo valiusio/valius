@@ -8,7 +8,7 @@
             <div class="welcome-page__description-container">
                 <div class="welcome-page__description">
                     <p>Η στρατηγική λειτουργεί με τον ίδιο τρόπο, αντιπροσωπεύει το μέσο για την επίτευξη στόχων.</p>
-                    <p>Η χρησιμοποίηση της στρατηγικής είναι ένας τρόπος για να διαμορφώνεις το μέλλον!</p>
+                    <p>Η χρησιμοποίηση της στρατηγικής είναι ένας τρόπος διαμόρφωσης του μέλλοντος!</p>
                 </div>
                 <div class="welcome-page__image  welcome-page__image--strategy">
                     <img src="../../assets/images/strategy.png">

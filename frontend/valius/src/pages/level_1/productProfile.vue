@@ -3,8 +3,9 @@
     <div class="product-profile">
         <div class="container--lg">
             <information-banner>
-                <h1>Πόσο καλά γνωρίζεις την επίχειρηση σου;</h1>
-                <p>Aπάντησε στις ερωτήσεις που γνωρίζεις συμπληρώνοντας τα παρακάτω κενά.</p>
+                <h1>Για ποιό προϊόν θά ήθελες να αναπτύξεις στρατηγικές;</h1>
+                <p>Δώσε ένα γρήγορο brief του προιόντος που θα ήθελες να εστιάσεις στα επόμενα
+                    βήματα συμπληρώνοντας τα παρακάτω κενά.</p>
             </information-banner>
             <form class="valius-form" @submit="register">
                 <div class="valius-form__row">
@@ -33,7 +34,7 @@
                             :class=" errors.has('offers') && 'input-field--has-error' "
                         >
                             <label>Τι προσφέρει (What it does)</label>
-                            <md-input name="offers" v-validate="" v-model="product.offers"></md-input>
+                            <md-textarea name="offers" v-validate="" v-model="product.offers"></md-textarea>
                             <span class="md-helper-text" v-show="errors.has('offers')">{{ errors.first('offers') }}</span>
                         </md-field>
                     </div>
@@ -48,7 +49,7 @@
                             :class=" errors.has('targetMarket') && 'input-field--has-error' "
                         >
                             <label>Σε ποιούς απευθύνεται (Target Market)</label>
-                            <md-input name="targetMarket" v-validate="" v-model="product.targetMarket"></md-input>
+                            <md-textarea name="targetMarket" v-validate="" v-model="product.targetMarket"></md-textarea>
                             <span class="md-helper-text" v-show="errors.has('targetMarket')">{{ errors.first('targetMarket') }}</span>
                         </md-field>
                     </div>
@@ -172,14 +173,14 @@
             },
             addNewStrength(event) {
                 event.preventDefault();
-                if(this.newstrength.length >= 5) {
+                if(this.newstrength.length >= 1) {
                     this.product.strengths.push(this.newstrength);
                     this.newstrength = '';
                 }
             },
 
             addNewWeakness(event){
-                if(this.newweakness.length >= 5) {
+                if(this.newweakness.length >= 1) {
                     event.preventDefault();
                     this.product.weaknesses.push(this.newweakness);
                     this.newweakness= '';

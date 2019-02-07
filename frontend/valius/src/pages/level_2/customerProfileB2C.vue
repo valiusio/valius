@@ -6,7 +6,8 @@
                 type="danger"
             >
                 <h1>Ας χτίσουμε το προφίλ των πελατών σου για κάθε τμήμα της αγοράς!</h1>
-                <p>Συμπλήρωσε τα παρακάτω κενά ή επίλεξε την κατάλληλο στοιχείο.</p>
+                <p>Aπάντησε στις ερωτήσεις που γνωρίζεις συμπληρώνοντας
+                    τα παρακάτω κενά ή επιλέγοντας το κατάλληλο στοιχείο</p>
             </information-banner>
             <form @submit="saveCustomers">
             <div class="customer-profile__forms">
@@ -267,7 +268,7 @@
         data() {
             return {
                 customer1 : {
-                    name : this.$store.getters.competitors.competitor1.name,
+                    name : this.$store.getters.markets.market1.name,
                     demographicItem: '',
                     productUsage: '',
                     desiredFeature: '',
@@ -277,7 +278,7 @@
                     lifeStyle: []
                 },
                 customer2 : {
-                    name : this.$store.getters.competitors.competitor2.name,
+                    name : this.$store.getters.markets.market2.name,
                     demographicItem: '',
                     productUsage: '',
                     desiredFeature: '',
@@ -287,7 +288,7 @@
                     lifeStyle: []
                 },
                 customer3 : {
-                    name : this.$store.getters.competitors.competitor3.name,
+                    name : this.$store.getters.markets.market3.name,
                     demographicItem: '',
                     productUsage: '',
                     desiredFeature: '',

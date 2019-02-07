@@ -80,7 +80,7 @@ Route::post("/api/login", "AuthController@login");
 Route::post("/api/saveState", function(\Illuminate\Http\Request $request){
     $user = JWTAuth::parseToken()->authenticate();
     if(!$user){
-        return response()->json('Need authorization', 422);
+        return response()->json('Authorization expired', 401);
     }
 
     $newState = $request->input('state');

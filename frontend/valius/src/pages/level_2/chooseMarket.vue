@@ -11,7 +11,7 @@
                     class="choose-market__option-wrapper choose-market__option-wrapper--b2c"
                     @click="goTo('b2c')"
                 >
-                    <div class="choose-market__option option">Καταναλοτική αγορά (B2C)</div>
+                    <div class="choose-market__option option">Καταναλωτική αγορά (B2C)</div>
                 </div>
                 <div
                     class="choose-market__option-wrapper choose-market__option-wrapper--b2b"

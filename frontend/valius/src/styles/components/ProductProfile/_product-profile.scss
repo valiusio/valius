@@ -11,7 +11,12 @@
         height: 50px;
     }
     .valius-form__column--left--image {
-        text-align: right;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        img {
+            width: 70px;
+        }
     }
 
     &__action-btn {

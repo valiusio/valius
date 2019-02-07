@@ -36,13 +36,24 @@ router.beforeEach((to, from, next) => {
 });
 
 
-Vue.prototype.$http = Axios;
-const token = localStorage.getItem('token');
-if (token) {
-    Vue.prototype.$http.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-}
-Vue.prototype.$http.defaults.baseURL = process.env.VUE_APP_API_BASE_URL;
 
+const token = localStorage.getItem('token');
+var headers = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+
+};
+if(token) {
+    headers['Authorization'] = 'Bearer ' + token;
+}
+
+const axiosInstance = Axios.create({
+    baseURL: process.env.VUE_APP_API_BASE_URL,
+    headers: headers
+});
+
+Vue.prototype.$http = axiosInstance;
+console.log(token)
 export default  app;
 
 
