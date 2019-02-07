@@ -47,13 +47,12 @@ if(token) {
     headers['Authorization'] = 'Bearer ' + token;
 }
 
-const axiosInstance = Axios.create({
+const axiosInstance = new Axios.create({
     baseURL: process.env.VUE_APP_API_BASE_URL,
     headers: headers
 });
 
 Vue.prototype.$http = axiosInstance;
-console.log(token)
 export default  app;
 
 

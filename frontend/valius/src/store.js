@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import { IntangibleFactors } from "./services/IntangibleFactorsService";
 import axios from 'axios';
+import app from './App'
 Vue.use(Vuex);
 
 export const store =  new  Vuex.Store({
@@ -243,6 +244,7 @@ export const store =  new  Vuex.Store({
     mutations: {
         auth_success(state, token){
             state.token = token
+            Vue.prototype.$http.defaults.headers.common['Authorization'] = 'Bearer ' + token;
         },
         logout(state){
             state.token = ''
