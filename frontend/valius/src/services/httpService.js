@@ -10,12 +10,9 @@ if(token) {
 }
 
 
-const http =  () => {
-    return new Axios.create({
+const http = Axios.create({
         baseURL: process.env.VUE_APP_API_BASE_URL,
         headers: headers
-    });
-
-}
+});
 
 export default http ;

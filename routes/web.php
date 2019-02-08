@@ -88,3 +88,14 @@ Route::post("/api/saveState", function(\Illuminate\Http\Request $request){
     $user->update();
 });
 
+Route::get("api/getState", function(\Illuminate\Http\Request $request){
+    error_log($request->headers);
+    $user = JWTAuth::parseToken()->authenticate();
+    if(!$user){
+        return response()->json('Authorization expired', 401);
+    }
+
+    $state = \App\User::find($user->id)->state;
+    return response()->json($state);
+});
+

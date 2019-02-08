@@ -292,13 +292,17 @@ export const store =  new  Vuex.Store({
         },
     },
     actions: {
-        login({commit}, user){
-            console.log(http)
+        login({commit}, user) {
             return new Promise((resolve, reject) => {
-               http().post( process.env.VUE_APP_API_BASE_URL +'/login', { email : user.email , password : user.password })
+               http.post( process.env.VUE_APP_API_BASE_URL +'/login', { email : user.email , password : user.password })
                     .then(resp => {
                         const token = resp.data.token;
                         localStorage.setItem('token', token);
+                        Object.assign(http.defaults.headers, {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json',
+                            'Authorization' : 'Bearer ' + token
+                        });
                         commit('auth_success', token);
                         resolve(resp);
                     })

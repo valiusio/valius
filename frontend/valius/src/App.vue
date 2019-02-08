@@ -12,6 +12,8 @@
 
 
 <script>
+import storeInitializator from './services/storeInitializator';
+
 export default {
     name: 'App',
     props: {
@@ -35,6 +37,7 @@ export default {
         const token = localStorage.getItem('token');
         if (token) {
             this.$store.dispatch('auth_success', token).then( res => {
+                storeInitializator(this.$store);
                 this.$router.push('/game-map');
             });
 

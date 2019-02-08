@@ -34,6 +34,7 @@
 
 import router from "../../router";
 import AuthTemplate from "../../components/AuthTemplate.vue";
+import storeInitializator from './../../services/storeInitializator';
 
 export default {
     name: 'Login',
@@ -62,8 +63,8 @@ export default {
             this.$validator.validate().then(valid => {
                 if(valid ) {
                     this.$store.dispatch('login', this.user).then( res => {
-                        console.log(this.$store.getters.isLoggedIn);
-                        this.$router.push('/welcome')
+                        storeInitializator(this.$store).then();
+                        this.$router.push('/welcome');
                     });
                 }
 

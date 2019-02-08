@@ -197,7 +197,7 @@
                          this.levels.start.subLevels.userProfile.completed = true;
                          this.levels.start.subLevels.organizationProfile.locked = false;
                          this.$store.dispatch('updateLevels', this.levels);
-                         router.push('/game-navigation/');
+                         router.push('/game-navigation/start');
                      }
                 });
             }

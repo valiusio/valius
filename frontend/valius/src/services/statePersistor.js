@@ -19,7 +19,7 @@ const persistStore = (store) => {
         levels : store.state.levels
     }
     return new Promise((resolve, reject)=>{
-        http().post('/saveState',{state :JSON.stringify(storeToSave)}).then(()=>{
+        http.post('/saveState',{state :JSON.stringify(storeToSave)}).then(()=>{
             resolve();
         }).catch(()=>{
             reject();
