@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-      <div class="logout-panel" v-if="displayLogout" @click="logout">
+      <div class="logout-panel" v-if="loggedin" @click="logout">
           <div class="container container--exlg">
               <button>logout</button>
           </div>
@@ -22,24 +22,22 @@ export default {
         }
     },
     computed : {
-        displayLogout() {
-          return !(this.$route.fullPath === '/')
+        loggedin () {
+            return this.$store.getters.isLoggedIn
         }
     },
     methods : {
         logout() {
-            this.$store.dispatch('logout').then(() => {
-                this.$router.push('/');
-            });
+            this.$store.dispatch('logout');
         }
     },
     created() {
         const token = localStorage.getItem('token');
         if (token) {
-            setTimeout(()=>{
+            this.$store.dispatch('auth_success', token).then( res => {
+                this.$router.push('/game-map');
+            });
 
-                this.$store.dispatch('auth_success', token);
-            }, 5000)
         }
     }
 }

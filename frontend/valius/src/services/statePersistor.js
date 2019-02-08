@@ -1,7 +1,7 @@
 import app from './../main';
+import http from './httpService';
 
-const persistStore = () => {
-    const store = app.$store;
+const persistStore = (store) => {
 
     const storeToSave = {
         user : store.state.user,
@@ -19,7 +19,7 @@ const persistStore = () => {
         levels : store.state.levels
     }
     return new Promise((resolve, reject)=>{
-        app.$http.post('/saveState',{state :JSON.stringify(storeToSave)}).then(()=>{
+        http().post('/saveState',{state :JSON.stringify(storeToSave)}).then(()=>{
             resolve();
         }).catch(()=>{
             reject();

@@ -62,6 +62,7 @@ export default {
             this.$validator.validate().then(valid => {
                 if(valid ) {
                     this.$store.dispatch('login', this.user).then( res => {
+                        console.log(this.$store.getters.isLoggedIn);
                         this.$router.push('/welcome')
                     });
                 }

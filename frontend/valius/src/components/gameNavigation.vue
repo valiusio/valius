@@ -68,13 +68,11 @@
 
             goToGameMap(){
                 this.$store.dispatch('setCurrentLevel','landscapeIdentification');
-                statePersistor().then(() => {
+                statePersistor(this.$store).then(() => {
                     this.$router.push("/game-map");
                 }).catch(() => {
 
                 })
-
-
             }
         }
     }

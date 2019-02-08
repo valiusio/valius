@@ -29,6 +29,7 @@ Vue.use(Router)
 
 const router = new Router({
   routes: [
+    { path: '*', redirect: '/' },
     {
       path: '/',
       name: 'login',
@@ -36,7 +37,7 @@ const router = new Router({
     },
     {
       path: '/register',
-      name: 'valius.src.pages.login_register.register',
+      name: 'register',
       component: Register
     },
     {

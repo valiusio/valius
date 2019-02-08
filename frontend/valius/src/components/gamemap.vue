@@ -34,7 +34,8 @@
                 ],
                 previusStatus : '',
                 currentStatus : this.$store.getters.currentLevel,
-                startAnimation :false
+                startAnimation :false,
+                animationCompleted : false
             }
         },
         components:{
@@ -46,19 +47,28 @@
             },
             action(name) {
                 this.$store.getters.levels[name]
+                && this.animationCompleted
                 && !this.$store.getters.levels[name].locked
                 &&  this.$router.push('/game-navigation/'+ name);
             }
         },
         created () {
-
-            ( this.currentStatus == 'start')
-                ? this.previusStatus = this.currentStatus
-                : this.previusStatus = this.allLevels[ this.allLevels.indexOf(this.currentStatus) - 1  ];
+            if(this.currentStatus == 'start'){
+                this.previusStatus = this.currentStatus;
+                this.animationCompleted = true;
+            }else{
+                this.previusStatus = this.allLevels[ this.allLevels.indexOf(this.currentStatus) - 1  ];
+            }
 
             setTimeout( () => {
                 this.startAnimation = true;
-            }, 1500)
+            }, 1500);
+
+            //animation complete on 1500ms + transition's delay (3000ms)
+            setTimeout( () => {
+                this.animationCompleted = true;
+            }, 1500 + 3000);
+
         }
     }
 </script>

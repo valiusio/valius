@@ -268,7 +268,7 @@
         data() {
             return {
                 customer1 : {
-                    name : this.$store.getters.markets.market1.name,
+                    name : this.$store.getters.customers.customer1.name,
                     demographicItem: '',
                     productUsage: '',
                     desiredFeature: '',
@@ -278,7 +278,7 @@
                     lifeStyle: []
                 },
                 customer2 : {
-                    name : this.$store.getters.markets.market2.name,
+                    name : this.$store.getters.customers.customer2.name,
                     demographicItem: '',
                     productUsage: '',
                     desiredFeature: '',
@@ -288,7 +288,7 @@
                     lifeStyle: []
                 },
                 customer3 : {
-                    name : this.$store.getters.markets.market3.name,
+                    name : this.$store.getters.customers.customer3.name,
                     demographicItem: '',
                     productUsage: '',
                     desiredFeature: '',
@@ -307,6 +307,9 @@
         computed:{
 
 
+        },
+        created() {
+          console.log(this.$store.getters.markets)
         },
         methods: {
             nextPage(event) {

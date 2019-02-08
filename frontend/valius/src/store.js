@@ -1,13 +1,13 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import { IntangibleFactors } from "./services/IntangibleFactorsService";
-import axios from 'axios';
-import app from './App'
+import router from './router';
+import http from './services/httpService';
 Vue.use(Vuex);
 
 export const store =  new  Vuex.Store({
     state : {
-        token : '' ,
+        token: null,
         user: {
             username:'',
             firstname:'',
@@ -191,10 +191,9 @@ export const store =  new  Vuex.Store({
                 }
     },
     getters: {
-        token(state) {
-          return state.token;
+        isLoggedIn(state) {
+            return !!state.token;
         },
-        isLoggedIn : state => !!state.token,
 
         levels(state) {
             return state.levels;
@@ -243,11 +242,12 @@ export const store =  new  Vuex.Store({
     },
     mutations: {
         auth_success(state, token){
-            state.token = token
-            Vue.prototype.$http.defaults.headers.common['Authorization'] = 'Bearer ' + token;
+            state.token = token;
         },
         logout(state){
-            state.token = ''
+            state.token = '';
+            localStorage.removeItem('token');
+            router.push('/')
         },
 
         updateToken(state, payload) {
@@ -293,23 +293,23 @@ export const store =  new  Vuex.Store({
     },
     actions: {
         login({commit}, user){
+            console.log(http)
             return new Promise((resolve, reject) => {
-               axios.post( process.env.VUE_APP_API_BASE_URL +'/login', {email : user.email , password : user.password})
+               http().post( process.env.VUE_APP_API_BASE_URL +'/login', { email : user.email , password : user.password })
                     .then(resp => {
-                        const token = resp.data.token
+                        const token = resp.data.token;
                         localStorage.setItem('token', token);
                         commit('auth_success', token);
                         resolve(resp);
                     })
                     .catch(err => {
-                        localStorage.removeItem('token')
+                        localStorage.removeItem('token');
                         reject(err);
                     })
             })
         },
         logout(context){
             return new Promise((resolve, reject) => {
-                localStorage.removeItem('token');
                 context.commit('logout');
                 resolve();
             })
