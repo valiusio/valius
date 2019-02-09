@@ -18,19 +18,19 @@
                     class="market-focus__input market-focus__input--1"
                     type="text"
                     placeholder="e.g. Athletes"
-                    v-model="market1.name"
+                    v-model="markets.market1.name"
                 >
                 <input
                     class="market-focus__input market-focus__input--2"
                     type="text"
                     placeholder="e.g. Games"
-                    v-model="market2.name"
+                    v-model="markets.market2.name"
                 >
                 <input
                     class="market-focus__input market-focus__input--3"
                     type="text"
                     placeholder="e.g. Travelers"
-                    v-model="market3.name"
+                    v-model="markets.market3.name"
                 >
             </div>
             <button
@@ -57,19 +57,10 @@
         ],
         data(){
             return {
-                levels : this.$store.getters.levels,
+                levels :       this.$store.getters.levels,
                 currentLevel : this.$store.getters.currentLevel,
-                markets : this.$store.getters.markets,
+                markets :      this.$store.getters.markets,
                 MarketSagmentsImg: MarketSagmentsImg,
-                market1 : {
-                    name: ''
-                },
-                market2 : {
-                    name: ''
-                },
-                market3 : {
-                    name: ''
-                },
             }
         },
         components:{
@@ -77,18 +68,11 @@
         },
         computed:{
         },
+        created(){
+            console.log( this.$store.getters.markets)
+        },
         methods: {
             nextPage(event) {
-                event.preventDefault();
-                if(this.market1.name){
-                    this.markets.push({...this.market1});
-                }
-                if(this.market2.name){
-                    this.markets.push({...this.market2});
-                }
-                if(this.market3.name){
-                    this.markets.push({...this.market3});
-                }
                 this.$store.dispatch('updateMarkets', this.markets).then(()=> {
                     this.$router.push("/choose-market");
                 });

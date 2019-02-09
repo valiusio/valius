@@ -8,8 +8,8 @@ const Initializator = (store) => {
     return new Promise( (resolve , reject) => {
         http.get('/getState').then( res => {
                const savedState = res.data;
-               const convertedState = JSON.parse(savedState);
-                if(convertedState && typeof convertedState === 'object'){
+               const convertedState = res.data !== '' && JSON.parse(savedState);
+                if(res.data !== '' && convertedState && typeof convertedState === 'object'){
                      store.dispatch('updateBusiness', convertedState.business);
                      store.dispatch('updateBusinesses', convertedState.businesses);
                      store.dispatch('updateCompetitors', convertedState.competitors);

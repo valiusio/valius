@@ -56,7 +56,17 @@ export const store =  new  Vuex.Store({
                 profile: ''
             },
         },
-        markets:[],
+        markets: {
+            market1 : {
+                name : ''
+            },
+            market2 : {
+                name : ''
+            },
+            market3 : {
+                name : ''
+            },
+        },
         marketCategories : {
             b2c : [
                 "Χρήσης προϊόντος (user-rate)",

@@ -5,9 +5,8 @@
             <information-banner
                 type="danger"
             >
-                <h1>Ας χτίσουμε το προφίλ των πελατών σου για κάθε τμήμα της αγοράς!</h1>
-                <p>Aπάντησε στις ερωτήσεις που γνωρίζεις συμπληρώνοντας
-                    τα παρακάτω κενά ή επιλέγοντας το κατάλληλο στοιχείο</p>
+                <h1>Σε ποια παράμετρο βασίστηκες για την τμηματοποίηση της αγοράς σου;</h1>
+                <p>Επίλεξε μία από τις παρακάτω παραμέτρους.</p>
             </information-banner>
             <form @submit="saveCustomers">
                 <div class="customer-profile__forms">
@@ -264,9 +263,9 @@
             InformationBanner : InformationBanner
         },
         created(){
-            this.businesses.business1.name = this.$store.getters.markets[0].name,
-            this.businesses.business2.name = this.$store.getters.markets[1].name,
-            this.businesses.business3.name = this.$store.getters.markets[2].name
+            this.businesses.business1.name = this.$store.getters.markets.market1.name,
+            this.businesses.business2.name = this.$store.getters.markets.market2.name,
+            this.businesses.business3.name = this.$store.getters.markets.market3.name
         },
         methods: {
             saveCustomers(event) {
