@@ -70,7 +70,7 @@
             nextPage(event) {
                 event.preventDefault();
                 var newPage = '';
-                if(this.marker == 'b2b'){
+                if(this.market === 'b2b'){
                     newPage = 'business-profile-b2b'
                 }else {
                     newPage = 'customer-profile-b2c'

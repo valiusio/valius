@@ -65,6 +65,8 @@ export default {
                     this.$store.dispatch('login', this.user).then( res => {
                         storeInitializator(this.$store).then();
                         this.$router.push('/welcome');
+                    }).catch( err => {
+                        alert('Wrong credentials. please try again');
                     });
                 }
 

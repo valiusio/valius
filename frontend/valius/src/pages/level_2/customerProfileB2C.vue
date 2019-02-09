@@ -91,7 +91,7 @@
                     <div class="customer-profile__form-container">
                         <md-field>
                             <label>Όνομα τμήματος</label>
-                            <md-input name="name" v-validate="''" v-model="customer2.name"></md-input>
+                            <md-input name="name" v-validate="''"  v-model="customer2.name"></md-input>
                         </md-field>
                         <md-field>
                             <label>Κύριο Δημογραφικό στοιχείο</label>
@@ -167,7 +167,7 @@
                     <div class="customer-profile__form-container">
                         <md-field>
                             <label>Όνομα τμήματος</label>
-                            <md-input name="name" v-validate="''" v-model="customer3.name"></md-input>
+                            <md-input name="name" v-validate="''"  v-model="customer3.name"></md-input>
                         </md-field>
                         <md-field>
                             <label>Κύριο Δημογραφικό στοιχείο</label>
@@ -268,7 +268,7 @@
         data() {
             return {
                 customer1 : {
-                    name : this.$store.getters.customers.customer1.name,
+                    name : this.$store.getters.markets[0].name,
                     demographicItem: '',
                     productUsage: '',
                     desiredFeature: '',
@@ -278,7 +278,7 @@
                     lifeStyle: []
                 },
                 customer2 : {
-                    name : this.$store.getters.customers.customer2.name,
+                    name :this.$store.getters.markets[1].name,
                     demographicItem: '',
                     productUsage: '',
                     desiredFeature: '',
@@ -288,7 +288,7 @@
                     lifeStyle: []
                 },
                 customer3 : {
-                    name : this.$store.getters.customers.customer3.name,
+                    name : this.$store.getters.markets[2].name,
                     demographicItem: '',
                     productUsage: '',
                     desiredFeature: '',

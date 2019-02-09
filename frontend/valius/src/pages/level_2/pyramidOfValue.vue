@@ -60,6 +60,7 @@
                             >
                         </template>
                     </div>
+                    <span class="pyramid-game__description">Σύρε τα παραπάνω εικονίδια ξεκινώντας από τη βάση της πυραμίδας προς την κορυφή</span>
                 </div>
             </div>
             <span class="pyramid-game__game-subtitle">The Value Proposition Pyramid</span>

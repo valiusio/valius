@@ -15,7 +15,7 @@
                     <div class="customer-profile__form-container">
                         <md-field>
                             <label>Όνομα τμήματος</label>
-                            <md-input name="name" v-validate="''" v-model="businesses.business1.name"></md-input>
+                            <md-input name="name"  v-validate="''" v-model="businesses.business1.name"></md-input>
                         </md-field>
                         <md-field>
                             <label>Κλάδος</label>
@@ -87,7 +87,7 @@
                     <div class="customer-profile__form-container">
                         <md-field>
                             <label>Όνομα τμήματος</label>
-                            <md-input name="name" v-validate="''" v-model="businesses.business2.name"></md-input>
+                            <md-input name="name"v-validate="''" v-model="businesses.business2.name"></md-input>
                         </md-field>
                         <md-field>
                             <label>Κλάδος</label>
@@ -257,15 +257,16 @@
         data() {
             return {
                 businesses : this.$store.getters.businesses,
-                levels: this.$store.getters.levels
+                levels: this.$store.getters.levels,
             }
         },
         components:{
             InformationBanner : InformationBanner
         },
-        computed:{
-
-
+        created(){
+            this.businesses.business1.name = this.$store.getters.markets[0].name,
+            this.businesses.business2.name = this.$store.getters.markets[1].name,
+            this.businesses.business3.name = this.$store.getters.markets[2].name
         },
         methods: {
             saveCustomers(event) {

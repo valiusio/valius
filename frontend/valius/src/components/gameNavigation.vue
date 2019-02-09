@@ -6,7 +6,7 @@
 
             <div class="game-navigation__level">
                 <img :src=" backgroundImg">
-                <span>Start</span>
+                <span>{{ levelNameLabel }}</span>
             </div>
 
             <div class="game-navigation__actions-container">
@@ -62,6 +62,18 @@
 
             isLevelCompleted () {
                return this.levels[this.currentLevel].completed;
+            },
+
+            levelNameLabel() {
+                const levels = {
+                    'start': 'Start',
+                    'landscapeIdentification' : "Landscape Identification",
+                    'marketAssessment' : 'Market Assessment',
+                    'productAssessment' : 'Product Assessment',
+                    'readyToStrategize' : 'Ready To Strategize'
+                }
+
+                return levels[this.currentLevel]
             }
         },
         methods: {
