@@ -6,8 +6,8 @@ echo "#### Get latest master ####"
 sudo git pull &&
 echo "#### Install php Dependencies  ####"
 sudo composer install &&
- cd frontend/valius/ &&
- echo "#### Install frontEnd Dependencies####"
+cd frontend/valius/ &&
+echo "#### Install frontEnd Dependencies####"
 sudo npm i &&
 echo "#### Build FrontEnd for production ####"
 sudo npm run build &&

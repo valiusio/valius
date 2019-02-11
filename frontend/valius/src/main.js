@@ -21,8 +21,6 @@ const app = new Vue({
     render: function (h) { return h(App) }
 }).$mount('#app');
 
-
-
 router.beforeEach((to, from, next) => {
     if(to.matched.some(record => record.meta.requiresAuth)) {
         if (app.$store.getters.isLoggedIn) {

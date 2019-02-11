@@ -14,7 +14,6 @@
                 <md-input name="email"  v-validate="'required|email'" v-model="user.email"></md-input>
                 <span class="md-helper-text" v-show="errors.has('email')">{{ errors.first('email') }}</span>
             </md-field>
-
             <md-field class="valius-auth-page__input">
                 <label>Company</label>
                 <md-input name="company"  v-validate="'required|min:3'" v-model="user.company"></md-input>

@@ -2,9 +2,11 @@
 
     <div class="choose-market">
         <div class="container container--lg">
-            <information-banner>
-                <h1>Σε ποια αγορά ανήκουν αυτά τα τμήματα-στόχοι;</h1>
-                <p>Επίλεξε μια από τις παρακάτω αγορές.</p>
+            <information-banner
+                type="danger"
+            >
+                <h1>Σε ποια αγορά ανήκουν τα τμήματα-στόχοι που επέλεξες;</h1>
+                <p>Κάνε κλικ σε μια από τις παρακάτω αγορές.</p>
             </information-banner>
             <div class="choose-market__banner">
                 <div
