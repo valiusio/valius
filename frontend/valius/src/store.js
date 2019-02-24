@@ -181,15 +181,21 @@ export const store =  new  Vuex.Store({
                         completed: false,
                         subLevels:
                             {
-                                offerOfValue        : { locked : true, completed: false, rating: 0},
+                                offerOfValue        : { locked : false, completed: false, rating: 0},
                                 competitors         : { locked : true, completed: false,rating: 0},
                                 marketObjective     : { locked : true, completed: false,rating: 0},
                             }
                     },
-                    // marketAssessment: {
-                    //     locked: true,
-                    //     completed: false,
-                    // },
+                    marketAssessment: {
+                        locked: true,
+                        completed: false,
+                        subLevels:
+                            {
+                                attractivenessCriteria : { locked : false, completed: false, rating: 0},
+                                competitors            : { locked : true, completed: false,rating: 0},
+                                marketObjective        : { locked : true, completed: false,rating: 0},
+                            }
+                    },
                     // productAssessment: {
                     //     locked: true,
                     //     completed: false,

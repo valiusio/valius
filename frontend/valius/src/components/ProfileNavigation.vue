@@ -10,7 +10,6 @@
                  src="../assets/images/gameNavigation/locked.png"
                  class="profile-navigation__locked"/>
         </div>
-
         <div class="profile-navigation__label">
             {{ label }}
         </div>
@@ -20,7 +19,7 @@
 
 
 <script>
-    import { ProfileNavigationNameMapping }from "../services/LocalizationMappingService";
+    import { ProfileNavigationNameMapping } from "../services/LocalizationMappingService";
 
     export default {
         name: 'ProfileNavigation',
@@ -39,6 +38,7 @@
         computed : {
 
             label() {
+                console.log ('======'+ this.type +'####'+ProfileNavigationNameMapping[this.type].name)
                 return ProfileNavigationNameMapping[this.type].name;
             }
         },

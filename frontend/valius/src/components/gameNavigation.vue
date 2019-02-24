@@ -71,15 +71,13 @@
                     'marketAssessment' : 'Market Assessment',
                     'productAssessment' : 'Product Assessment',
                     'readyToStrategize' : 'Ready To Strategize'
-                }
+                };
 
                 return levels[this.currentLevel]
             }
         },
         methods: {
-
-            goToGameMap(){
-                this.$store.dispatch('setCurrentLevel','landscapeIdentification');
+            goToGameMap() {
                 statePersistor(this.$store).then(() => {
                     this.$router.push("/game-map");
                 }).catch(() => {

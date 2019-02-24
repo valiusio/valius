@@ -166,7 +166,8 @@
                          this.levels.landscapeIdentification.subLevels.offerOfValue.locked = false;
                          this.levels.start.completed = true;
                          this.$store.dispatch('updateLevels', this.levels);
-                         router.push('/game-navigation');
+                         this.$store.dispatch('setCurrentLevel', 'landscapeIdentification');
+                         router.push('/game-map');
                     }
 
                 });

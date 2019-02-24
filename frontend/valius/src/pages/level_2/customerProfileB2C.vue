@@ -294,8 +294,10 @@
                 this.levels.landscapeIdentification.subLevels.marketObjective.completed = true;
                 this.levels.landscapeIdentification.subLevels.marketObjective.rating= 3;
                 this.levels.landscapeIdentification.completed = true;
+                this.levels.marketAssessment.locked = false;
 
                 this.$store.dispatch('updateLevels', this.levels);
+                this.$store.dispatch('setCurrentLevel', 'marketAssessment');
                 this.$store.dispatch('updateCustomers', this.customers);
                 this.$router.push('/game-navigation/landscapeIdentification');
             }

@@ -17,8 +17,10 @@ const persistStore = (store) => {
         customers : store.state.customers,
         businesses : store.state.businesses,
         levels : store.state.levels
-    }
+    };
+
     return new Promise((resolve, reject)=>{
+
         http.post('/saveState',{state :JSON.stringify(storeToSave)}).then(()=>{
             resolve();
         }).catch(()=>{

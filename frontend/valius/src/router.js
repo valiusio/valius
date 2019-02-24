@@ -23,13 +23,14 @@ import MarketCategories from './pages/level_2/marketCategories';
 import CustomerProfileIntro from './pages/level_2/customerProfileIntro';
 import CustomerProfileB2C from './pages/level_2/customerProfileB2C';
 import BusinessProfileB2B from './pages/level_2/businessProfileB2B';
-
+import test from './pages/testpage';
 
 Vue.use(Router)
 
 const router = new Router({
   routes: [
     { path: '*', redirect: '/' },
+    { path: '/test', component: test },
     {
       path: '/',
       name: 'login',
