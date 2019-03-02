@@ -1,0 +1,11 @@
+.select-marketAssesments {
+    height: 100%;
+    overflow-y: auto;
+
+    &__container {
+        border: 1px solid red;
+        width: 800px;
+        height: 400px;
+        margin: 100px auto 0 auto;
+    }
+}

@@ -49,7 +49,6 @@
             }
         },
         created () {
-            console.log(this.currentStatus)
             setTimeout( () => {
                 this.startAnimation = true;
             }, 1500);

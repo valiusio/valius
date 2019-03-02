@@ -38,7 +38,6 @@
         computed : {
 
             label() {
-                console.log ('======'+ this.type +'####'+ProfileNavigationNameMapping[this.type].name)
                 return ProfileNavigationNameMapping[this.type].name;
             }
         },

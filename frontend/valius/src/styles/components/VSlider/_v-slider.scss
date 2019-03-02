@@ -126,6 +126,12 @@
                 bottom: 0;
                 right: -1px;
             }
+            &:last-child {
+                &::after {
+                    content: '';
+                    border-right: 0;
+                }
+            }
 
             &:focus,
             &:focus-within {

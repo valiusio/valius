@@ -1,0 +1,64 @@
+.market-assassment-intro {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        padding: 50px;
+        height: 800px;
+        border: 5px solid #ffb753;
+        border-radius: 4px;
+    }
+
+    .row{
+        display: flex;
+    }
+    .column--left {
+        flex: 2;
+    }
+    .column--right{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        color: #177CC5;
+        font-size: 30px;
+        font-weight: 900;
+    }
+
+    &__subtitle {
+        font-size: 22px;
+        color: #FDB16E;
+        margin: 60px 0;
+    }
+
+    p {
+        font-size: 16px;
+        margin: 30px 0;
+    }
+    img {
+        width: 200px;
+    }
+
+    button {
+        width: 200px;
+        height: 50px;
+        margin: 200px auto 20px auto;
+        display: block;
+        outline: none;
+        background-color: #17B5F0;
+        border: none;
+        border-radius: 10px;
+        font-size: 20px;
+        color: $login-text-color;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}

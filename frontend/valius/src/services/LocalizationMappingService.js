@@ -5,7 +5,12 @@ const ProfileNavigationNameMapping = {
 
     offerOfValue: {name:"Προσφορά αξίας" ,link :"/offer"},
     competitors : {name:"Κύριοι Ανταγωνιστές", link:"/competitors"},
-    marketObjective : {name:"Αγορά - Στόχος", link:"/market"}
+    marketObjective : {name:"Αγορά - Στόχος", link:"/market"},
+
+    attractivenessCriteria : { name : "Κριτήρια Ελκυστικότητας", link : '/marketAssassmentIntro'},
+    importanceOfCriteria   : { name : "Σημαντικότητα κριτηρίων", link : '/'},
+    evaluationProcess      : { name : "Διαδικασία Αξιολόγησης", link : '/'},
+
 
 };
 

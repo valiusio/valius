@@ -163,8 +163,7 @@ export const store =  new  Vuex.Store({
             },
 
         },
-        levels:
-                {
+        levels: {
                     start: {
                         locked: false,
                         completed: false,
@@ -204,7 +203,74 @@ export const store =  new  Vuex.Store({
                     //     locked: true,
                     //     completed: false,
                     // }
+                },
+        marketAssessments: {
+            marketAssessment1: {
+                name: '',
+                weight: '',
+                attractivenessParameters: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                },
+                marketAttractivenessParameter: {
+                    name: '',
+                    value: 0
                 }
+            },
+            marketAssessment2: {
+                name: '',
+                weight: '',
+                attractivenessParameters: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                },
+                marketAttractivenessParameter: {
+                    name: '',
+                    value: 0
+                }
+            },
+            marketAssessment3: {
+                name: '',
+                weight: '',
+                attractivenessParameters: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                },
+                marketAttractivenessParameter: {
+                    name: '',
+                    value: 0
+                }
+            },
+            marketAssessment4: {
+                name: '',
+                weight: '',
+                attractivenessParameters: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                },
+                marketAttractivenessParameter: {
+                    name: '',
+                    value: 0
+                }
+            },
+            marketAssessment5: {
+                name: '',
+                weight: '',
+                attractivenessParameters: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                },
+                marketAttractivenessParameter: {
+                    name: '',
+                    value: 0
+                }
+            },
+        },
     },
     getters: {
         isLoggedIn(state) {

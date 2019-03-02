@@ -23,6 +23,8 @@ import MarketCategories from './pages/level_2/marketCategories';
 import CustomerProfileIntro from './pages/level_2/customerProfileIntro';
 import CustomerProfileB2C from './pages/level_2/customerProfileB2C';
 import BusinessProfileB2B from './pages/level_2/businessProfileB2B';
+import marketAssassmentIntro from './pages/level_3/marketAssessmentIntro';
+import selectMarketAssessments from './pages/level_3/selectMarketAssessments'
 import test from './pages/testpage';
 
 Vue.use(Router)
@@ -201,6 +203,22 @@ const router = new Router({
       path: '/business-profile-b2b',
       name: 'businessProfileB2B',
       component: BusinessProfileB2B,
+        meta : {
+            requiresAuth: true
+        }
+    },
+    {
+      path: '/marketAssassmentIntro',
+      name: 'marketAssassmentIntro',
+      component: marketAssassmentIntro,
+        meta : {
+            requiresAuth: true
+        }
+    },
+    {
+      path: '/selectMarketAssessments',
+      name: 'selectMarketAssessments',
+      component: selectMarketAssessments,
         meta : {
             requiresAuth: true
         }
