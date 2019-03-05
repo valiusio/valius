@@ -101,7 +101,7 @@
                     <div class="valius-form__column--left valius-form__column--left--image"/>
                     <div class="valius-form__column--right">
                         <ul class="product-profile__actions-list product-profile__actions-list--weaknesses">
-                            <li v-for="weakness in product.weaknesses">{{weakness}} <span>x</span></li>
+                            <li v-for="weakness in product.weaknesses">{{weakness}}</li>
                         </ul>
                     </div>
 
@@ -167,7 +167,7 @@
                          this.levels.start.completed = true;
                          this.$store.dispatch('updateLevels', this.levels);
                          this.$store.dispatch('setCurrentLevel', 'landscapeIdentification');
-                         router.push('/game-map');
+                         router.push('/game-navigation/start');
                     }
 
                 });

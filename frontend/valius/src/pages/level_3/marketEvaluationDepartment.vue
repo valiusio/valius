@@ -27,6 +27,10 @@
                     </app-slider>
                 </div>
             </div>
+
+            <button class="marketEvaluationDepartment__submit" @click="next">
+                Got it!
+            </button>
         </div>
     </div>
 </template>
@@ -36,7 +40,7 @@
 <script>
     import informationBanner from './../../components/InformationBanner';
     import appSlider from './../../components/Vslider';
-    import attractivenessCriteria from './../../services/AttractivenessCriteria';
+    import AttractiveCriteria from './../../services/AttractivenessCriteria';
 
     export default {
         name: 'marketEvaluationDepartment',
@@ -67,13 +71,11 @@
             this.markets.market3.attractiveCriteria.attractiveCriteria3.name = this.marketAssessments.marketAssessment3.name;
             this.markets.market3.attractiveCriteria.attractiveCriteria4.name = this.marketAssessments.marketAssessment4.name;
             this.markets.market3.attractiveCriteria.attractiveCriteria5.name = this.marketAssessments.marketAssessment5.name;
-            console.log(this.markets)
         },
         computed : {
             img () {
                 return require('./../../assets/images/segmenticon.png');
-            },
-
+            }
         },
         data(){
             return {
@@ -84,11 +86,12 @@
         },
         methods: {
             next() {
-                this.$router.push('/importanceOfCriteria');
+                this.$store.dispatch('updateMarkets', this.markets);
+                this.$router.push('/marketsEvaluation');
             },
             getFactorName(i) {
                 const factorName = this.markets[this.market].attractiveCriteria['attractiveCriteria'+i].name;
-                return attractivenessCriteria.availableFactors.filter((factor) => {
+                return AttractiveCriteria.AttractivenessCriteria.filter((factor) => {
                     return factor.name === factorName
                 })[0].label;
             },

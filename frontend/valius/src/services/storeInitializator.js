@@ -2,10 +2,6 @@ import http from './httpService';
 import modelReinitializator from './modelReinitializator';
 
 const Initializator = (store) => {
-
-    let savedState = null;
-
-
     return new Promise( (resolve , reject) => {
         http.get('/getState').then( res => {
                const savedState = res.data;
@@ -29,8 +25,6 @@ const Initializator = (store) => {
 
         });
     })
-
-
 }
 
 export default Initializator;

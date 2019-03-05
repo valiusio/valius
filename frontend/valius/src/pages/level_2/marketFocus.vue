@@ -68,9 +68,6 @@
         },
         computed:{
         },
-        created(){
-            console.log( this.$store.getters.markets)
-        },
         methods: {
             nextPage(event) {
                 this.$store.dispatch('updateMarkets', this.markets).then(()=> {

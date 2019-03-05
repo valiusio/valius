@@ -211,6 +211,7 @@ export const store =  new  Vuex.Store({
         },
         marketCategory : '',
         selectedMarket: '',
+        selectedAttractiveCriteria:[],
         customers : {
             customer1 : {
                 name : '',
@@ -358,6 +359,9 @@ export const store =  new  Vuex.Store({
         marketCategory(state) {
             return state.marketCategory;
         },
+        selectedAttractiveCriteria(state) {
+            return state.selectedAttractiveCriteria;
+        },
         selectedMarket(state) {
             return state.selectedMarket;
         },
@@ -412,6 +416,9 @@ export const store =  new  Vuex.Store({
         },
         updateMarketCategory(state, payload) {
             state.marketCategory = payload;
+        },
+        updateSelectedAttractiveCriteria(state, payload) {
+          state.selectedAttractiveCriteria = payload;
         },
         updateSelectedMarket(state, payload) {
             state.selectedMarket = payload;
@@ -488,6 +495,9 @@ export const store =  new  Vuex.Store({
         },
         updateSelectedMarket(context, payload) {
             context.commit('updateSelectedMarket', payload);
+        },
+        updateSelectedAttractiveCriteria(context, payload) {
+            context.commit('updateSelectedAttractiveCriteria', payload);
         },
         updateCustomers(context, payload) {
             context.commit('updateCustomers', payload);

@@ -63,6 +63,9 @@
     }
 </script>
 <style scoped>
+    h1 {
+        font-size: 25px;
+    }
     .image {
         width: 500px;
     }

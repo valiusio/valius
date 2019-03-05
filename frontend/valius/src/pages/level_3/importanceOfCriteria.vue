@@ -14,59 +14,15 @@
                     <div class="column__right">weights</div>
                 </div>
 
-                <div class="row">
+                <div class="row" v-for="i in 5">
                     <div class="column__left">
                         <div class="attractiveness-factor">
-                            <img class="attractiveness-factor__img" :src="getFactorImg(marketAssessments.marketAssessment1.name)">
-                            <span class="attractiveness-factor__label">{{getLabelByFactor(marketAssessments.marketAssessment1.name)}}</span>
+                            <img class="attractiveness-factor__img" :src="getFactorImg(marketAssessments['marketAssessment' +i].name)">
+                            <span class="attractiveness-factor__label">{{getLabelByFactor(marketAssessments['marketAssessment' +i].name)}}</span>
                         </div>
                     </div>
                     <div class="column__right">
-                        <input class="importanceOfCriteria_weight" type="number" min="0" max="100" v-model="marketAssessments.marketAssessment1.weight" placeholder="e.g 20%">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="column__left">
-                        <div class="attractiveness-factor">
-                            <img class="attractiveness-factor__img" :src="getFactorImg(marketAssessments.marketAssessment2.name)">
-                            <span class="attractiveness-factor__label">{{getLabelByFactor(marketAssessments.marketAssessment2.name)}}</span>
-                        </div>
-                    </div>
-                    <div class="column__right">
-                        <input class="importanceOfCriteria_weight" type="number" min="0" max="100"  v-model="marketAssessments.marketAssessment2.weight" >
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="column__left">
-                        <div class="attractiveness-factor">
-                            <img class="attractiveness-factor__img" :src="getFactorImg(marketAssessments.marketAssessment3.name)">
-                            <span class="attractiveness-factor__label">{{getLabelByFactor(marketAssessments.marketAssessment3.name)}}</span>
-                        </div>
-                    </div>
-                    <div class="column__right">
-                        <input class="importanceOfCriteria_weight"  type="number" min="0" max="100"  v-model="marketAssessments.marketAssessment3.weight">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="column__left">
-                        <div class="attractiveness-factor">
-                            <img class="attractiveness-factor__img" :src="getFactorImg(marketAssessments.marketAssessment4.name)">
-                            <span class="attractiveness-factor__label">{{getLabelByFactor(marketAssessments.marketAssessment4.name)}}</span>
-                        </div>
-                    </div>
-                    <div class="column__right">
-                        <input class="importanceOfCriteria_weight"  type="number" min="0" max="100"  v-model="marketAssessments.marketAssessment4.weight">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="column__left">
-                        <div class="attractiveness-factor">
-                            <img class="attractiveness-factor__img" :src="getFactorImg(marketAssessments.marketAssessment5.name)">
-                            <span class="attractiveness-factor__label">{{getLabelByFactor(marketAssessments.marketAssessment5.name)}}</span>
-                        </div>
-                    </div>
-                    <div class="column__right">
-                        <input class="importanceOfCriteria_weight" type="number" min="0" max="100"  v-model="marketAssessments.marketAssessment5.weight">
+                        <input class="importanceOfCriteria_weight" type="number" min="0" max="100" v-model="marketAssessments['marketAssessment' +i].weight" placeholder="e.g 20%">
                     </div>
                 </div>
                 <div class="row">
@@ -108,23 +64,16 @@
         data(){
             return {
                 marketAssessments : this.$store.getters.marketAssessments,
-                levels            : this.$store.getters.levels,
-                allAttractivenessCriteriaFactors : () => {
-                    return [
-                        ...AttractivenessCriteria.AttractivenessCriteria.competitiveFactors.factors,
-                        ...AttractivenessCriteria.AttractivenessCriteria.socialFactors.factors,
-                        ...AttractivenessCriteria.AttractivenessCriteria.segmentFactors.factors,
-                    ]
-                }
+                levels            : this.$store.getters.levels
             }
         },
         computed: {
             getTotal() {
                 return Number(this.marketAssessments.marketAssessment1.weight) +
-                    Number(this.marketAssessments.marketAssessment2.weight) +
-                    Number(this.marketAssessments.marketAssessment3.weight) +
-                    Number(this.marketAssessments.marketAssessment4.weight) +
-                    Number(this.marketAssessments.marketAssessment5.weight)
+                       Number(this.marketAssessments.marketAssessment2.weight) +
+                       Number(this.marketAssessments.marketAssessment3.weight) +
+                       Number(this.marketAssessments.marketAssessment4.weight) +
+                       Number(this.marketAssessments.marketAssessment5.weight)
             },
             getTotalClass() {
                 if(this.getTotal === 100){
@@ -138,9 +87,10 @@
         methods: {
 
             getLabelByFactor(name) {
-                return this.allAttractivenessCriteriaFactors().filter((factor) => {
-                    return factor.name == name
-                })[0].label;
+                return AttractivenessCriteria.AttractivenessCriteria.filter((factor) => {
+                    return factor.name === name
+                })[0].label
+
             },
             getFactorImg(name) {
                 return require('./../../assets/images/attractivenessCriteria/' + name +'.png');
@@ -151,7 +101,7 @@
                 this.levels.marketAssessment.subLevels.evaluationProcess.locked = false;
                 this.$store.dispatch('updateMarketAssessments', this.marketAssessments);
                 this.$store.dispatch('updateLevels', this.levels);
-                this.$router.push('/game-navigation');
+                this.$router.push('/game-navigation/marketAssessment');
             }
         }
 

@@ -59,7 +59,7 @@
 
 <script>
     import InformationBanner from './../../components/InformationBanner';
-    import availableFactors from '../../services/AttractivenessCriteria';
+    import AttractivenessCriteria from '../../services/AttractivenessCriteria';
 
     export default {
         name: 'evaluationProcess',
@@ -74,13 +74,12 @@
         data(){
             return {
                 marketAssessments : this.$store.getters.marketAssessments,
-                availableFactors : availableFactors.availableFactors
             }
         },
         methods: {
             getFactorsLabel(i) {
                 const factorName = this.marketAssessments["marketAssessment"+i].name;
-                const factorLabel = this.availableFactors.filter((factor) => {
+                const factorLabel = AttractivenessCriteria.AttractivenessCriteria.filter((factor) => {
                     return factor.name === factorName
                 })[0].label;
 
@@ -92,11 +91,11 @@
             },
             getPlaceholderText(i, placeHolderType) {
               const factorName = this.marketAssessments["marketAssessment"+i].name;
-              const placeHolder = this.availableFactors.filter((factor) => {
+              const placeHolder = AttractivenessCriteria.AttractivenessCriteria.filter((factor) => {
                   return factor.name === factorName
-              })[0].placeholders;
+              })[0].placeholders[placeHolderType];
 
-              return placeHolder[placeHolderType]
+              return placeHolder;
             },
             next() {
                 this.$store.dispatch('updateMarketAssessments', this.marketAssessments);

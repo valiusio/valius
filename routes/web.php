@@ -41,15 +41,6 @@ Route::fallback(function(){
 
 
 
-
-
-
-Route::post("/api/test", function(\Illuminate\Http\Request $request){
-
-    error_log('works');
-
-});
-
 Route::post("/api/register", function(\Illuminate\Http\Request $request){
 
     try {
@@ -89,7 +80,6 @@ Route::post("/api/saveState", function(\Illuminate\Http\Request $request){
 });
 
 Route::get("api/getState", function(\Illuminate\Http\Request $request){
-    error_log($request->headers);
     $user = JWTAuth::parseToken()->authenticate();
     if(!$user){
         return response()->json('Authorization expired', 401);

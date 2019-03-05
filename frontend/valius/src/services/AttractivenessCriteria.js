@@ -1,11 +1,9 @@
-const AttractivenessCriteria = {
-    segmentFactors : {
-        name: 'segmentFactors',
-        label : 'segmentFactors',
-        factors : [
+const AttractivenessCriteria =
+    [
             {
                 name: 'size',
                 label:'Μέγεθος (money, units or both)',
+                category: "segmentFactors",
                 placeholders: {
                     low: 'e.g. < €1Μ',
                     medium: 'e.g. €1Μ - €5Μ',
@@ -15,6 +13,7 @@ const AttractivenessCriteria = {
             {
                 name: 'profitability',
                 label:'Κερδοφορία',
+                category: "segmentFactors",
                 placeholders: {
                     low: 'e.g. <10%',
                     medium: 'e.g. 10-15%',
@@ -24,6 +23,7 @@ const AttractivenessCriteria = {
             {
                 name: 'priceSensitive',
                 label:'Ευαισθησία ως προς την τιμή',
+                category: "segmentFactors",
                 placeholders: {
                     low: 'e.g. high price elasticity',
                     medium: 'e.g. medium price elasticity',
@@ -33,6 +33,7 @@ const AttractivenessCriteria = {
             {
                 name: 'growthRate',
                 label:'Ρυθμός ανάπτυξης',
+                category: "segmentFactors",
                 placeholders: {
                     low: 'e.g. GNP -2.5%',
                     medium: 'e.g. GNP',
@@ -42,6 +43,7 @@ const AttractivenessCriteria = {
             {
                 name: 'vulnerability',
                 label:'Ευπάθεια',
+                category: "segmentFactors",
                 placeholders: {
                     low: 'e.g. high vulnerability',
                     medium: 'e.g. medium vulnerability',
@@ -51,6 +53,7 @@ const AttractivenessCriteria = {
             {
                 name: 'accessibility',
                 label:'Προσβασιμότητα',
+                category: "segmentFactors",
                 placeholders: {
                     low: 'e.g. not accessible',
                     medium: 'e.g. normal accessiblity',
@@ -60,6 +63,7 @@ const AttractivenessCriteria = {
             {
                 name: 'responseTense',
                 label:'Τάση ανταπόκρισης στις ενέργειες μας',
+                category: "segmentFactors",
                 placeholders: {
                     low: 'e.g. low responsiveness',
                     medium: 'e.g. medium responsiveness',
@@ -69,6 +73,7 @@ const AttractivenessCriteria = {
             {
                 name: 'negotiatingPower',
                 label:'Διαπραγματευτική δύναμη',
+                category: "segmentFactors",
                 placeholders: {
                     low: 'e.g. weak power of buyers',
                     medium: 'e.g. normal power of buyers',
@@ -78,6 +83,7 @@ const AttractivenessCriteria = {
             {
                 name: 'differentiationSection',
                 label:'Διαφοροποίηση τμήματος',
+                category: "segmentFactors",
                 placeholders: {
                     low: 'e.g. high differentiation',
                     medium: 'e.g. medium differentiation',
@@ -87,6 +93,7 @@ const AttractivenessCriteria = {
             {
                 name: 'seasonalShopping',
                 label:'Εποχικότητα αγορών',
+                category: "segmentFactors",
                 placeholders: {
                     low: 'e.g. high cyclicality',
                     medium: 'e.g. medium cyclicality',
@@ -96,21 +103,17 @@ const AttractivenessCriteria = {
             {
                 name: 'consumerTrends',
                 label:'Τάση Καταναλωτισμού',
+                category: "segmentFactors",
                 placeholders: {
                     low: 'e.g. low share of wallet',
                     medium: 'e.g. medium share of wallet',
                     high: 'e.g. high share of wallet'
                 }
             },
-        ]
-    },
-    competitiveFactors: {
-        name: 'socialFactors',
-        label: 'socialFactors Factors',
-        factors: [
             {
                 name: 'intensityOfCompetition',
                 label: 'Ένταση του ανταγωνισμού',
+                category: "socialFactors",
                 placeholders: {
                     low: 'e.g. competition is high',
                     medium: 'e.g. competition is medium',
@@ -120,6 +123,7 @@ const AttractivenessCriteria = {
             {
                 name: 'threatOfNewProducts',
                 label: 'Απειλή από νέα προϊόντα',
+                category: "socialFactors",
                 placeholders: {
                     low: 'e.g. high threat of new products',
                     medium: 'e.g. medium threat of new products',
@@ -129,6 +133,7 @@ const AttractivenessCriteria = {
             {
                 name: 'threatOfNewTechnologies',
                 label: 'Απειλή από νέες τεχνολογίες',
+                category: "socialFactors",
                 placeholders: {
                     low: 'e.g. high threat of new technologies',
                     medium: 'e.g. medium threat of new technologies',
@@ -138,6 +143,7 @@ const AttractivenessCriteria = {
             {
                 name: 'complexity',
                 label: 'Πολυπλοκότητα',
+                category: "socialFactors",
                 placeholders: {
                     low: 'e.g. high segment complexity',
                     medium: 'e.g. medium segment complexity',
@@ -147,6 +153,7 @@ const AttractivenessCriteria = {
             {
                 name: 'variabilityTechnology',
                 label: 'Μεταβλητότητα τεχνολογίας',
+                category: "socialFactors",
                 placeholders: {
                     low: 'e.g. high volatility of technology',
                     medium: 'e.g. medium volatility of technology',
@@ -156,6 +163,7 @@ const AttractivenessCriteria = {
             {
                 name: 'usePartnerships',
                 label: 'Χρήση συνεργασιών & partnerships',
+                category: "socialFactors",
                 placeholders: {
                     low: 'e.g. few synergies/partnerships',
                     medium: 'e.g. some synergies/partnerships',
@@ -165,6 +173,7 @@ const AttractivenessCriteria = {
             {
                 name: 'changesToMarketShares',
                 label: 'Αλλαγές στα μερίδια αγοράς',
+                category: "socialFactors",
                 placeholders: {
                     low: 'e.g. high level of changes in share',
                     medium: 'e.g. medium level of changes in share',
@@ -174,6 +183,7 @@ const AttractivenessCriteria = {
             {
                 name: 'useOfLicenses',
                 label: 'Χρήση αδειών',
+                category: "socialFactors",
                 placeholders: {
                     low: 'e.g. not licensing needed',
                     medium: 'e.g. so-so licensing needed',
@@ -183,6 +193,7 @@ const AttractivenessCriteria = {
             {
                 name: 'maturityOfTechnology',
                 label: 'Ωριμότητα τεχνολογίας',
+                category: "socialFactors",
                 placeholders: {
                     low: 'e.g. high maturity of technology',
                     medium: 'e.g. medium maturity of technology',
@@ -192,6 +203,7 @@ const AttractivenessCriteria = {
             {
                 name: 'leverageFactors',
                 label: 'Παράγοντες μόχλευσης (e.g οικονομίες κλίμακας, εμπειρία)',
+                category: "socialFactors",
                 placeholders: {
                     low: 'e.g. low leveraging factors',
                     medium: 'e.g. medium leveraging factors',
@@ -201,21 +213,18 @@ const AttractivenessCriteria = {
             {
                 name: 'negotiatingPowerSuppliers',
                 label: 'Διαπραγματευτική δύναμη προμηθευτών',
+                category: "socialFactors",
                 placeholders: {
                     low: 'e.g. low leveraging factors',
                     medium: 'e.g. medium leveraging factors',
                     high: 'e.g. high leveraging factors'
                 }
             },
-        ]
-    },
-    socialFactors  : {
-        name: 'competitiveFactors',
-        label: 'competitiveFactors',
-        factors: [
+
             {
                 name:'socialBeliefs',
                 label: 'Κοινωνικές Πεποιθήσεις (νόρμες)',
+                category: "competitiveFactors",
                 placeholders: {
                     low: 'e.g. high level of norms',
                     medium: 'e.g. medium level of norms',
@@ -225,6 +234,7 @@ const AttractivenessCriteria = {
             {
                 name:'complexWayOfLife',
                 label: 'Πολύπλοκος τρόπος ζωής',
+                category: "competitiveFactors",
                 placeholders: {
                     low: 'e.g. high complexity of lifestyle',
                     medium: 'e.g. normal complexity of lifestyle',
@@ -234,6 +244,7 @@ const AttractivenessCriteria = {
             {
                 name:'legislationAndRegulations',
                 label: 'Νομοθεσίες & κανονισμοί',
+                category: "competitiveFactors",
                 placeholders: {
                     low: 'e.g. low level of compliance',
                     medium: 'e.g. medium level of compliance',
@@ -243,6 +254,7 @@ const AttractivenessCriteria = {
             {
                 name:'influenceFromTrends',
                 label: 'Επιρροή από trends',
+                category: "competitiveFactors",
                 placeholders: {
                     low: 'e.g. high influence of trends',
                     medium: 'e.g. normal influence of trends',
@@ -252,6 +264,7 @@ const AttractivenessCriteria = {
             {
                 name:'influenceFromMKO',
                 label: 'Επιρροή από MKO',
+                category: "competitiveFactors",
                 placeholders: {
                     low: 'e.g. strongly affected by NGOs',
                     medium: 'e.g. affected normlaly by NGOs',
@@ -261,6 +274,7 @@ const AttractivenessCriteria = {
             {
                 name:'socialAcceptance',
                 label: 'Κοινωνική αποδοχή',
+                category: "competitiveFactors",
                 placeholders: {
                     low: 'e.g. desire for social acceptrance',
                     medium: 'e.g. desire for social acceptrance',
@@ -270,6 +284,7 @@ const AttractivenessCriteria = {
             {
                 name:'influenceFromCommunities',
                 label: 'Επιρροή από communities',
+                category: "competitiveFactors",
                 placeholders: {
                     low: 'e.g. influenced by communities',
                     medium: 'e.g. so-so influenced by communities',
@@ -279,19 +294,13 @@ const AttractivenessCriteria = {
             {
                 name:'influenceFromThePoliticianSystem',
                 label: 'Επιρροή από το πολιτικό σύστημα',
+                category: "competitiveFactors",
                 placeholders: {
                     low: 'e.g. strong influence of political system',
                     medium: 'e.g. normal influence of political system',
                     high: 'e.g. strong influence of political system'
                 }
             }
-        ]
-    }
-};
-const availableFactors = [
-        ...AttractivenessCriteria.segmentFactors.factors,
-        ...AttractivenessCriteria.socialFactors.factors,
-        ...AttractivenessCriteria.competitiveFactors.factors,
-];
+        ];
 
-export default { AttractivenessCriteria : AttractivenessCriteria ,availableFactors : availableFactors  }
+export default { AttractivenessCriteria : AttractivenessCriteria }

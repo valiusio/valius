@@ -73,6 +73,6 @@ var levels = levels;
     }
 
     return levels
-}
+};
 
 export default {initMarkets,initLevels}
