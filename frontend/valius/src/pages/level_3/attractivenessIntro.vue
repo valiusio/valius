@@ -62,6 +62,9 @@
     }
 </script>
 <style scoped>
+    h1 {
+        font-size: 25px;
+    }
     img {
         width: 250px;
         transform: rotate(-115deg);

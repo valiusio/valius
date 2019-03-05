@@ -14,6 +14,7 @@ const persistStore = (store) => {
         markets :store.state.markets,
         marketCategory : store.state.marketCategory,
         selectedMarket : store.state.selectedMarket,
+        selectedAttractiveCriteria: store.state.selectedAttractiveCriteria,
         customers : store.state.customers,
         businesses : store.state.businesses,
         levels : store.state.levels,
