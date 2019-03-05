@@ -3,19 +3,43 @@
     overflow-y: auto;
 
     &__container {
-        margin: auto;
-        border: 1px solid red;
-        width: 600px;
-        height: 500px;
+        margin: 50px auto 0 auto;
+        width:800px;
+        height:auto;
     }
 
     .row {
         display: flex;
     }
 
+    .element-row {
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
     &__icon {
         width: 90px;
         height: 90px !important;
+    }
+
+    &__factor {
+        display: flex;
+        margin: 0 50px 0 0;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        border-radius: 4px;
+        background-color: #FBC426;
+        width: 300px;
+        font-family: cursive;
+        font-weight: 900;
+    }
+
+    &__factor-icon {
+        width: 50px;
+        height: 50px!important;
+        margin: 0 20px 0 0;
     }
 
     .icon__container {
@@ -32,4 +56,6 @@
             font-weight: 900;
         }
     }
+
+
 }

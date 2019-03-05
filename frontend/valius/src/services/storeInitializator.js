@@ -23,6 +23,7 @@ const Initializator = (store) => {
                     convertedState.pyramicIntangibleFactors && store.dispatch('updatePyramicIntangibleFactors', convertedState.pyramicIntangibleFactors);
                     convertedState.selectedMarket && store.dispatch('updateSelectedMarket', convertedState.selectedMarket);
                     convertedState.user && store.dispatch('saveUser', convertedState.user);
+                    convertedState.marketAssessments && store.dispatch('updateMarketAssessments', convertedState.marketAssessments);
                     resolve();
                 }
 

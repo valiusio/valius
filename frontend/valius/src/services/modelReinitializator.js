@@ -2,7 +2,7 @@ const initMarkets = (markets) => {
 var markets = markets;
     for(var i=1; i<=3; i++) {
         if(!markets['market'+i].attractiveCriteria) {
-            markets.market1['attractiveCriteria'] = {
+            markets['market'+i]['attractiveCriteria'] = {
                 attractiveCriteria1 : {
                     name: '',
                     value: 0

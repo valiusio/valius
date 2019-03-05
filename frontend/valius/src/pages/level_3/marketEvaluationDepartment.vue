@@ -17,7 +17,14 @@
                     </div>
                 </div>
 
-                <div class="row" v-for="i in 5">
+                <div class="row element-row" v-for="i in 5">
+                    <img class="marketEvaluationDepartment__factor-icon" :src="getFactorImg(i)">
+                    <div class="marketEvaluationDepartment__factor">{{getFactorName(i)}}</div>
+                    <app-slider
+                        v-model="markets[market].attractiveCriteria['attractiveCriteria'+i].value"
+                    >
+
+                    </app-slider>
                 </div>
             </div>
         </div>
@@ -29,6 +36,7 @@
 <script>
     import informationBanner from './../../components/InformationBanner';
     import appSlider from './../../components/Vslider';
+    import attractivenessCriteria from './../../services/AttractivenessCriteria';
 
     export default {
         name: 'marketEvaluationDepartment',
@@ -41,27 +49,52 @@
         },
         created() {
             this.market = this.$route.params.market;
-            this.markets[this.market].attractiveCriteria.attractiveCriteria1.name = this.marketAssessments.marketAssessment1.name;
-            this.markets[this.market].attractiveCriteria.attractiveCriteria2.name = this.marketAssessments.marketAssessment2.name;
-            this.markets[this.market].attractiveCriteria.attractiveCriteria3.name = this.marketAssessments.marketAssessment3.name;
-            this.markets[this.market].attractiveCriteria.attractiveCriteria4.name = this.marketAssessments.marketAssessment4.name;
-            this.markets[this.market].attractiveCriteria.attractiveCriteria5.name = this.marketAssessments.marketAssessment5.name;
+            this.markets = this.$store.getters.markets;
+            this.markets.market1.attractiveCriteria.attractiveCriteria1.name = this.marketAssessments.marketAssessment1.name;
+            this.markets.market1.attractiveCriteria.attractiveCriteria2.name = this.marketAssessments.marketAssessment2.name;
+            this.markets.market1.attractiveCriteria.attractiveCriteria3.name = this.marketAssessments.marketAssessment3.name;
+            this.markets.market1.attractiveCriteria.attractiveCriteria4.name = this.marketAssessments.marketAssessment4.name;
+            this.markets.market1.attractiveCriteria.attractiveCriteria5.name = this.marketAssessments.marketAssessment5.name;
+
+            this.markets.market2.attractiveCriteria.attractiveCriteria1.name = this.marketAssessments.marketAssessment1.name;
+            this.markets.market2.attractiveCriteria.attractiveCriteria2.name = this.marketAssessments.marketAssessment2.name;
+            this.markets.market2.attractiveCriteria.attractiveCriteria3.name = this.marketAssessments.marketAssessment3.name;
+            this.markets.market2.attractiveCriteria.attractiveCriteria4.name = this.marketAssessments.marketAssessment4.name;
+            this.markets.market2.attractiveCriteria.attractiveCriteria5.name = this.marketAssessments.marketAssessment5.name;
+
+            this.markets.market3.attractiveCriteria.attractiveCriteria1.name = this.marketAssessments.marketAssessment1.name;
+            this.markets.market3.attractiveCriteria.attractiveCriteria2.name = this.marketAssessments.marketAssessment2.name;
+            this.markets.market3.attractiveCriteria.attractiveCriteria3.name = this.marketAssessments.marketAssessment3.name;
+            this.markets.market3.attractiveCriteria.attractiveCriteria4.name = this.marketAssessments.marketAssessment4.name;
+            this.markets.market3.attractiveCriteria.attractiveCriteria5.name = this.marketAssessments.marketAssessment5.name;
+            console.log(this.markets)
         },
         computed : {
             img () {
                 return require('./../../assets/images/segmenticon.png');
-            }
+            },
+
         },
         data(){
             return {
                 market: '',
                 marketAssessments: this.$store.getters.marketAssessments,
-                markets: this.$store.getters.markets
+                markets: {}
             }
         },
         methods: {
             next() {
                 this.$router.push('/importanceOfCriteria');
+            },
+            getFactorName(i) {
+                const factorName = this.markets[this.market].attractiveCriteria['attractiveCriteria'+i].name;
+                return attractivenessCriteria.availableFactors.filter((factor) => {
+                    return factor.name === factorName
+                })[0].label;
+            },
+            getFactorImg(i) {
+                const factorName = this.markets[this.market].attractiveCriteria['attractiveCriteria'+i].name;
+                return require('./../../assets/images/attractivenessCriteria/'+factorName+'.png');
             }
         }
     }

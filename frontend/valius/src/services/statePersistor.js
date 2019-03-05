@@ -16,7 +16,8 @@ const persistStore = (store) => {
         selectedMarket : store.state.selectedMarket,
         customers : store.state.customers,
         businesses : store.state.businesses,
-        levels : store.state.levels
+        levels : store.state.levels,
+        marketAssessments: store.state.marketAssessments
     };
 
     return new Promise((resolve, reject)=>{
