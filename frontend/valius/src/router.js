@@ -25,6 +25,13 @@ import CustomerProfileB2C from './pages/level_2/customerProfileB2C';
 import BusinessProfileB2B from './pages/level_2/businessProfileB2B';
 import marketAssassmentIntro from './pages/level_3/marketAssessmentIntro';
 import selectMarketAssessments from './pages/level_3/selectMarketAssessments'
+import importanceOfCriteriaIntro from './pages/level_3/importanceOfCriteriaIntro';
+import importanceOfCriteria from './pages/level_3/importanceOfCriteria';
+import evaluationProcessIntro from './pages/level_3/evaluationProcessIntro';
+import evaluationProcess from './pages/level_3/evaluationProcess';
+import attractivenessIntro from './pages/level_3/attractivenessIntro';
+import marketEvaluation from './pages/level_3/marketsEvaluation';
+import marketEvaluationDepartment from './pages/level_3/marketEvaluationDepartment';
 import test from './pages/testpage';
 
 Vue.use(Router)
@@ -223,9 +230,62 @@ const router = new Router({
             requiresAuth: true
         }
     },
-
-
-
+    {
+      path: '/importanceOfCriteriaIntro',
+      name: 'importanceOfCriteriaIntro',
+      component: importanceOfCriteriaIntro,
+        meta : {
+            requiresAuth: true
+        }
+    },
+    {
+      path: '/importanceOfCriteria',
+      name: 'importanceOfCriteria',
+      component: importanceOfCriteria,
+        meta : {
+            requiresAuth: true
+        }
+    },
+    {
+      path: '/evaluationProcessIntro',
+      name: 'evaluationProcessIntro',
+      component: evaluationProcessIntro,
+        meta : {
+            requiresAuth: true
+        }
+    },
+    {
+      path: '/evaluationProcess',
+      name: 'evaluationProcess',
+      component: evaluationProcess,
+        meta : {
+            requiresAuth: true
+        }
+    },
+    {
+      path: '/attractivenessIntro',
+      name: 'attractivenessIntro',
+      component: attractivenessIntro,
+      meta : {
+          requiresAuth: true
+      }
+    },
+    {
+      path: '/marketsEvaluation',
+      name: 'marketsEvaluation',
+      component: marketEvaluation,
+      meta : {
+          requiresAuth: true
+      }
+    },
+    {
+        path: '/marketsEvaluationDepartment/:market?',
+        name: 'marketsEvaluationDepartment',
+        component: marketEvaluationDepartment,
+        meta : {
+          requiresAuth: true
+        }
+    },
   ]
 });
 export default router;

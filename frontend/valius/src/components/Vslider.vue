@@ -26,7 +26,7 @@
 <script>
 
     export default {
-        name: 'test',
+        name: 'app-slider',
         props: [
             "value"
         ],

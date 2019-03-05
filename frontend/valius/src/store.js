@@ -56,15 +56,128 @@ export const store =  new  Vuex.Store({
                 profile: ''
             },
         },
+        marketAssessments: {
+            marketAssessment1: {
+                name: '',
+                weight: 0,
+                attractivenessParameters: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                }
+            },
+            marketAssessment2: {
+                name: '',
+                weight: 0,
+                attractivenessParameters: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                }
+            },
+            marketAssessment3: {
+                name: '',
+                weight: 0,
+                attractivenessParameters: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                }
+            },
+            marketAssessment4: {
+                name: '',
+                weight: 0,
+                attractivenessParameters: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                }
+            },
+            marketAssessment5: {
+                name: '',
+                weight: 0,
+                attractivenessParameters: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                }
+            },
+        },
         markets: {
             market1 : {
-                name : ''
+                name : '',
+                attractiveCriteria: {
+                    attractiveCriteria1 : {
+                        name: '',
+                        value: 0
+                    },
+                    attractiveCriteria2 : {
+                        name: '',
+                        value: 0
+                    },
+                    attractiveCriteria3 : {
+                        name: '',
+                        value: 0
+                    },
+                    attractiveCriteria4 : {
+                        name: '',
+                        value: 0
+                    },
+                    attractiveCriteria5 : {
+                        name: '',
+                        value: 0
+                    },
+                }
             },
             market2 : {
-                name : ''
+                name : '',
+                attractiveCriteria: {
+                    attractiveCriteria1 : {
+                        name: '',
+                        value: 0
+                    },
+                    attractiveCriteria2 : {
+                        name: '',
+                        value: 0
+                    },
+                    attractiveCriteria3 : {
+                        name: '',
+                        value: 0
+                    },
+                    attractiveCriteria4 : {
+                        name: '',
+                        value: 0
+                    },
+                    attractiveCriteria5 : {
+                        name: '',
+                        value: 0
+                    },
+                }
             },
             market3 : {
-                name : ''
+                name : '',
+                attractiveCriteria: {
+                    attractiveCriteria1 : {
+                        name: '',
+                        value: 0
+                    },
+                    attractiveCriteria2 : {
+                        name: '',
+                        value: 0
+                    },
+                    attractiveCriteria3 : {
+                        name: '',
+                        value: 0
+                    },
+                    attractiveCriteria4 : {
+                        name: '',
+                        value: 0
+                    },
+                    attractiveCriteria5 : {
+                        name: '',
+                        value: 0
+                    },
+                }
             },
         },
         marketCategories : {
@@ -191,8 +304,8 @@ export const store =  new  Vuex.Store({
                         subLevels:
                             {
                                 attractivenessCriteria : { locked : false, completed: false, rating: 0},
-                                competitors            : { locked : true, completed: false,rating: 0},
-                                marketObjective        : { locked : true, completed: false,rating: 0},
+                                importanceOfCriteria   : { locked : true, completed: false,rating: 0},
+                                evaluationProcess      : { locked : true, completed: false,rating: 0},
                             }
                     },
                     // productAssessment: {
@@ -204,73 +317,6 @@ export const store =  new  Vuex.Store({
                     //     completed: false,
                     // }
                 },
-        marketAssessments: {
-            marketAssessment1: {
-                name: '',
-                weight: '',
-                attractivenessParameters: {
-                    low: '',
-                    medium: '',
-                    high: ''
-                },
-                marketAttractivenessParameter: {
-                    name: '',
-                    value: 0
-                }
-            },
-            marketAssessment2: {
-                name: '',
-                weight: '',
-                attractivenessParameters: {
-                    low: '',
-                    medium: '',
-                    high: ''
-                },
-                marketAttractivenessParameter: {
-                    name: '',
-                    value: 0
-                }
-            },
-            marketAssessment3: {
-                name: '',
-                weight: '',
-                attractivenessParameters: {
-                    low: '',
-                    medium: '',
-                    high: ''
-                },
-                marketAttractivenessParameter: {
-                    name: '',
-                    value: 0
-                }
-            },
-            marketAssessment4: {
-                name: '',
-                weight: '',
-                attractivenessParameters: {
-                    low: '',
-                    medium: '',
-                    high: ''
-                },
-                marketAttractivenessParameter: {
-                    name: '',
-                    value: 0
-                }
-            },
-            marketAssessment5: {
-                name: '',
-                weight: '',
-                attractivenessParameters: {
-                    low: '',
-                    medium: '',
-                    high: ''
-                },
-                marketAttractivenessParameter: {
-                    name: '',
-                    value: 0
-                }
-            },
-        },
     },
     getters: {
         isLoggedIn(state) {
@@ -320,7 +366,11 @@ export const store =  new  Vuex.Store({
         },
         businesses(state) {
             return state.businesses;
+        },
+        marketAssessments(state) {
+            return state.marketAssessments;
         }
+
     },
     mutations: {
         auth_success(state, token){
@@ -372,6 +422,9 @@ export const store =  new  Vuex.Store({
         updateBusinesses(state, payload) {
             state.businesses = payload;
         },
+        updateMarketAssessments(state, payload) {
+            state.marketAssessments = payload;
+        }
     },
     actions: {
         login({commit}, user) {
@@ -441,6 +494,9 @@ export const store =  new  Vuex.Store({
         },
         updateBusinesses(context, payload) {
             context.commit('updateBusinesses', payload);
+        },
+        updateMarketAssessments(context, payload) {
+            context.commit('updateMarketAssessments', payload);
         }
     }
 });

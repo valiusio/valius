@@ -1,4 +1,5 @@
 import http from './httpService';
+import modelReinitializator from './modelReinitializator';
 
 const Initializator = (store) => {
 
@@ -10,18 +11,18 @@ const Initializator = (store) => {
                const savedState = res.data;
                const convertedState = res.data !== '' && JSON.parse(savedState);
                 if(res.data !== '' && convertedState && typeof convertedState === 'object'){
-                     store.dispatch('updateBusiness', convertedState.business);
-                     store.dispatch('updateBusinesses', convertedState.businesses);
-                     store.dispatch('updateCompetitors', convertedState.competitors);
-                     store.dispatch('setCurrentLevel', convertedState.currentLevel);
-                     store.dispatch('updateCustomers', convertedState.customers);
-                     store.dispatch('updateLevels', convertedState.levels);
-                     store.dispatch('updateMarketCategory', convertedState.marketCategory);
-                     store.dispatch('updateMarkets', convertedState.markets);
-                     store.dispatch('updateProduct', convertedState.product);
-                     store.dispatch('updatePyramicIntangibleFactors', convertedState.pyramicIntangibleFactors);
-                     store.dispatch('updateSelectedMarket', convertedState.selectedMarket);
-                     store.dispatch('saveUser', convertedState.user);
+                    convertedState.business && store.dispatch('updateBusiness', convertedState.business);
+                    convertedState.businesses && store.dispatch('updateBusinesses', convertedState.businesses);
+                    convertedState.competitors && store.dispatch('updateCompetitors', convertedState.competitors);
+                    convertedState.currentLevel && store.dispatch('setCurrentLevel', convertedState.currentLevel);
+                    convertedState.customers && store.dispatch('updateCustomers', convertedState.customers);
+                    convertedState.levels && store.dispatch('updateLevels', modelReinitializator.initLevels(convertedState.levels));
+                    convertedState.marketCategory && store.dispatch('updateMarketCategory', convertedState.marketCategory);
+                    convertedState.markets && store.dispatch('updateMarkets', modelReinitializator.initMarkets(convertedState.markets));
+                    convertedState.product && store.dispatch('updateProduct', convertedState.product);
+                    convertedState.pyramicIntangibleFactors && store.dispatch('updatePyramicIntangibleFactors', convertedState.pyramicIntangibleFactors);
+                    convertedState.selectedMarket && store.dispatch('updateSelectedMarket', convertedState.selectedMarket);
+                    convertedState.user && store.dispatch('saveUser', convertedState.user);
                     resolve();
                 }
 

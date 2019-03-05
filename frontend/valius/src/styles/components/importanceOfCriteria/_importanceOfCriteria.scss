@@ -1,0 +1,105 @@
+.importanceOfCriteria {
+    height: 100%;
+    overflow-y: auto;
+
+    &__container {
+        width: 600px;
+        height: 450px;
+        border: 1px solid black;
+        padding: 0 10px;
+        margin: 100px auto 0 auto;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    &__headers {
+        display: flex;
+        justify-content: space-between;
+        font-family: cursive;
+        font-size: 24px;
+        color: #174C64;
+        font-weight: 900;
+        margin: 0 0 30px 0;
+    }
+
+    .column__right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    input {
+        width: 100px;
+        height: 40px;
+        padding: 2px 5px;
+        text-align: center;
+        outline: none;
+        font-size: 20px;
+        border: 1px solid gray;
+        border-radius: 4px;
+    }
+
+    .total-value {
+        background-color: #F59C59 ;
+        border: 5px solid #174C64;
+        width: 100px;
+        height: 50px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        font-family: cursive;
+        color: #174C64;
+
+        &--completed {
+            border: 5px solid #89ff34;
+        }
+        &--error {
+            border: 5px solid #ff1522;
+        }
+    }
+
+    &__button {
+        width: 200px;
+        height: 50px;
+        margin: 50px auto;
+        display: block;
+        outline: none;
+        background-color: rgba(255, 148, 37, 0.93);
+        border: none;
+        border-radius: 10px;
+        font-size: 20px;
+        color: $login-text-color;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    .attractiveness-factor {
+        display: flex;
+
+        &__img {
+            width: 40px;
+            height: 40px;
+            margin: 0 20px 0 0;
+        }
+
+        &__label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: cursive;
+            font-size: 20px;
+            width: 300px;
+            height: 50px;
+            text-align: center;
+            background-color: #FBC426;
+            border-radius: 4px;
+        }
+    }
+}

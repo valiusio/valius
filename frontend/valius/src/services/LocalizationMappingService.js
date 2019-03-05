@@ -8,8 +8,8 @@ const ProfileNavigationNameMapping = {
     marketObjective : {name:"Αγορά - Στόχος", link:"/market"},
 
     attractivenessCriteria : { name : "Κριτήρια Ελκυστικότητας", link : '/marketAssassmentIntro'},
-    importanceOfCriteria   : { name : "Σημαντικότητα κριτηρίων", link : '/'},
-    evaluationProcess      : { name : "Διαδικασία Αξιολόγησης", link : '/'},
+    importanceOfCriteria   : { name : "Σημαντικότητα κριτηρίων", link : '/importanceOfCriteriaIntro'},
+    evaluationProcess      : { name : "Διαδικασία Αξιολόγησης", link : '/evaluationProcessIntro'},
 
 
 };
