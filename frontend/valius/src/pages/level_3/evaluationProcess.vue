@@ -24,8 +24,10 @@
                         <tbody>
                             <tr v-for="i in 5">
                                 <td>
-                                    <img class="evaluationsTable__icon" :src="getFactorImg(i)">
-                                    <span class="evaluationsTable__factor">{{getFactorsLabel(i)}}</span>
+                                    <div class="evaluationsTable__label-container">
+                                        <img class="evaluationsTable__icon" :src="getFactorImg(i)">
+                                        <span class="evaluationsTable__factor">{{getFactorsLabel(i)}}</span>
+                                    </div>
                                 </td>
                                 <td>
                                     <input v-model="marketAssessments['marketAssessment'+i].attractivenessParameters.low"
