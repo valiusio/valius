@@ -5,7 +5,7 @@
                 <img :src="getPic()" />
                 <img
                     src="../assets/images/gamemapings/horse.png"
-                    :class=" !startAnimation ? `horse horse__position--start` : `horse horse__position--${currentStatus}`"
+                    :class=" !startAnimation ? `horse horse__position--${previousStatus}` : `horse horse__position--${currentStatus}`"
                 >
                 <div class="game-map__link  game-map__link--start" @click="action('start')">Start</div>
                 <div class="game-map__link  game-map__link--landscapeIdentification" @click="action('landscapeIdentification')">Landscape Identification</div>
@@ -36,6 +36,31 @@
         },
         components:{
             "InformationBanner" : InformationBanner
+        },
+        computed: {
+            previousStatus() {
+                let previousStatus = null;
+                switch (this.currentStatus) {
+                    case 'start':
+                        previousStatus = 'start';
+                        break;
+                    case 'landscapeIdentification':
+                        previousStatus = 'start';
+                        break;
+                    case 'marketAssessment':
+                        previousStatus = 'landscapeIdentification';
+                        break;
+                    case 'productAssessment':
+                        previousStatus = 'marketAssessment';
+                        break;
+                    case 'readyToStrategize':
+                        previousStatus = 'productAssessment';
+                        break;
+
+                }
+
+                return previousStatus;
+            }
         },
         methods:{
             getPic() {

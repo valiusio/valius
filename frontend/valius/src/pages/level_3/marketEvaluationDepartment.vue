@@ -17,6 +17,11 @@
                     </div>
                 </div>
 
+                <div class="row marketEvaluationDepartment__flags">
+                    <span>Low</span>
+                    <span>Medium</span>
+                    <span>High</span>
+                </div>
                 <div class="row element-row" v-for="i in 5">
                     <img class="marketEvaluationDepartment__factor-icon" :src="getFactorImg(i)">
                     <div class="marketEvaluationDepartment__factor">{{getFactorName(i)}}</div>

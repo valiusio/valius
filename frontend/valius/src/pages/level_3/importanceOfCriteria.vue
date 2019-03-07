@@ -29,11 +29,15 @@
                     <div class="column__left">
 
                     </div>
-                    <div class="column__right">
+                    <div class="column__right total-score">
                        <span
                            class="total-value"
                            :class="getTotalClass"
                        >{{ getTotal }} %</span>
+
+                        <span v-if="getTotal > 100" class="total-score__error">
+                            Δεν μπορείτε να υπερβείτε το 100%
+                        </span>
                     </div>
                 </div>
             </div>

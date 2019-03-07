@@ -57,6 +57,23 @@
         }
     }
 
+    &__flags {
+        display: flex;
+        justify-content: flex-end;
+
+        span {
+            font-size: 24px;
+            font-weight: 900;
+            text-align: center;
+            padding: 0 70px 10px 0;
+            color: gray;
+
+            &:last-child {
+                padding-right: 5px;
+            }
+        }
+    }
+
     &__submit {
         width: 200px;
         height: 50px;

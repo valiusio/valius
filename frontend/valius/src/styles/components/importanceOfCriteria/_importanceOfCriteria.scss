@@ -59,6 +59,7 @@
           border: 5px solid rgba(18,255,42,0.86);
         }
         &--error {
+            margin-left: auto;
             border: 5px solid #ff1522;
         }
     }
@@ -99,6 +100,21 @@
             text-align: center;
             background-color: #FBC426;
             border-radius: 4px;
+        }
+    }
+    .total-score {
+        display: flex;
+        flex-direction: column;
+
+
+        &__error {
+            font-size: 14px;
+            background-color: #F2DEDE;
+            color: #ff1522;
+            border: 1px solid #ff1522;
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin-top: 10px;
         }
     }
 }
