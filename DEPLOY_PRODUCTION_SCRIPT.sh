@@ -3,7 +3,7 @@
 echo "#### Stop apache2 service ####"
 sudo service apache2 stop &&
 echo "#### Get latest master ####"
-sudo git pull &&
+sudo git pull origin $1 &&
 echo "#### Install php Dependencies  ####"
 sudo composer install &&
 cd frontend/valius/ &&
