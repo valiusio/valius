@@ -7,17 +7,20 @@ const persistStore = (store) => {
         user : store.state.user,
         business : store.state.business,
         product : store.state.product,
+        levels : store.state.levels,
+
         currentLevel : store.state.currentLevel,
         IntangibleFactors : store.state.IntangibleFactors,
         pyramicIntangibleFactors : store.state.pyramicIntangibleFactors,
         competitors : store.state.competitors,
+
         markets :store.state.markets,
         marketCategory : store.state.marketCategory,
         selectedMarket : store.state.selectedMarket,
         selectedAttractiveCriteria: store.state.selectedAttractiveCriteria,
+
         customers : store.state.customers,
         businesses : store.state.businesses,
-        levels : store.state.levels,
         marketAssessments: store.state.marketAssessments
     };
 

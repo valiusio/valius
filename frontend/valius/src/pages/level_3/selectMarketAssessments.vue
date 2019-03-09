@@ -114,12 +114,17 @@
                 return require('./../../assets/images/attractivenessCriteria/' + name +'.png');
             },
             handleFactorAction(factor) {
-                this.selectedAttractiveCriteria.indexOf(factor) === -1
-                ? this.selectedAttractiveCriteria.length < 5 && this.selectedAttractiveCriteria.push(factor)
-                : this.selectedAttractiveCriteria.splice(this.selectedAttractiveCriteria.indexOf(factor), 1)
+
+                if(this.isFactorSelected(factor)) {
+                    this.selectedAttractiveCriteria = this.selectedAttractiveCriteria.filter((f) => { return f.name !== factor.name});
+                }else {
+                    this.selectedAttractiveCriteria.length < 5 && this.selectedAttractiveCriteria.push(factor)
+                }
             },
             isFactorSelected(factor) {
-                return this.selectedAttractiveCriteria.indexOf(factor) >= 0
+                return this.selectedAttractiveCriteria.filter((f) => {
+                    return f.name === factor.name
+                }).length === 1
             },
             next() {
                 this.marketAssessments.marketAssessment1.name = this.selectedAttractiveCriteria[0].name;

@@ -15,7 +15,7 @@ const Initializator = (store) => {
                     convertedState.levels && store.dispatch('updateLevels', modelReinitializator.initLevels(convertedState.levels));
                     convertedState.marketCategory && store.dispatch('updateMarketCategory', convertedState.marketCategory);
                     convertedState.markets && store.dispatch('updateMarkets', modelReinitializator.initMarkets(convertedState.markets));
-                    convertedState.selectedAttractiveCriteria && store.dispatch('updateSelectedAttractiveCriteria', convertedState.updateSelectedAttractiveCriteria);
+                    convertedState.selectedAttractiveCriteria && store.dispatch('updateSelectedAttractiveCriteria', convertedState.selectedAttractiveCriteria);
                     convertedState.product && store.dispatch('updateProduct', convertedState.product);
                     convertedState.pyramicIntangibleFactors && store.dispatch('updatePyramicIntangibleFactors', convertedState.pyramicIntangibleFactors);
                     convertedState.selectedMarket && store.dispatch('updateSelectedMarket', convertedState.selectedMarket);
