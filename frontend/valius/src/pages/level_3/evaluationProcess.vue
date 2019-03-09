@@ -30,17 +30,20 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <input v-model="marketAssessments['marketAssessment'+i].attractivenessParameters.low"
+                                    <input class="evaluationsTable__low"
+                                           v-model="marketAssessments['marketAssessment'+i].attractivenessParameters.low"
                                            :placeholder="getPlaceholderText(i, 'low')"
                                     >
                                 </td>
                                 <td>
-                                    <input v-model="marketAssessments['marketAssessment'+i].attractivenessParameters.medium"
+                                    <input class="evaluationsTable__medium"
+                                            v-model="marketAssessments['marketAssessment'+i].attractivenessParameters.medium"
                                            :placeholder="getPlaceholderText(i, 'medium')"
                                     >
                                 </td>
                                 <td>
-                                    <input v-model="marketAssessments['marketAssessment'+i].attractivenessParameters.high"
+                                    <input class="evaluationsTable__high"
+                                        v-model="marketAssessments['marketAssessment'+i].attractivenessParameters.high"
                                            :placeholder="getPlaceholderText(i, 'high')"
                                     >
                                 </td>

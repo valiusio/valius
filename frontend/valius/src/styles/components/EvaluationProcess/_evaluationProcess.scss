@@ -74,5 +74,17 @@
             border: 1px solid gray;
             outline: none;
         }
+
+        &__low {
+            background-color: #FDD3CD;
+        }
+
+        &__medium {
+            background-color: #FDF1D0;
+        }
+
+        &__high {
+            background-color: #E3EFDC;
+        }
     }
 }
