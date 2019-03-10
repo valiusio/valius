@@ -17,6 +17,7 @@
                     :rating="level.rating"
                     :locked="level.locked"
                 />
+
             </div>
             <button
                 v-if="isLevelCompleted"
