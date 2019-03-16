@@ -9,11 +9,14 @@
             </information-banner>
 
             <div class="importanceOfCriteria__container">
+                <div class="importanceOfCriteria__remaining"
+                     :style="getRemaining <= 0 && 'visibility:hidden'">
+                     'Εχεις ακόμη <span>{{getRemaining}}%</span> ποσοστό να διαθέσεις
+                </div>
                 <div class="importanceOfCriteria__headers">
                     <div class="column__left">Market Attractiveness Factors</div>
                     <div class="column__right">weights</div>
                 </div>
-
                 <div class="row" v-for="i in 5">
                     <div class="column__left">
                         <div class="attractiveness-factor">
@@ -86,6 +89,9 @@
                 if(this.getTotal > 100){
                     return 'total-value--error'
                 }
+            },
+            getRemaining() {
+                return Number(100 - this.getTotal);
             }
         },
         methods: {

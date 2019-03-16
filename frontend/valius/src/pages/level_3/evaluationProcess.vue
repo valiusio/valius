@@ -4,9 +4,10 @@
             <information-banner
                 type="info"
             >
-                <h1>Μπορείς να θέσεις τις κατάλληλες παραμέτρους ελκυστικότητας της αγοράς;</h1>
-                <p>Συμπλήρωσε όσα από τα παρακάτω κενά γνωρίζεις. Μπορείς να βασιστείς
-                    σε εμπειρική γνώση αλλά και διαθέσιμα δεδομένα</p>
+                <h1>Για τα κριτήρια ελκυστικότητας που επέλεξες, προτείνονται υψηλές,
+                    μεσαίες & χαμηλές τιμές για βαθμολογίες από το 1 έως το 10.</h1>
+                <p>Μπορείς να αλλάξεις τα προτεινόμενα παραδείγματα για τις ποσοτικές τιμές, καθώς
+                    πρέπει να στηρίζονται σε δεδομένα της δικής σου αγοράς.</p>
             </information-banner>
 
             <div class="evaluationProcess__container">
@@ -15,9 +16,9 @@
                         <thead>
                             <tr>
                                 <th>Κριτήρια ελκυστικότητας των τμημάτων της αγοράς</th>
-                                <th>Low (1-3)</th>
-                                <th>Παράμετροι Medium (4-7)</th>
-                                <th>High (10-8)</th>
+                                <th>Xαμηλές τιμές (1-3)</th>
+                                <th>Μέτριες τιμές (4-7)</th>
+                                <th>Υψηλές τιμές (10-8)</th>
                             </tr>
                         <tr class="space"></tr>
                         </thead>
@@ -32,19 +33,16 @@
                                 <td>
                                     <input class="evaluationsTable__low"
                                            v-model="marketAssessments['marketAssessment'+i].attractivenessParameters.low"
-                                           :placeholder="getPlaceholderText(i, 'low')"
                                     >
                                 </td>
                                 <td>
                                     <input class="evaluationsTable__medium"
                                             v-model="marketAssessments['marketAssessment'+i].attractivenessParameters.medium"
-                                           :placeholder="getPlaceholderText(i, 'medium')"
                                     >
                                 </td>
                                 <td>
                                     <input class="evaluationsTable__high"
                                         v-model="marketAssessments['marketAssessment'+i].attractivenessParameters.high"
-                                           :placeholder="getPlaceholderText(i, 'high')"
                                     >
                                 </td>
                             </tr>
@@ -74,11 +72,23 @@
         components: {
             InformationBanner
         },
-        computed : {
+        created() {
+            this.marketAssessments =  this.$store.getters.marketAssessments;
+            for(let i=1; i<=5; i++) {
+                if(this.marketAssessments["marketAssessment"+i].attractivenessParameters.low === '') {
+                    this.marketAssessments["marketAssessment"+i].attractivenessParameters.low = this.getDefaultValue(i,'low');
+                }
+                if(this.marketAssessments["marketAssessment"+i].attractivenessParameters.medium === '') {
+                    this.marketAssessments["marketAssessment"+i].attractivenessParameters.medium = this.getDefaultValue(i,'medium');
+                }
+                if(this.marketAssessments["marketAssessment"+i].attractivenessParameters.high === '') {
+                    this.marketAssessments["marketAssessment"+i].attractivenessParameters.high = this.getDefaultValue(i,'high');
+                }
+            }
         },
         data(){
             return {
-                marketAssessments : this.$store.getters.marketAssessments,
+                marketAssessments :  ''
             }
         },
         methods: {
@@ -94,13 +104,13 @@
                const factorName = this.marketAssessments["marketAssessment"+i].name;
                return require("./../../assets/images/attractivenessCriteria/"+factorName+'.png');
             },
-            getPlaceholderText(i, placeHolderType) {
+            getDefaultValue(i, placeHolderType) {
               const factorName = this.marketAssessments["marketAssessment"+i].name;
-              const placeHolder = AttractivenessCriteria.AttractivenessCriteria.filter((factor) => {
+              const defaultValue = AttractivenessCriteria.AttractivenessCriteria.filter((factor) => {
                   return factor.name === factorName
-              })[0].placeholders[placeHolderType];
+              })[0].defaultValue[placeHolderType];
 
-              return placeHolder;
+              return defaultValue;
             },
             next() {
                 this.$store.dispatch('updateMarketAssessments', this.marketAssessments);

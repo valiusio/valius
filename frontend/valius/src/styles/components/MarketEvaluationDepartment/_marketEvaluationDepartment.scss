@@ -4,7 +4,7 @@
 
     &__container {
         margin: 50px auto 0 auto;
-        width:800px;
+        width:1000px;
         height:auto;
     }
 
@@ -19,8 +19,8 @@
     }
 
     &__icon {
-        width: 90px;
-        height: 90px !important;
+        width: 120px;
+        height: 120px !important;
     }
 
     &__factor {
@@ -72,6 +72,11 @@
                 padding-right: 5px;
             }
         }
+    }
+
+    .evaluation-helper {
+        border: 1px solid red;
+        width: 200px;
     }
 
     &__submit {

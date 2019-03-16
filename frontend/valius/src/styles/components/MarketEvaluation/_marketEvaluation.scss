@@ -31,17 +31,17 @@
             background-color: #ffae80;
         }
 
-        &--travellers {
+        &--2 {
             top: 130px;
             left: 125px;
         }
 
-        &--athletes {
+        &--1 {
             top: 30px;
             left: 530px;
         }
 
-        &--gamers {
+        &--3 {
             top: 230px;
             left: 530px;
         }
@@ -70,6 +70,28 @@
 
         &:hover{
             cursor: pointer;
+        }
+    }
+
+    .clickable {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        position: absolute;
+        cursor: pointer;
+
+        &--2{
+            top: 130px;
+            left: 109px;
+        }
+        &--1 {
+            top: 24px;
+            right: 192px;
+        }
+
+        &--3 {
+            top: 220px;
+            right: 192px;
         }
     }
 }

@@ -22,6 +22,7 @@
             padding: 10px 5px;
             display: flex;
             align-items: center;
+            min-height: 70px;
 
             .icon {
                 width: 20px;
@@ -48,6 +49,14 @@
             border-bottom: 2px solid gray;
         }
 
+        &__helper {
+            display: block;
+            text-align: center;
+            font-size: 14px;
+            font-style: italic;
+            margin: 0 0 5px 0;
+            color: gray;
+        }
         &__category {
             border: 1px solid gray;
             display: flex;
@@ -88,7 +97,7 @@
             cursor: pointer;
 
             &--selected {
-                background-color: #FDD7B6;
+                background-color: #f3fe9d;
             }
             img {
 

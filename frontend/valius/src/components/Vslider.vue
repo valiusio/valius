@@ -54,8 +54,8 @@
         },
         computed : {
             classValue() {
-                if(this.value <= 4) { return 'v-slider--low'}
-                if(this.value > 4 && this.value < 8 ) { return 'v-slider--medium'}
+                if(this.value <= 3) { return 'v-slider--low'}
+                if(this.value >= 4 && this.value <= 7 ) { return 'v-slider--medium'}
                 if(this.value >= 8) { return 'v-slider--max'}
             }
         }

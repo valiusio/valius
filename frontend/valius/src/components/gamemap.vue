@@ -5,7 +5,7 @@
                 <img :src="getPic()" />
                 <img
                     src="../assets/images/gamemapings/horse.png"
-                    :class=" !startAnimation ? `horse horse__position--${previousStatus}` : `horse horse__position--${currentStatus}`"
+                    :class="`horse horse__position--${currentStatus}`"
                 >
                 <div class="game-map__link  game-map__link--start" @click="action('start')">Start</div>
                 <div class="game-map__link  game-map__link--landscapeIdentification" @click="action('landscapeIdentification')">Landscape Identification</div>
@@ -30,37 +30,12 @@
         data(){
             return {
                 currentStatus : this.$store.getters.currentLevel,
-                startAnimation :false,
-                animationCompleted : false
             }
         },
         components:{
             "InformationBanner" : InformationBanner
         },
         computed: {
-            previousStatus() {
-                let previousStatus = null;
-                switch (this.currentStatus) {
-                    case 'start':
-                        previousStatus = 'start';
-                        break;
-                    case 'landscapeIdentification':
-                        previousStatus = 'start';
-                        break;
-                    case 'marketAssessment':
-                        previousStatus = 'landscapeIdentification';
-                        break;
-                    case 'productAssessment':
-                        previousStatus = 'marketAssessment';
-                        break;
-                    case 'readyToStrategize':
-                        previousStatus = 'productAssessment';
-                        break;
-
-                }
-
-                return previousStatus;
-            }
         },
         methods:{
             getPic() {
@@ -68,21 +43,9 @@
             },
             action(name) {
                 this.$store.getters.levels[name]
-                && this.animationCompleted
                 && !this.$store.getters.levels[name].locked
                 &&  this.$router.push('/game-navigation/'+ name);
             }
-        },
-        created () {
-            setTimeout( () => {
-                this.startAnimation = true;
-            }, 1500);
-
-            //animation complete on 1500ms + transition's delay (3000ms)
-            setTimeout( () => {
-                this.animationCompleted = true;
-            }, 1500 + 3000);
-
         }
     }
 </script>

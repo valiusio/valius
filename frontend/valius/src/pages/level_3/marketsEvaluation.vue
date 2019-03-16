@@ -4,33 +4,37 @@
             <information-banner
                 type="info"
             >
-                <h1>Βαθμολόγησε το κάθε τμήματος της αγοράς σου.</h1>
-                <p>Κάντε κλικ στα παρακάτω εικονίδια για να ξεκινήσεις!</p>
+                <h1>Κάντε κλικ στα παρακάτω εικονίδια για να ξεκινήσεις την
+                    αξιολόγηση!</h1>
             </information-banner>
 
             <div class="marketsEvaluation__container">
                     <img class="marketsEvaluation__cover" :src="img">
                 <span
-                    class="marketsEvaluation__category marketsEvaluation__category--travellers"
+                    class="marketsEvaluation__category marketsEvaluation__category--2"
                     :class="hasRating(markets.market1) && 'marketsEvaluation__completed'"
-                    @click="next('market1')"
-                >
-                    {{markets.market1.name}}
-                </span>
-                <span
-                    class="marketsEvaluation__category marketsEvaluation__category--athletes"
-                    :class="hasRating(markets.market2) && 'marketsEvaluation__completed'"
-                    @click="next('market2')"
+
                 >
                     {{markets.market2.name}}
                 </span>
+                <div class="clickable clickable--2" @click="next('market2')"></div>
+
                 <span
-                    class="marketsEvaluation__category marketsEvaluation__category--gamers"
+                    class="marketsEvaluation__category marketsEvaluation__category--1"
+                    :class="hasRating(markets.market2) && 'marketsEvaluation__completed'"
+                >
+                    {{markets.market1.name}}
+                </span>
+                <div class="clickable clickable--1" @click="next('market1')"></div>
+
+                <span
+                    class="marketsEvaluation__category marketsEvaluation__category--3"
                     :class="hasRating(markets.market3) && 'marketsEvaluation__completed'"
-                    @click="next('market3')"
+
                 >
                     {{markets.market3.name}}
                 </span>
+                <div class="clickable clickable--3" @click="next('market3')"></div>
             </div>
 
             <button v-if="levelComplete" @click="complete" class="marketsEvaluation__submit">

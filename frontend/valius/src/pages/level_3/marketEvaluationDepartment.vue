@@ -28,7 +28,6 @@
                     <app-slider
                         v-model="markets[market].attractiveCriteria['attractiveCriteria'+i].value"
                     >
-
                     </app-slider>
                 </div>
             </div>
@@ -103,7 +102,8 @@
             getFactorImg(i) {
                 const factorName = this.markets[this.market].attractiveCriteria['attractiveCriteria'+i].name;
                 return require('./../../assets/images/attractivenessCriteria/'+factorName+'.png');
-            }
+            },
+
         }
     }
 </script>
