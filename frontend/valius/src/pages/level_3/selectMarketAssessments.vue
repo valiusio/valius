@@ -35,19 +35,19 @@
                         </div>
                        <div
                            class="market-assessments__category"
-                           :class="isSelected('socialFactors') ? 'market-assessments__category__selected': ''"
-                           @click="select('socialFactors')"
-                       >
-                           <img :src="socialFactorImg">
-                           <span>Social Criteria</span>
-                       </div>
-                       <div
-                           class="market-assessments__category"
                            :class="isSelected('competitiveFactors') ? 'market-assessments__category__selected': ''"
                            @click="select('competitiveFactors')"
                        >
                            <img :src="competitiveFactorsImg">
                            <span>Competitive Criteria</span>
+                       </div>
+                       <div
+                           class="market-assessments__category"
+                           :class="isSelected('socialFactors') ? 'market-assessments__category__selected': ''"
+                           @click="select('socialFactors')"
+                       >
+                           <img :src="socialFactorImg">
+                           <span>Social Criteria</span>
                        </div>
                    </div>
                    <div class="market-assessments__elements">

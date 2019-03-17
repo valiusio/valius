@@ -48,6 +48,7 @@
 
 <script>
     import informationBanner from './../../components/InformationBanner';
+    import levelUpdate from './../../services/levelUpdate';
 
     export default {
         name: 'marketsEvaluation',
@@ -89,7 +90,7 @@
                 this.levels.marketAssessment.completed = true;
 
                 this.$store.dispatch('updateLevels', this.levels);
-                this.$store.dispatch('setCurrentLevel', 'productAssessment');
+                levelUpdate.levelUpdate(this.$store, 'productAssessment');
                 this.$router.push('/game-navigation/marketAssessment');
             }
         }

@@ -23,6 +23,7 @@
                     </p>
 
                     <ul style="list-style: none">
+                        <li>π.χ.</li>
                        <li>Μέγεθος του τμήματος του τμήματος</li>
                        <li>Ρυθμός ανάπτυξης,</li>
                        <li>Κερδοφορία,</li>
@@ -34,9 +35,9 @@
                     <img :src="growthIcon">
                 </div>
             </div>
-
-
-            <button @click="next">Got it!</button>
+            <div class="row">
+                <button @click="next">Got it!</button>
+            </div>
         </div>
     </div>
 </template>
@@ -63,3 +64,8 @@ import growthIcon from './../../assets/images/growth icon.png'
         }
     }
 </script>
+<style scoped>
+    button {
+        margin: 70px auto 10px auto;
+    }
+</style>

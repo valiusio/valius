@@ -123,6 +123,7 @@
 <script>
 
     import router from "../../router";
+    import levelUpdate from './../../services/levelUpdate';
     import InformationBanner from "../../components/InformationBanner.vue";
 
     import BrandIcon from "../../assets/images/brand.png";
@@ -166,7 +167,7 @@
                          this.levels.landscapeIdentification.subLevels.offerOfValue.locked = false;
                          this.levels.start.completed = true;
                          this.$store.dispatch('updateLevels', this.levels);
-                         this.$store.dispatch('setCurrentLevel', 'landscapeIdentification');
+                         levelUpdate.levelUpdate(this.$store, 'landscapeIdentification');
                          router.push('/game-navigation/start');
                     }
 

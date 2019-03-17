@@ -247,6 +247,7 @@
 
 <script>
     import InformationBanner from './../../components/InformationBanner';
+    import levelUpdate from './../../services/levelUpdate';
 
     export default {
         name: 'BusinessProfille',
@@ -275,7 +276,7 @@
                 this.levels.landscapeIdentification.completed = true;
                 this.levels.marketAssessment.locked = false;
                 this.$store.dispatch('updateBusinesses', this.businesses);
-                this.$store.dispatch('setCurrentLevel', 'marketAssessment');
+                levelUpdate.levelUpdate(this.$store, 'marketAssessment');
                 this.$store.dispatch('updateLevels', this.levels);
                 this.$router.push('/game-navigation/landscapeIdentification');
             }

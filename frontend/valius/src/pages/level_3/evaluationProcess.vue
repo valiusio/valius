@@ -119,3 +119,11 @@
         }
     }
 </script>
+<style scoped type="scss">
+    .information-banner__text h1{
+        font-size: 18px;
+    }
+    .information-banner__text p{
+        font-size: 14px;
+    }
+</style>

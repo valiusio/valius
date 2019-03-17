@@ -5,16 +5,16 @@
     &__container {
         position: relative;
         margin: auto;
-        width: 800px;
-        height: 400px;
+        width: 700px;
+        height: 460px;
     }
 
     &__cover {
         position: absolute;
-        width: 500px;
-        height: 325px;
-        left: 100px;
-        top: 30px;
+        width: 700px;
+        height: 460px!important;
+        left: 0;
+        top: 0;
     }
 
     &__category {
@@ -25,7 +25,6 @@
         background-color: #3d4852;
         color: white;
         font-size: 16px;
-        font-family: cursive;
         &:hover {
             cursor: pointer;
             background-color: #ffae80;
@@ -33,17 +32,17 @@
 
         &--2 {
             top: 130px;
-            left: 125px;
+            left: 73px;
         }
 
         &--1 {
-            top: 30px;
-            left: 530px;
+            top: 0px;
+            right: 5px;
         }
 
         &--3 {
-            top: 230px;
-            left: 530px;
+            right: 10px;
+            bottom: 145px;
         }
     }
 
@@ -74,24 +73,24 @@
     }
 
     .clickable {
-        width: 140px;
-        height: 140px;
+        width: 180px;
+        height: 180px;
         border-radius: 50%;
         position: absolute;
         cursor: pointer;
 
         &--2{
-            top: 130px;
-            left: 109px;
+            top: 152px;
+            left: 20px;
         }
         &--1 {
-            top: 24px;
-            right: 192px;
+            top: 0px;
+            right: 0px;
         }
 
         &--3 {
-            top: 220px;
-            right: 192px;
+            bottom: 0px;
+            right: 0px;
         }
     }
 }

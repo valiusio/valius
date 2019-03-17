@@ -45,7 +45,7 @@
         ],
         computed : {
             img () {
-                return require('./../../assets/images/circleRuller.png');
+                return require('./../../assets/images/ruller.png');
             }
         },
         data(){
@@ -62,7 +62,8 @@
 </script>
 <style scoped>
     .image {
-        width: 500px;
+        width: 300px;
+        transform: rotate(235deg);
     }
 
     button {

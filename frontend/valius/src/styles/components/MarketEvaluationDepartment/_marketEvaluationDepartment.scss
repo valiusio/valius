@@ -32,7 +32,6 @@
         border-radius: 4px;
         background-color: #FBC426;
         width: 300px;
-        font-family: cursive;
         font-weight: 900;
     }
 
@@ -52,7 +51,6 @@
             border: 1px solid gray;
             padding: 5px 10px;
             margin: 0 0 0 40px;
-            font-family: cursive;
             font-weight: 900;
         }
     }
@@ -62,10 +60,10 @@
         justify-content: flex-end;
 
         span {
-            font-size: 24px;
-            font-weight: 900;
+            font-size: 16px;
+            font-style: italic;
             text-align: center;
-            padding: 0 70px 10px 0;
+            padding: 0 50px 10px 0;
             color: gray;
 
             &:last-child {

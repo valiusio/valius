@@ -8,8 +8,6 @@
         min-height: 460px;
         padding: 10px;
         margin: 100px auto 0 auto;
-        border: 5px solid #FDDA80;
-        border-radius: 4px;
     }
 
     .selected-assessments {
@@ -32,7 +30,6 @@
                 margin: 0 15px 0 0;
             }
             .label {
-                font-family: cursive;
                 color: #3d4852;
             }
         }
@@ -61,6 +58,7 @@
             border: 1px solid gray;
             display: flex;
             flex-direction: row;
+            background-color: #fedcb9;
             padding: 5px;
             border-radius: 4px;
             margin: 0 5px 0 0;
@@ -69,6 +67,7 @@
             &__selected {
                 background-color: #ffb06c;
             }
+
             img {
                 width: 35px;
                 height: 35px;

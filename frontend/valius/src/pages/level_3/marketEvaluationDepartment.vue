@@ -18,9 +18,9 @@
                 </div>
 
                 <div class="row marketEvaluationDepartment__flags">
-                    <span>Low</span>
-                    <span>Medium</span>
-                    <span>High</span>
+                    <span>Low (1-3)</span>
+                    <span>Medium (4-7)</span>
+                    <span>High (8-10)</span>
                 </div>
                 <div class="row element-row" v-for="i in 5">
                     <img class="marketEvaluationDepartment__factor-icon" :src="getFactorImg(i)">
@@ -45,6 +45,7 @@
     import informationBanner from './../../components/InformationBanner';
     import appSlider from './../../components/Vslider';
     import AttractiveCriteria from './../../services/AttractivenessCriteria';
+    import levelupdate  from './../../services/levelUpdate';
 
     export default {
         name: 'marketEvaluationDepartment',
@@ -91,6 +92,7 @@
         methods: {
             next() {
                 this.$store.dispatch('updateMarkets', this.markets);
+                levelupdate.levelUpdate(this.$store);
                 this.$router.push('/marketsEvaluation');
             },
             getFactorName(i) {
