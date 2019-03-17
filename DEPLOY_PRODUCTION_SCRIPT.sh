@@ -8,7 +8,7 @@ echo "#### Install php Dependencies  ####"
 sudo composer install &&
 cd frontend/valius/ &&
 echo "#### Install frontEnd Dependencies####"
-sudo npm i &&
+sudo npm ci &&
 echo "#### Build FrontEnd for production ####"
 sudo npm run build &&
 echo "#### Start apache2 service####"
