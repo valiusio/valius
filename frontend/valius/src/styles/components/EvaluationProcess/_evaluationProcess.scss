@@ -30,8 +30,8 @@
     .evaluationsTable {
 
         &__icon {
-            width: 50px;
-            height: 50px;
+            width: 30px;
+            height: 30px;
         }
 
         &__label-container {
@@ -40,10 +40,11 @@
 
         table {
             thead {
-                font-size: 20px;
-                font-weight: 900;
-                .space {
-                    height: 20px;
+                font-size: 15px;
+                font-style: italic;
+
+                th {
+                    padding: 0 0 10px 0;
                 }
             }
             td {
@@ -57,7 +58,7 @@
             margin: 0 0 0 10px;
             padding: 10px 0;
             background-color: #FBC426;
-            font-size: 16px;
+            font-size: 14px;
             text-align: center;
             width: 300px;
             border-radius: 4px;

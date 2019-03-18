@@ -11,13 +11,13 @@
             <div class="marketsEvaluation__container">
                     <img class="marketsEvaluation__cover" :src="img">
                 <span
-                    class="marketsEvaluation__category marketsEvaluation__category--2"
+                    class="marketsEvaluation__category marketsEvaluation__category--3"
                     :class="hasRating(markets.market1) && 'marketsEvaluation__completed'"
 
                 >
-                    {{markets.market2.name}}
+                    {{markets.market3.name}}
                 </span>
-                <div class="clickable clickable--2" @click="next('market2')"></div>
+                <div class="clickable clickable--3" @click="next('market3')"></div>
 
                 <span
                     class="marketsEvaluation__category marketsEvaluation__category--1"
@@ -28,13 +28,13 @@
                 <div class="clickable clickable--1" @click="next('market1')"></div>
 
                 <span
-                    class="marketsEvaluation__category marketsEvaluation__category--3"
+                    class="marketsEvaluation__category marketsEvaluation__category--2"
                     :class="hasRating(markets.market3) && 'marketsEvaluation__completed'"
 
                 >
-                    {{markets.market3.name}}
+                    {{markets.market2.name}}
                 </span>
-                <div class="clickable clickable--3" @click="next('market3')"></div>
+                <div class="clickable clickable--2" @click="next('market2')"></div>
             </div>
 
             <button v-if="levelComplete" @click="complete" class="marketsEvaluation__submit">

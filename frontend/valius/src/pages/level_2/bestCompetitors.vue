@@ -152,7 +152,7 @@
                 this.levels.landscapeIdentification.subLevels.competitors.rating = 3;
                 this.levels.landscapeIdentification.subLevels.marketObjective.locked = false;
                 this.$store.dispatch('updateLevels',this.levels).then(()=>{
-                    this.$router.push('game-navigation');
+                    this.$router.push('/game-navigation/landscapeIdentification');
                 });
             }
         }

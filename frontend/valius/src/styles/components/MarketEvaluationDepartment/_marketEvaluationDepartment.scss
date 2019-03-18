@@ -58,6 +58,7 @@
     &__flags {
         display: flex;
         justify-content: flex-end;
+        margin: 0 155px 0 0;
 
         span {
             font-size: 16px;
@@ -72,9 +73,16 @@
         }
     }
 
-    .evaluation-helper {
-        border: 1px solid red;
-        width: 200px;
+    .marketAssessment-banner {
+        border: 2px solid gray;
+        background-color: #eafec5;
+        text-align: center;
+        margin: 0 0 0 5px;
+        font-style: italic;
+        font-size: 12px;
+        padding: 2px 5px;
+        width: 150px;
+        border-radius: 4px;
     }
 
     &__submit {

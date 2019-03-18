@@ -6,3 +6,4 @@ module.exports = {
         return (process.env.VUE_APP_API_CHUNK_BUILD) && config.optimization.delete('splitChunks')
     }
 }
+

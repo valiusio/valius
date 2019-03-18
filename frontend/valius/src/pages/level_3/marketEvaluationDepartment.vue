@@ -29,7 +29,11 @@
                         v-model="markets[market].attractiveCriteria['attractiveCriteria'+i].value"
                     >
                     </app-slider>
+                    <div class="marketAssessment-banner">
+                        {{ getAttractivenessCriteriaValue(markets[market].attractiveCriteria['attractiveCriteria'+i]) }}
+                    </div>
                 </div>
+
             </div>
 
             <button class="marketEvaluationDepartment__submit" @click="next">
@@ -46,6 +50,7 @@
     import appSlider from './../../components/Vslider';
     import AttractiveCriteria from './../../services/AttractivenessCriteria';
     import levelupdate  from './../../services/levelUpdate';
+    import _ from 'lodash';
 
     export default {
         name: 'marketEvaluationDepartment',
@@ -105,7 +110,37 @@
                 const factorName = this.markets[this.market].attractiveCriteria['attractiveCriteria'+i].name;
                 return require('./../../assets/images/attractivenessCriteria/'+factorName+'.png');
             },
+            getAttractivenessCriteriaValue(obj) {
+                const name = obj.name;
+                const value = obj.value;
 
+                let valueLevel = null;
+                if(value <= 3) {
+                    valueLevel = 'low';
+                }
+                if(value >=4 && value <=7) {
+                    valueLevel = 'medium';
+                }
+                if(value > 7) {
+                    valueLevel = 'high';
+                }
+
+                if(this.marketAssessments.marketAssessment1.name === name) {
+                    return this.marketAssessments.marketAssessment1.attractivenessParameters[valueLevel];
+                }
+                if(this.marketAssessments.marketAssessment2.name === name) {
+                    return this.marketAssessments.marketAssessment2.attractivenessParameters[valueLevel];
+                }
+                if(this.marketAssessments.marketAssessment3.name === name) {
+                    return this.marketAssessments.marketAssessment3.attractivenessParameters[valueLevel];
+                }
+                if(this.marketAssessments.marketAssessment4.name === name) {
+                    return this.marketAssessments.marketAssessment4.attractivenessParameters[valueLevel];
+                }
+                if(this.marketAssessments.marketAssessment5.name === name) {
+                    return this.marketAssessments.marketAssessment5.attractivenessParameters[valueLevel];
+                }
+            }
         }
     }
 </script>

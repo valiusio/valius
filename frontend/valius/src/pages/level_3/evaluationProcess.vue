@@ -20,7 +20,6 @@
                                 <th>Μέτριες τιμές (4-7)</th>
                                 <th>Υψηλές τιμές (10-8)</th>
                             </tr>
-                        <tr class="space"></tr>
                         </thead>
                         <tbody>
                             <tr v-for="i in 5">

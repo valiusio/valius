@@ -30,19 +30,20 @@
             background-color: #ffae80;
         }
 
-        &--2 {
-            top: 130px;
-            left: 73px;
-        }
 
         &--1 {
             top: 0px;
             right: 5px;
         }
 
-        &--3 {
+        &--2 {
             right: 10px;
             bottom: 145px;
+        }
+
+        &--3 {
+            top: 130px;
+            left: 73px;
         }
     }
 
@@ -79,18 +80,19 @@
         position: absolute;
         cursor: pointer;
 
-        &--2{
-            top: 152px;
-            left: 20px;
-        }
         &--1 {
             top: 0px;
             right: 0px;
         }
 
-        &--3 {
+        &--2 {
             bottom: 0px;
             right: 0px;
+        }
+
+        &--3{
+            top: 152px;
+            left: 20px;
         }
     }
 }
