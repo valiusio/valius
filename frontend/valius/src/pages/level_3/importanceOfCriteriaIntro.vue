@@ -67,6 +67,7 @@
         font-size: 25px;
     }
     .image {
+        margin: 100px 0 0 0;
         width: 500px;
     }
 

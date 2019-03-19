@@ -21,6 +21,7 @@
                     <div class="pyramid-game__personal-pyramid">
 
                         <img
+                            draggable="true"
                             class="md-image pyramid-game__pyramidBackground"
                             :src="pyramidImg"
                             v-on:drop="drop"
@@ -42,7 +43,6 @@
                                 >x</span>
                             </div>
                         </template>
-
                     </div>
                 </div>
                 <div class="column--right">
@@ -119,6 +119,7 @@
                 event.dataTransfer.setData("tntangible-factor", IntangibleFactor);
             },
             drop(event) {
+                console.log(1)
                 event.preventDefault();
                 var data = event.dataTransfer.getData("tntangible-factor");
 

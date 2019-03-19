@@ -3,7 +3,7 @@ module.exports = {
 
     chainWebpack: config => {
 
-        return (process.env.VUE_APP_API_CHUNK_BUILD) && config.optimization.delete('splitChunks')
+        return (!process.env.VUE_APP_API_CHUNK_BUILD) && config.optimization.delete('splitChunks')
     }
 }
 
