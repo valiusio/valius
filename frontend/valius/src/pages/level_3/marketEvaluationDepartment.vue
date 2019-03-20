@@ -12,8 +12,8 @@
             <div class="marketEvaluationDepartment__container">
                 <div class="row">
                     <div class="icon__container">
-                        <span>{{ this.markets[market].name }}</span>
                         <img class="marketEvaluationDepartment__icon":src="img">
+                        <span>{{ this.markets[market].name }}</span>
                     </div>
                 </div>
 
