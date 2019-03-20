@@ -50,7 +50,9 @@
     import appSlider from './../../components/Vslider';
     import AttractiveCriteria from './../../services/AttractivenessCriteria';
     import levelupdate  from './../../services/levelUpdate';
-    import _ from 'lodash';
+    import greenIcon from './../../assets/images/market--green.png';
+    import blueIcon from './../../assets/images/market--blue.png';
+    import redIcon from './../../assets/images/market--red.png';
 
     export default {
         name: 'marketEvaluationDepartment',
@@ -84,14 +86,19 @@
         },
         computed : {
             img () {
-                return require('./../../assets/images/segmenticon.png');
+                return this.marketIcon[this.market]
             }
         },
         data(){
             return {
                 market: '',
                 marketAssessments: this.$store.getters.marketAssessments,
-                markets: {}
+                markets: {},
+                marketIcon: {
+                    market1 : blueIcon,
+                    market2: redIcon,
+                    market3: greenIcon
+                }
             }
         },
         methods: {
