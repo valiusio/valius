@@ -216,6 +216,7 @@ export const store =  new  Vuex.Store({
             customer1 : {
                 name : '',
                 demographicItem: '',
+                selectedMarketCategory: '',
                 productUsage: '',
                 desiredFeature: '',
                 brandFidelity: '',
@@ -226,6 +227,7 @@ export const store =  new  Vuex.Store({
             customer2 : {
                 name : '',
                 demographicItem: '',
+                selectedMarketCategory: '',
                 productUsage: '',
                 desiredFeature: '',
                 brandFidelity: '',
@@ -236,6 +238,7 @@ export const store =  new  Vuex.Store({
             customer3 : {
                 name : '',
                 demographicItem: '',
+                selectedMarketCategory: '',
                 productUsage: '',
                 desiredFeature: '',
                 brandFidelity: '',
