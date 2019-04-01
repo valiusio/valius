@@ -15,4 +15,4 @@ const http = Axios.create({
         headers: headers
 });
 
-export default http ;
+export default http;

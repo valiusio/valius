@@ -21,7 +21,7 @@
                             <md-input name="category" v-validate="''" v-model="businesses.business1.category"></md-input>
                         </md-field>
                         <md-field>
-                            <label>Βαθμός χρήσης προϊόντος μας</label>
+                            <label>Χρήση προϊόντος</label>
                             <md-select name="productUsage" v-validate="''" v-model="businesses.business1.productUsage">
                                 <md-optgroup>
                                     <md-option value="Υψηλή χρήση" >Υψηλή χρήση</md-option>

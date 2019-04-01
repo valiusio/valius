@@ -24,12 +24,12 @@
                         </md-field>
 
                         <md-field v-if="shouldRenderMultiple">
-                            <label>{{marketCategory}}</label>
+                            <label>{{ getLabel() }}</label>
                             <md-input  v-validate="''" v-model="customers.customer1.selectedMarketCategory"></md-input>
                         </md-field>
 
                         <md-field>
-                            <label>Βαθμός χρήσης προϊόντος μας</label>
+                            <label>Χρήση προϊόντος</label>
                             <md-select v-if="shouldRenderMultiple" name="productUsage" v-validate="''" v-model="customers.customer1.productUsage">
                                 <md-optgroup>
                                     <md-option value="Υψηλή χρήση" >Υψηλή χρήση</md-option>
@@ -80,7 +80,7 @@
                         </md-field>
 
                         <md-field>
-                            <label>Κανάλι διανομής</label>
+                            <label>Κανάλι αγοράς</label>
                             <md-input name="distributionChannel" v-validate="''" v-model="customers.customer1.distributionChannel"></md-input>
                         </md-field>
                         <md-field>
@@ -111,11 +111,11 @@
                         </md-field>
 
                         <md-field v-if="shouldRenderMultiple">
-                            <label>{{marketCategory}}</label>
+                            <label>{{ getLabel() }}</label>
                             <md-input  v-validate="''" v-model="customers.customer2.selectedMarketCategory"></md-input>
                         </md-field>
                         <md-field>
-                            <label>Βαθμός χρήσης προϊόντος μας</label>
+                            <label>Χρήση προϊόντος</label>
                             <md-select v-if="shouldRenderMultiple" name="productUsage" v-validate="''" v-model="customers.customer2.productUsage">
                                 <md-optgroup>
                                     <md-option value="Υψηλή χρήση" >Υψηλή χρήση</md-option>
@@ -195,11 +195,11 @@
                             <md-input name="demographicItem" v-validate="''" v-model="customers.customer3.demographicItem"></md-input>
                         </md-field>
                         <md-field v-if="shouldRenderMultiple">
-                            <label>{{marketCategory}}</label>
+                            <label>{{ getLabel() }}</label>
                             <md-input  v-validate="''" v-model="customers.customer3.selectedMarketCategory"></md-input>
                         </md-field>
                         <md-field>
-                            <label>Βαθμός χρήσης προϊόντος μας</label>
+                            <label>Χρήση προϊόντος</label>
                             <md-select v-if="shouldRenderMultiple" name="productUsage" v-validate="''" v-model="customers.customer3.productUsage">
                                 <md-optgroup>
                                     <md-option value="Υψηλή χρήση" >Υψηλή χρήση</md-option>
@@ -288,7 +288,7 @@
 <script>
     import InformationBanner from './../../components/InformationBanner';
     import levelUpdate from './../../services/levelUpdate';
-
+    import labelService from './../../services/marketCategoriesLabelsService';
     export default {
         name: 'CustomerProfile',
         props: [
@@ -334,6 +334,9 @@
             nextPage(event) {
 
                 this.$router.push('/market-focus');
+            },
+            getLabel() {
+                return labelService('b2c',this.marketCategory);
             },
             saveCustomers(event) {
                 event.preventDefault();
