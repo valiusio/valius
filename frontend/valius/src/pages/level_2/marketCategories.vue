@@ -19,9 +19,9 @@
                 <span
                     v-for="category in marketCategories.slice(0, Math.floor(marketCategories.length / 2))"
                     class="market-categories__category"
-                    @click="submitCategory(category)"
+                    @click="submitCategory(category.name)"
                 >
-                    {{category}}
+                    {{category.name}}
                 </span>
             </div>
             <div class="market-categories__menu"> {{ parameterTitle }} </div>
@@ -29,9 +29,9 @@
                 <span
                     v-for="category in marketCategories.slice(Math.floor(marketCategories.length / 2), marketCategories.length)"
                     class="market-categories__category"
-                    @click="submitCategory(category)"
+                    @click="submitCategory(category.name)"
                 >
-                    {{category}}
+                    {{category.name}}
                 </span>
             </div>
         </div>

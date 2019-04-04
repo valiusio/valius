@@ -72,6 +72,8 @@ var levels = levels;
         };
     }
 
+    //TODO reinitialize state response for business and customers
+
     return levels
 };
 

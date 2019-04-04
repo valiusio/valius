@@ -180,34 +180,103 @@ export const store =  new  Vuex.Store({
                 }
             },
         },
-        marketCategories : {
-            b2c : [
-                "Χρήσης προϊόντος (user-rate)",
-                "Ευαισθησία στην τιμή (sensitivity)",
-                "Αντιλαμβανόμενα Οφέλη",
-                "Πιστότητα στη μάρκα (loyalty)",
-                "Δημογραφικά",
-                "Κοινωνικό - Οικονομικό",
-                "Γεωγραφικά",
-                "Τρόπου ζωής",
-                "Κανάλι αγοράς",
-                "Μέσο ενημέρωσης",
-                "Άλλο"
+        marketCategories: {
+            b2c: [
+                {
+                    name: 'Χρήσης προϊόντος (user-rate)',
+                    label: 'Χρήσης προϊόντος (user-rate)'
+                },
+                {
+                    name: 'Ευαισθησία στην τιμή (sensitivity)',
+                    label: 'Ευαισθησία στην τιμή (sensitivity)'
+                },
+                {
+                    name: 'Αντιλαμβανόμενα Οφέλη',
+                    label: 'Αντιλαμβανόμενο Όφελος'
+                },
+                {
+                    name: 'Πιστότητα στη μάρκα (loyalty)',
+                    label: 'Πιστότητα στη μάρκα (loyalty)'
+                },
+                {
+                    name: 'Δημογραφικά',
+                    label: 'Δημογραφικά'
+                },
+                {
+                    name: 'Κοινωνικό - Οικονομικό',
+                    label: 'Κύριο Κοινωνικό-Οικονομικό Στοιχείο'
+                },
+                {
+                    name: 'Γεωγραφικά',
+                    label: 'Κύριο Γεωγραφικό στοιχείο'
+                },
+                {
+                    name: 'Τρόπου ζωής',
+                    label: 'Στοιχείο Τρόπου Ζωής'
+                },
+                {
+                    name: 'Κανάλι αγοράς',
+                    label: 'Κανάλι αγοράς'
+                },
+                {
+                    name: 'Μέσο ενημέρωσης',
+                    label: 'Κύριο Μέσο Ενημέρωσης'
+                },
+                {
+                    name: 'Άλλο',
+                    label: 'Άλλο'
+                }
+
             ],
-            b2b : [
-                "Πιστότητα στη μάρκα (loyalty)",
-                "Χρήσης προϊόντος (user-rate)",
-                "Ευαισθησία στην τιμή (sensitivity)",
-                "Αντιλαμβανόμενα Οφέλη",
-                "Μέγεθος αγορών",
-                "Τομέας",
-                "Status Χρήστη",
-                "Γεωγραφικά",
-                "Μέγεθος εταιρίας",
-                "Σχέση μεταξύ αγοραστή/πωλητή",
-                "Πολιτικές αγορών",
-                "Πρόσωπα λήψης αποφάσεων (Key decision marker)",
-                "Άλλο"
+            b2b: [
+                {
+                    name: 'Πιστότητα στη μάρκα (loyalty)',
+                    label: 'Πιστότητα στη μάρκα'
+                },
+                {
+                    name: 'Χρήσης προϊόντος (user-rate)',
+                    label: 'Χρήσης προϊόντος'
+                },
+                {
+                    name: 'Ευαισθησία στην τιμή (sensitivity)',
+                    label: 'Ευαισθησία στην τιμή'
+                },
+                {
+                    name: 'Αντιλαμβανόμενα Οφέλη',
+                    label: 'Αντιλαμβανόμενα Οφέλη'
+                },
+                {
+                    name: 'Μέγεθος αγορών',
+                    label: 'Μέγεθος αγορών'
+                },
+                {
+                    name: 'Τομέας',
+                    label: 'Τομέας'
+                },
+                {
+                    name: 'Status Χρήστη',
+                    label: 'Status Χρήστη'
+                },
+                {
+                    name: 'Γεωγραφικά',
+                    label: 'Κύριο Γεωγραφικό στοιχείο'
+                },
+                {
+                    name: 'Μέγεθος εταιρίας',
+                    label: 'Μέγεθος εταιρίας'
+                },
+                {
+                    name: 'Σχέση μεταξύ αγοραστή/πωλητή',
+                    label: 'Σχέση μεταξύ αγοραστή/πωλητή'
+                },
+                {
+                    name: 'Πολιτικές αγορών',
+                    label: 'Πολιτικές αγορών'
+                },
+                {
+                    name: 'Πρόσωπα λήψης αποφάσεων (Key decision marker)',
+                    label: 'Πρόσωπα λήψης αποφάσεων'
+                }
             ]
         },
         marketCategory : '',
@@ -217,7 +286,7 @@ export const store =  new  Vuex.Store({
             customer1 : {
                 name : '',
                 demographicItem: '',
-                selectedMarketCategory: '',
+                selectedMarketCategoryAnswer: '',
                 productUsage: '',
                 desiredFeature: '',
                 brandFidelity: '',
@@ -228,7 +297,7 @@ export const store =  new  Vuex.Store({
             customer2 : {
                 name : '',
                 demographicItem: '',
-                selectedMarketCategory: '',
+                selectedMarketCategoryAnswer: '',
                 productUsage: '',
                 desiredFeature: '',
                 brandFidelity: '',
@@ -239,7 +308,7 @@ export const store =  new  Vuex.Store({
             customer3 : {
                 name : '',
                 demographicItem: '',
-                selectedMarketCategory: '',
+                selectedMarketCategoryAnswer: '',
                 productUsage: '',
                 desiredFeature: '',
                 brandFidelity: '',
@@ -253,6 +322,7 @@ export const store =  new  Vuex.Store({
                 name: '',
                 category: '',
                 productUsage: '',
+                selectedBusinessCategoryAnswer: '',
                 desiredFeature: '',
                 brandFidelity: '',
                 communicationMeans: [],
@@ -263,6 +333,7 @@ export const store =  new  Vuex.Store({
                 name: '',
                 category: '',
                 productUsage: '',
+                selectedBusinessCategoryAnswer: '',
                 desiredFeature: '',
                 brandFidelity: '',
                 communicationMeans: [],
@@ -273,6 +344,7 @@ export const store =  new  Vuex.Store({
                 name: '',
                 category: '',
                 productUsage: '',
+                selectedBusinessCategoryAnswer: '',
                 desiredFeature: '',
                 brandFidelity: '',
                 communicationMeans: [],
