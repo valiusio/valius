@@ -276,6 +276,10 @@ export const store =  new  Vuex.Store({
                 {
                     name: 'Πρόσωπα λήψης αποφάσεων (Key decision marker)',
                     label: 'Πρόσωπα λήψης αποφάσεων'
+                },
+                {
+                    name: 'Άλλο',
+                    label: 'Άλλο'
                 }
             ]
         },
