@@ -12,6 +12,12 @@ const ProfileNavigationNameMapping = {
     evaluationProcess      : { name : "Διαδικασία Αξιολόγησης", link : '/evaluationProcessIntro'},
 
 
+    successFactors        : { name : "Παράγοντες επιτυχίας", link : '/successFactorsIntro'},
+    customersSample       : { name : "Δείγμα πελατών", link : '/customersSampleIntro'},
+    customersFeedback     : { name : "Feedback πελατών", link : '/customersFeedbackIntro'},
+
 };
+
+//TODO add all this info into levels object inside store
 
 export { ProfileNavigationNameMapping };

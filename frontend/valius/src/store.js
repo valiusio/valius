@@ -357,6 +357,8 @@ export const store =  new  Vuex.Store({
             },
 
         },
+        customersPurchasingCriteria: [],
+        questionnaire: [],
         levels: {
                     start: {
                         locked: false,
@@ -389,10 +391,16 @@ export const store =  new  Vuex.Store({
                                 evaluationProcess      : { locked : true, completed: false,rating: 0},
                             }
                     },
-                    // productAssessment: {
-                    //     locked: true,
-                    //     completed: false,
-                    // },
+                    productAssessment: {
+                        locked: true,
+                        completed: false,
+                        subLevels:
+                            {
+                                successFactors    : { locked : false, completed: false, rating: 0},
+                                customersSample   : { locked : true, completed: false,rating: 0},
+                                customersFeedback : { locked : true, completed: false,rating: 0},
+                            }
+                    },
                     // readyToStrategize: {
                     //     locked: true,
                     //     completed: false,
@@ -453,6 +461,12 @@ export const store =  new  Vuex.Store({
         },
         marketAssessments(state) {
             return state.marketAssessments;
+        },
+        customersPurchasingCriteria(state) {
+            return state.customersPurchasingCriteria;
+        },
+        questionnaire(state) {
+            return state.questionnaire;
         }
 
     },
@@ -511,6 +525,12 @@ export const store =  new  Vuex.Store({
         },
         updateMarketAssessments(state, payload) {
             state.marketAssessments = payload;
+        },
+        updateCustomersPurchasingCriteria(state, payload) {
+            state.customersPurchasingCriteria = payload;
+        },
+        updateQuestionnaire(state, payload) {
+            state.questionnaire = payload;
         }
     },
     actions: {
@@ -587,6 +607,12 @@ export const store =  new  Vuex.Store({
         },
         updateMarketAssessments(context, payload) {
             context.commit('updateMarketAssessments', payload);
+        },
+        updateCustomersPurchasingCriteria(context, payload) {
+            context.commit('updateCustomersPurchasingCriteria', payload);
+        },
+        updateQuestionnaire(context, payload) {
+            context.commit('updateQuestionnaire', payload);
         }
     }
 });

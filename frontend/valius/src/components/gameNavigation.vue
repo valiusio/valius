@@ -8,9 +8,7 @@
                 <img :src=" backgroundImg">
                 <span>{{ levelNameLabel }}</span>
             </div>
-
             <div class="game-navigation__actions-container">
-
                 <profile-navigation
                     v-for="(level, key) in levels[currentLevel].subLevels "
                     :type="key"

@@ -71,6 +71,18 @@ var levels = levels;
                 }
         };
     }
+    if(!levels.productAssessment) {
+        levels['productAssessment'] = {
+            locked: false,
+            completed: false,
+            subLevels:
+                {
+                    successFactors    : { locked : false, completed: false, rating: 0},
+                    customersSample   : { locked : true, completed: false,rating: 0},
+                    customersFeedback : { locked : true, completed: false,rating: 0},
+                }
+        };
+    }
 
     //TODO reinitialize state response for business and customers
 

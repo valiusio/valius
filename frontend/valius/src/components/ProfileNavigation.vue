@@ -6,7 +6,7 @@
             <img :src="getTypeImg()" class="md-image profile-navigation__type"/>
             <img :src="getRatingImg()" class="profile-navigation__rating"/>
 
-            <img v-if="locked == true "
+            <img v-if="locked"
                  src="../assets/images/gameNavigation/locked.png"
                  class="profile-navigation__locked"/>
         </div>

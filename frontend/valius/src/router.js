@@ -32,6 +32,12 @@ import evaluationProcess from './pages/level_3/evaluationProcess';
 import attractivenessIntro from './pages/level_3/attractivenessIntro';
 import marketEvaluation from './pages/level_3/marketsEvaluation';
 import marketEvaluationDepartment from './pages/level_3/marketEvaluationDepartment';
+import successFactorsintro from './pages/level_4/successFactorsIntro';
+import successFactors from './pages/level_4/successFactors';
+import verifyAttractivenessCriteria from './pages/level_4/verifyAttractivenessCriteria';
+import customersSampleIntro from './pages/level_4/customersSampleIntro';
+import questionnaire from './pages/level_4/questionnaire';
+import customerFeedbackIntro from './pages/level_4/customerFeedbackIntro';
 import test from './pages/testpage';
 
 Vue.use(Router)
@@ -286,6 +292,55 @@ const router = new Router({
           requiresAuth: true
         }
     },
+    {
+        path: '/successFactorsIntro',
+        name: 'successFactorsIntro',
+        component: successFactorsintro,
+        meta : {
+          requiresAuth: true
+        }
+    },
+    {
+        path: '/successFactors',
+        name: 'successFactors',
+        component: successFactors,
+        meta : {
+          requiresAuth: true
+        }
+    },
+    {
+        path: '/verifyAttractivenessCriteria',
+        name: 'verifyAttractivenessCriteria',
+        component: verifyAttractivenessCriteria,
+        meta : {
+          requiresAuth: true
+        }
+    },
+    {
+        path: '/customersSampleIntro',
+        name: 'customersSampleIntro',
+        component: customersSampleIntro,
+        meta : {
+          requiresAuth: true
+        }
+    },
+    {
+        path: '/questionnaire',
+        name: 'questionnaire',
+        component: questionnaire,
+        meta : {
+          requiresAuth: true
+        }
+    },
+    {
+        path: '/customersFeedbackIntro',
+        name: 'customerFeedbackIntro',
+        component: customerFeedbackIntro,
+        meta : {
+          requiresAuth: true
+        }
+    }
+
   ]
 });
 export default router;

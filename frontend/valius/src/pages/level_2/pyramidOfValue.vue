@@ -116,12 +116,11 @@
                 return require("./../../assets/images/IntangibleFactors/" + img + '.png');
             },
             drag(event,IntangibleFactor) {
-                event.dataTransfer.setData("tntangible-factor", IntangibleFactor);
+                event.dataTransfer.setData("intangible-factor", IntangibleFactor);
             },
             drop(event) {
-                console.log(1)
                 event.preventDefault();
-                var data = event.dataTransfer.getData("tntangible-factor");
+                var data = event.dataTransfer.getData("intangible-factor");
 
                 data && !this.pyramidIsFull
                 && this.pyramicIntangibleFactors.push(data)

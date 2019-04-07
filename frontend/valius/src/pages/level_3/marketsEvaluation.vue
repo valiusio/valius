@@ -88,7 +88,7 @@
                 this.levels.marketAssessment.subLevels.evaluationProcess.completed = true;
                 this.levels.marketAssessment.subLevels.evaluationProcess.rating    = 3;
                 this.levels.marketAssessment.completed = true;
-
+                this.levels.productAssessment.locked = false;
                 this.$store.dispatch('updateLevels', this.levels);
                 levelUpdate.levelUpdate(this.$store, 'productAssessment');
                 this.$router.push('/game-navigation/marketAssessment');
