@@ -34,10 +34,11 @@ import marketEvaluation from './pages/level_3/marketsEvaluation';
 import marketEvaluationDepartment from './pages/level_3/marketEvaluationDepartment';
 import successFactorsintro from './pages/level_4/successFactorsIntro';
 import successFactors from './pages/level_4/successFactors';
-import verifyAttractivenessCriteria from './pages/level_4/verifyAttractivenessCriteria';
+import verifySuccessFactors from './pages/level_4/verifySuccessFactors';
 import customersSampleIntro from './pages/level_4/customersSampleIntro';
 import questionnaire from './pages/level_4/questionnaire';
 import customerFeedbackIntro from './pages/level_4/customerFeedbackIntro';
+import customersInvitation from './pages/level_4/customersInvitation';
 import test from './pages/testpage';
 
 Vue.use(Router)
@@ -309,9 +310,9 @@ const router = new Router({
         }
     },
     {
-        path: '/verifyAttractivenessCriteria',
-        name: 'verifyAttractivenessCriteria',
-        component: verifyAttractivenessCriteria,
+        path: '/verifySuccessFactors',
+        name: 'verifySuccessFactors',
+        component: verifySuccessFactors,
         meta : {
           requiresAuth: true
         }
@@ -336,6 +337,14 @@ const router = new Router({
         path: '/customersFeedbackIntro',
         name: 'customerFeedbackIntro',
         component: customerFeedbackIntro,
+        meta : {
+          requiresAuth: true
+        }
+    },
+    {
+        path: '/customersInvitation',
+        name: 'customersInvitation',
+        component: customersInvitation,
         meta : {
           requiresAuth: true
         }

@@ -21,6 +21,9 @@
                     <span class="icon"></span>
                     <input type="text" v-model="questionsObject[2]">
                 </div>
+                <div v-if="getAllBrands()" class="row brands__container">
+                    <span v-for="brand in getAllBrands()" class="brands__item">{{ brand }}</span>
+                </div>
                 <div class="row">
                     <span class="icon"></span>
                     <input type="text" v-model="questionsObject[3]">
@@ -102,6 +105,15 @@
 
                 return questions;
             },
+            getAllBrands() {
+                let brands = [];
+                this.$store.getters.business.business && brands.push(this.$store.getters.business.business);
+                this.$store.getters.competitors.competitor1.name && brands.push(this.$store.getters.competitors.competitor1.name);
+                this.$store.getters.competitors.competitor2.name && brands.push(this.$store.getters.competitors.competitor2.name);
+                this.$store.getters.competitors.competitor3.name && brands.push(this.$store.getters.competitors.competitor3.name);
+
+                return brands;
+            },
             nextPage() {
                 this.questionnaire[0] = this.questionsObject[1];
                 this.questionnaire[1] = this.questionsObject[2];
@@ -155,7 +167,7 @@
                 display: flex;
                 margin: 10px 0 0 0;
 
-                span {
+                .icon {
                     width: 55px;
                     height: 55px;
                     border: 10px solid #38BBD5;
@@ -165,10 +177,17 @@
 
                 input {
                     border: 2px solid gray;
-                    text-align: center;
+                    text-align: left;
                     border-radius: 10px;
-                    width: 500px;
+                    width: 600px;
                     padding: 20px 10px;
+                    outline: none;
+
+                    &:focus {
+                        -moz-box-shadow:    3px 3px 5px 6px #ccc;
+                        -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+                        box-shadow:         3px 3px 5px 6px #ccc;
+                    }
                 }
             }
         }
@@ -177,6 +196,21 @@
             text-align: center;
             font-size: 18px;
             margin-bottom: 30px;
+        }
+    }
+
+    .brands {
+        &__container {
+            align-items: flex-start;
+            padding-left: 80px;
+        }
+
+        &__item {
+            padding: 4px 10px;
+            background-color: rgba(225,101,17,0.95);
+            color: white;
+            margin-right: 10px;
+            border-radius: 5px;
         }
     }
 </style>

@@ -12,7 +12,7 @@
                     <img class="marketsEvaluation__cover" :src="img">
                 <span
                     class="marketsEvaluation__category marketsEvaluation__category--3"
-                    :class="hasRating(markets.market1) && 'marketsEvaluation__completed'"
+                    :class="hasRating(markets.market3) && 'marketsEvaluation__completed'"
 
                 >
                     {{markets.market3.name}}
@@ -21,7 +21,7 @@
 
                 <span
                     class="marketsEvaluation__category marketsEvaluation__category--1"
-                    :class="hasRating(markets.market2) && 'marketsEvaluation__completed'"
+                    :class="hasRating(markets.market1) && 'marketsEvaluation__completed'"
                 >
                     {{markets.market1.name}}
                 </span>
@@ -29,7 +29,7 @@
 
                 <span
                     class="marketsEvaluation__category marketsEvaluation__category--2"
-                    :class="hasRating(markets.market3) && 'marketsEvaluation__completed'"
+                    :class="hasRating(markets.market2) && 'marketsEvaluation__completed'"
 
                 >
                     {{markets.market2.name}}

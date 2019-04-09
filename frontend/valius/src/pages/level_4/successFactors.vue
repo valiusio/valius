@@ -9,8 +9,7 @@
             </h1>
 
             <p>
-                <b>Eπίλεξε τους τέσσερεις (4) παράγοντες επιτυχίας</b> που πιστεύεις ότι κρίνουν περισσότερο τις
-                αποφάσεις των τμημάτων της αγοράς σου.
+                <b>Eπίλεξε τους τέσσερεις (4) παράγοντες επιτυχίας</b>
             </p>
         </information-banner>
 
@@ -47,7 +46,7 @@
                 class="pyramid-game__next-level"
                 @click="goToNextPage"
             >
-                Go to next Level
+               Next
             </button>
         </div>
 
@@ -102,7 +101,7 @@
             goToNextPage(ev) {
                 ev.preventDefault();
                 this.$store.dispatch('updateCustomersPurchasingCriteria', this.customersPurchasingCriteria);
-                this.$router.push('/verifyAttractivenessCriteria');
+                this.$router.push('/verifySuccessFactors');
             }
 
         }
@@ -117,6 +116,7 @@
 
         p {
             font-size: 14px;
+            font-weight: 800;
         }
     }
 
@@ -126,7 +126,7 @@
         justify-content: center;
         align-items: center;
     }
-    .pyramid-game__game-subtitle {
+    .pyramid-game {
         font-style: italic;
         font-size: 15px;
     }
@@ -142,6 +142,23 @@
         opacity: 0.52;
         top: 0;
         left: 0;
+
+        &:after {
+            content: 'x';
+            background: red;
+            color: white;
+            border: 1px solid black;
+            border-radius: 2em;
+            display: inline-block;
+            font-size: 12px;
+            height: 20px;
+            line-height: 2px;
+            margin: 0 0 8px;
+            padding: 7px 0 0 0;
+            text-align: center;
+            width: 20px;
+            font-weight: 900;
+        }
     }
 </style>
 

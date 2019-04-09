@@ -19,13 +19,13 @@
                             <label>Κλάδος</label>
                             <md-input name="category" v-validate="''" v-model="businesses[`business${i}`].category"></md-input>
                         </md-field>
-                        <md-field v-if="answerTypeMultiple">
+                        <md-field v-if="displayExtraOption">
                             <label>{{ marketCategory }}</label>
                             <md-input name="category" v-validate="''" v-model="businesses[`business${i}`].selectedBusinessCategoryAnswer"></md-input>
                         </md-field>
                         <md-field>
                             <label>Χρήση προϊόντος</label>
-                            <md-select v-if="answerTypeMultiple" name="productUsage" v-validate="''" v-model="businesses[`business${i}`].productUsage">
+                            <md-select name="productUsage" v-validate="''" v-model="businesses[`business${i}`].productUsage">
                                 <md-optgroup>
                                     <md-option value="Υψηλή χρήση" >Υψηλή χρήση</md-option>
                                     <md-option value="Τακτική χρήση" >Τακτική χρήση</md-option>
@@ -34,7 +34,6 @@
                                     <md-option value="Δυνητική χρήση">Δυνητική χρήση</md-option>
                                 </md-optgroup>
                             </md-select>
-                            <md-input v-else name="productUsage" v-validate="''" v-model="businesses[`business${i}`].productUsage"></md-input>
                         </md-field>
                         <md-field>
                             <label>Επιθυμητό χαρακτηριστικό</label>
@@ -43,7 +42,7 @@
 
                         <md-field>
                             <label>Πιστότητα στη μάρκα</label>
-                            <md-select v-if="answerTypeMultiple" name="brandFidelity" v-validate="''" v-model="businesses[`business${i}`].brandFidelity">
+                            <md-select name="brandFidelity" v-validate="''" v-model="businesses[`business${i}`].brandFidelity">
                                 <md-optgroup>
                                     <md-option value="Πιστοί/ Ικανοποιημένοι" >Πιστοί/ Ικανοποιημένοι</md-option>
                                     <md-option value="Πρώιμοι πελάτες" >Πρώιμοι πελάτες</md-option>
@@ -52,7 +51,6 @@
                                     <md-option value="Μη πληροφορημένοι">Μη πληροφορημένοι</md-option>
                                 </md-optgroup>
                             </md-select>
-                            <md-input v-else name="brandFidelity" v-validate="''" v-model="businesses[`business${i}`].brandFidelity"></md-input>
                         </md-field>
                         <md-field>
                             <label>Mέσα επικοινωνίας</label>
@@ -76,7 +74,7 @@
                         </md-field>
                         <md-field>
                             <label>Μέγεθος εταιρίας</label>
-                            <md-select v-if="answerTypeMultiple" name="businessSize" v-validate="''" v-model="businesses[`business${i}`].businessSize" >
+                            <md-select  name="businessSize" v-validate="''" v-model="businesses[`business${i}`].businessSize" >
                                 <md-option value="Πολυεθνική">Πολυεθνική</md-option>
                                 <md-option value="Μεγάλη">Μεγάλη</md-option>
                                 <md-option value="Μεσαία">Μεσαία</md-option>
@@ -84,7 +82,6 @@
                                 <md-option value="Πολύ-μικρή">Πολύ-μικρή</md-option>
                                 <md-option value="Ελεύθερος επαγγελματίας">Ελεύθερος επαγγελματίας</md-option>
                             </md-select>
-                            <md-input v-else name="businessSize" v-validate="''" v-model="businesses[`business${i}`].businessSize"></md-input>
                         </md-field>
                     </div>
                 </div>
@@ -127,7 +124,7 @@
             }
         },
         computed:{
-            answerTypeMultiple() {
+            displayExtraOption() {
                 return this.plainTextItems.indexOf(this.marketCategory) === -1;
             }
         },

@@ -62,7 +62,7 @@
         },
         methods: {
             next() {
-                this.$router.push('');
+                this.$router.push('/customersInvitation');
             }
         }
     }

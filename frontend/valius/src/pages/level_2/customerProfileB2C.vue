@@ -23,14 +23,14 @@
                             <md-input name="demographicItem" v-validate="''" v-model="customers[`customer${i}`].demographicItem"></md-input>
                         </md-field>
 
-                        <md-field v-if="answerTypeMultiple">
+                        <md-field v-if="displayExtraOption">
                             <label>{{ marketCategory }}</label>
                             <md-input name="demographicItem" v-validate="''" v-model="customers[`customer${i}`].selectedMarketCategoryAnswer"></md-input>
                         </md-field>
 
                         <md-field>
                             <label>Βαθμός χρήσης προϊόντος μας</label>
-                            <md-select v-if="answerTypeMultiple" name="productUsage" v-validate="''" v-model="customers[`customer${i}`].productUsage">
+                            <md-select  name="productUsage" v-validate="''" v-model="customers[`customer${i}`].productUsage">
                                 <md-optgroup>
                                     <md-option value="Υψηλή χρήση" >Υψηλή χρήση</md-option>
                                     <md-option value="Τακτική χρήση" >Τακτική χρήση</md-option>
@@ -39,7 +39,6 @@
                                     <md-option value="Δυνητική χρήση">Δυνητική χρήση</md-option>
                                 </md-optgroup>
                             </md-select>
-                            <md-input v-else name="productUsage" v-validate="''" v-model="customers[`customer${i}`].productUsage"></md-input>
                         </md-field>
 
 
@@ -50,7 +49,7 @@
 
                         <md-field>
                             <label>Πιστότητα στη μάρκα</label>
-                            <md-select v-if="answerTypeMultiple" name="brandFidelity" v-validate="''" v-model="customers[`customer${i}`].brandFidelity">
+                            <md-select name="brandFidelity" v-validate="''" v-model="customers[`customer${i}`].brandFidelity">
                                 <md-optgroup>
                                     <md-option value="Πιστοί/ Ικανοποιημένοι" >Πιστοί/ Ικανοποιημένοι</md-option>
                                     <md-option value="Πρώιμοι πελάτες" >Πρώιμοι πελάτες</md-option>
@@ -59,12 +58,11 @@
                                     <md-option value="Μη πληροφορημένοι">Μη πληροφορημένοι</md-option>
                                 </md-optgroup>
                             </md-select>
-                            <md-input v-else name="brandFidelity" v-validate="''" v-model="customers[`customer${i}`].brandFidelity"></md-input>
                         </md-field>
 
                         <md-field>
                             <label>Mέσo Ενημέρωσης</label>
-                            <md-select v-if="answerTypeMultiple" name="communicationMeans" v-validate="''" v-model="customers[`customer${i}`].communicationMeans" multiple >
+                            <md-select  name="communicationMeans" v-validate="''" v-model="customers[`customer${i}`].communicationMeans" >
                                     <md-option value="TV" >TV</md-option>
                                     <md-option value="Ραδιόφωνο" >Ραδιόφωνο</md-option>
                                     <md-option value="Διαφήμιση Online" >Διαφήμιση Online</md-option>
@@ -77,7 +75,6 @@
                                     <md-option value="Εξωτερικοί χώρο">Εξωτερικοί χώρο</md-option>
                                     <md-option value="Προσωπική πώληση">Προσωπική πώληση</md-option>
                             </md-select>
-                            <md-input v-else name="communicationMeans" v-validate="''" v-model="customers[`customer${i}`].communicationMeans"></md-input>
                         </md-field>
 
                         <md-field>
@@ -86,7 +83,7 @@
                         </md-field>
                         <md-field>
                             <label>Τρόπος ζωής</label>
-                            <md-select v-if="answerTypeMultiple" name="communicationMeans" v-validate="''" v-model="customers[`customer${i}`].lifeStyle" multiple >
+                            <md-select  name="communicationMeans" v-validate="''" v-model="customers[`customer${i}`].lifeStyle" multiple >
                                 <md-option value="Αθλητικοί" >Αθλητικοί</md-option>
                                 <md-option value="Αισθητικοί" >Αισθητικοί</md-option>
                                 <md-option value="Αισιόδοξοι" >Αισιόδοξοι</md-option>
@@ -98,7 +95,6 @@
                                 <md-option value="Απαιτητικοί" >Απαιτητικοί</md-option>
                                 <md-option value="Αποφασιστικοί" >Αποφασιστικοί</md-option>
                             </md-select>
-                            <md-input v-else name="communicationMeans" v-validate="''" v-model="customers[`customer${i}`].lifeStyle"></md-input>
                         </md-field>
                 </div>
 
@@ -146,7 +142,7 @@
             InformationBanner : InformationBanner
         },
         computed:{
-            answerTypeMultiple() {
+            displayExtraOption() {
                 return this.plainTextItems.indexOf(this.marketCategory) === -1;
             }
         },

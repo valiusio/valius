@@ -3,19 +3,23 @@
         <information-banner
             type="success"
         >
-            <h1>Σε ποια παράμετρο βασίστηκες για την τμηματοποίηση της αγοράς σου;</h1>
-            <p>Επίλεξε μία από τις παρακάτω παραμέτρους.</p>
+            <h1>Τώρα μπορείς να υποβάλλεις τις επιλογές σου!</h1>
+            <p>Μπορείς ακόμα να αλλάξεις κάποιο από τα παρακάτω στοιχεία, μόλις υποβληθούν δεν θα μπορείς
+                να κάνεις άλλες αλλαγές.</p>
         </information-banner>
 
-
         <div class="market-categories__container">
+            <button class="back" @click="back">
+                Go back to edit
+            </button>
             <div
-                v-for="i in getSelectedMarketAssessments()"
+                v-for="i in customersPurchasingCriteria"
                 class="market-categories__row"
             >
-                <img :src="getMarketAssessmentImgFromName(i)">
+                <img :src="getFactorImg(i)">
+
                 <span>
-                    {{ getAttractivenessCriteriaLabelByName(i) }}
+                    {{ i }}
                 </span>
             </div>
         </div>
@@ -33,17 +37,17 @@
 
 <script>
     import InformationBanner from './../../components/InformationBanner';
-    import AttractivenessCriteriaService from './../../services/AttractivenessCriteria';
 
     export default {
-        name: 'verifyAttractivenessCriteria',
+        name: 'verifySuccessFactors',
         props: [
 
         ],
         data() {
             return {
                 selectedMarketAssessments : this.$store.getters.marketAssessments,
-                levels: this.$store.getters.levels
+                levels: this.$store.getters.levels,
+                customersPurchasingCriteria : this.$store.getters.customersPurchasingCriteria
             }
         },
         computed:{
@@ -53,22 +57,8 @@
             "information-banner" : InformationBanner
         },
         methods: {
-            getSelectedMarketAssessments() {
-                let selectedMarketAssessments = [];
-                let marketKeys = Object.keys(this.selectedMarketAssessments);
-                marketKeys.map( (key) => {
-                    selectedMarketAssessments.push(this.selectedMarketAssessments[key].name);
-                });
-
-                return selectedMarketAssessments;
-            },
-            getAttractivenessCriteriaLabelByName(name) {
-                return AttractivenessCriteriaService.AttractivenessCriteria.filter((el) => {
-                    return el.name === name;
-                })[0].label;
-            },
-            getMarketAssessmentImgFromName(assessment) {
-                return require(`./../../assets/images/attractivenessCriteria/${assessment}.png`);
+            getFactorImg(i) {
+                return require(`./../../assets/images/IntangibleFactors/${i}.png`)
             },
             nextPage() {
                 this.levels.productAssessment.subLevels.successFactors.completed = true;
@@ -77,6 +67,9 @@
                 this.$store.dispatch('updateLevels', this.levels).then(()=>{
                     this.$router.push('/game-navigation/productAssessment');
                 });
+            },
+            back() {
+                this.$router.push('/successFactors');
             }
         }
     }
@@ -99,8 +92,8 @@
             display: flex;
 
             img {
-                width: 50px;
-                height: 50px;
+                width: 70px;
+                height: 70px;
                 margin-right: 20px;
             }
 
@@ -108,7 +101,7 @@
                 display: flex;
                 flex: 3;
                 width: 300px;
-                height: 50px;
+                height: 70px;
                 border-radius: 10px;
                 justify-content: center;
                 align-items: center;
@@ -116,6 +109,19 @@
                 font-style: italic;
             }
         }
+    }
+    .back {
+        width: 120px;
+        height: 40px;
+        margin: 0 auto 0 0;
+        display: block;
+        outline: none;
+        background-color: rgba(210,51,37,0.95);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 14px;
+        cursor: pointer;
     }
     .submit {
         width: 200px;
