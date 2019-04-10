@@ -169,15 +169,15 @@
                 if(this.selectedMarket === 'b2b') {
                     if(spesificCategories.b2b.indexOf(this.marketCategory) === -1) {
                         productAnswers = [
-                            this.$store.getters.business.business1.selectedBusinessCategoryAnswer,
-                            this.$store.getters.business.business2.selectedBusinessCategoryAnswer,
-                            this.$store.getters.business.business3.selectedBusinessCategoryAnswer,
+                            this.$store.getters.businesses.business1.selectedBusinessCategoryAnswer,
+                            this.$store.getters.businesses.business2.selectedBusinessCategoryAnswer,
+                            this.$store.getters.businesses.business2.selectedBusinessCategoryAnswer,
                         ]
                     }else {
                         productAnswers = [
-                            this.$store.getters.business.business1.productUsage,
-                            this.$store.getters.business.business2.productUsage,
-                            this.$store.getters.business.business3.productUsage,
+                            this.$store.getters.businesses.business1.productUsage,
+                            this.$store.getters.businesses.business2.productUsage,
+                            this.$store.getters.businesses.business3.productUsage,
                         ];
                     }
                 }
