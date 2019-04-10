@@ -9,9 +9,7 @@
         </information-banner>
 
         <div class="market-categories__container">
-            <button class="back" @click="back">
-                Go back to edit
-            </button>
+
             <div
                 v-for="i in customersPurchasingCriteria"
                 class="market-categories__row"
@@ -23,7 +21,9 @@
                 </span>
             </div>
         </div>
-
+        <button class="back" @click="back">
+            Go back to edit
+        </button>
         <button
             class="submit"
             @click="nextPage()"

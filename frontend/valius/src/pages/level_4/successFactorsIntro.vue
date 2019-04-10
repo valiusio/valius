@@ -69,9 +69,13 @@
         }
     }
 </script>
-<style scoped>
+<style lang="scss" scoped>
+
+    .information-banner {
+        display: none;
+    }
     .container {
-        border-color: green;
+        border-color: rgba(73, 170, 53, 0.95);
     }
 
     h1 {

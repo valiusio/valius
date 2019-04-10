@@ -127,7 +127,6 @@
         align-items: center;
     }
     .pyramid-game {
-        font-style: italic;
         font-size: 15px;
     }
 
