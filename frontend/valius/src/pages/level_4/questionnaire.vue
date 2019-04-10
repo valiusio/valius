@@ -17,20 +17,36 @@
                     <span class="icon"></span>
                     <input type="text" v-model="questionsObject[1]">
                 </div>
+                <div class="row answer">
+                    <md-checkbox disabled>Ναι</md-checkbox>
+                    <md-checkbox disabled>Οχι</md-checkbox>
+                </div>
                 <div class="row">
                     <span class="icon"></span>
                     <input type="text" v-model="questionsObject[2]">
                 </div>
+
                 <div v-if="getAllBrands()" class="row brands__container">
                     <span v-for="brand in getAllBrands()" class="brands__item">{{ brand }}</span>
+                </div>
+                <div v-if="getAllBrands()" class="row answer">
+                    <md-checkbox disabled>Ναι</md-checkbox>
+                    <md-checkbox disabled>Οχι</md-checkbox>
                 </div>
                 <div class="row">
                     <span class="icon"></span>
                     <input type="text" v-model="questionsObject[3]">
                 </div>
+                <div class="row answer">
+                    <md-checkbox disabled>Ναι</md-checkbox>
+                    <md-checkbox disabled>Οχι</md-checkbox>
+                </div>
                 <div class="row">
                     <span class="icon"></span>
                     <input type="text" v-model="questionsObject[4]">
+                </div>
+                <div v-if="getAllProductAnswers()" class="row brands__container">
+                    <span v-for="product in getAllProductAnswers()" class="brands__item">{{ product }}</span>
                 </div>
             </div>
 
@@ -61,6 +77,7 @@
         data(){
             return {
                 selectedMarket: this.$store.getters.selectedMarket,
+                marketCategory : this.$store.getters.marketCategory,
                 levels: this.$store.getters.levels,
                 business: this.$store.getters.business,
                 product: this.$store.getters.product,
@@ -107,12 +124,64 @@
             },
             getAllBrands() {
                 let brands = [];
-                this.$store.getters.business.business && brands.push(this.$store.getters.business.business);
+                this.$store.getters.product.brandName && brands.push(this.$store.getters.product.brandName);
                 this.$store.getters.competitors.competitor1.name && brands.push(this.$store.getters.competitors.competitor1.name);
                 this.$store.getters.competitors.competitor2.name && brands.push(this.$store.getters.competitors.competitor2.name);
                 this.$store.getters.competitors.competitor3.name && brands.push(this.$store.getters.competitors.competitor3.name);
 
                 return brands;
+            },
+
+            getAllProductAnswers() {
+                let spesificCategories = {
+                    b2c :[
+                        'Δημογραφικά',
+                        'Χρήσης προϊόντος (user-rate)',
+                        'Πιστότητα στη μάρκα (loyalty)',
+                        'Μέσο ενημέρωσης',
+                        'Τρόπου ζωής'
+                    ],
+                    b2b :[
+                        'Τομέας',
+                        'Χρήσης προϊόντος (user-rate)',
+                        'Πιστότητα στη μάρκα (loyalty)',
+                        'Μέγεθος εταιρίας'
+                    ]
+                }
+
+                let productAnswers = [];
+                if(this.selectedMarket === 'b2c') {
+                    if(spesificCategories.b2c.indexOf(this.marketCategory) === -1) {
+                        productAnswers = [
+                            this.$store.getters.customers.customer1.selectedMarketCategoryAnswer,
+                            this.$store.getters.customers.customer2.selectedMarketCategoryAnswer,
+                            this.$store.getters.customers.customer3.selectedMarketCategoryAnswer,
+                        ]
+                    }else {
+                        productAnswers = [
+                            this.$store.getters.customers.customer1.productUsage,
+                            this.$store.getters.customers.customer2.productUsage,
+                            this.$store.getters.customers.customer3.productUsage,
+                        ];
+                    }
+                }
+
+                if(this.selectedMarket === 'b2b') {
+                    if(spesificCategories.b2b.indexOf(this.marketCategory) === -1) {
+                        productAnswers = [
+                            this.$store.getters.business.business1.selectedBusinessCategoryAnswer,
+                            this.$store.getters.business.business2.selectedBusinessCategoryAnswer,
+                            this.$store.getters.business.business3.selectedBusinessCategoryAnswer,
+                        ]
+                    }else {
+                        productAnswers = [
+                            this.$store.getters.business.business1.productUsage,
+                            this.$store.getters.business.business2.productUsage,
+                            this.$store.getters.business.business3.productUsage,
+                        ];
+                    }
+                }
+                return productAnswers;
             },
             nextPage() {
                 this.questionnaire[0] = this.questionsObject[1];
@@ -165,7 +234,7 @@
 
             .row {
                 display: flex;
-                margin: 10px 0 0 0;
+                margin: 0;
 
                 .icon {
                     width: 55px;
@@ -198,9 +267,12 @@
             margin-bottom: 30px;
         }
     }
-
+    .answer {
+        padding: 0 0 20px 90px;
+    }
     .brands {
         &__container {
+            padding-top: 10px;
             align-items: flex-start;
             padding-left: 80px;
         }
