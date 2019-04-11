@@ -145,6 +145,9 @@
         left: 0;
 
         &:after {
+            position: absolute;
+            right: 0;
+            top: -6px;
             content: 'x';
             background: red;
             color: white;
