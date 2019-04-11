@@ -85,7 +85,7 @@
         },
         methods: {
             getIntangibleFactorImg(img) {
-                return require("./../../assets/images/IntangibleFactors/" + img + '.png');
+                return require("./../../assets/images/IntangibleFactors/boxedIcons/" + img + '.png');
             },
             selectItem(item) {
                 if(this.customersPurchasingCriteria.indexOf(item) >= 0 ) {

@@ -51,12 +51,13 @@
                         :class=" pyramidIsFull ? 'pyramid-game__intangible-factors__container--disabled' : ''"
                         draggable="false"
                     >
-                        <template v-for="IntangibleFactor in IntangibleFactors">
+                        <template v-for="(IntangibleFactor, key) in IntangibleFactors">
                             <img
-                                :src="getIntangibleFactorImg(IntangibleFactor)"
+                                v-if="IntangibleFactor.name && pyramicIntangibleFactors.indexOf(IntangibleFactor.name) === -1"
+                                :src="getIntangibleFactorImg(IntangibleFactor.name)"
                                 class="pyramid-game__intangible-factors--img"
                                 draggable="true"
-                                v-on:dragstart="drag($event, IntangibleFactor)"
+                                v-on:dragstart="drag($event, IntangibleFactor.name)"
                             >
                         </template>
                     </div>
@@ -111,9 +112,10 @@
                 return this.pyramicIntangibleFactors.length >= 5;
             }
         },
+        // TODO refactor the add / delete logic on methods, remove unnecessary data from store
         methods: {
             getIntangibleFactorImg(img) {
-                return require("./../../assets/images/IntangibleFactors/" + img + '.png');
+                return require("./../../assets/images/IntangibleFactors/boxedIcons/" + img + '.png');
             },
             drag(event,IntangibleFactor) {
                 event.dataTransfer.setData("intangible-factor", IntangibleFactor);

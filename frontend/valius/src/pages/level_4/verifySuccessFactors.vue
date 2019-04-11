@@ -9,7 +9,6 @@
         </information-banner>
 
         <div class="market-categories__container">
-
             <div
                 v-for="i in customersPurchasingCriteria"
                 class="market-categories__row"
@@ -17,7 +16,7 @@
                 <img :src="getFactorImg(i)">
 
                 <span>
-                    {{ i }}
+                    {{ getByingCriteriaLabel(i) }}
                 </span>
             </div>
         </div>
@@ -37,6 +36,7 @@
 
 <script>
     import InformationBanner from './../../components/InformationBanner';
+    import { IntangibleFactors } from './../../services/IntangibleFactorsService';
 
     export default {
         name: 'verifySuccessFactors',
@@ -58,7 +58,12 @@
         },
         methods: {
             getFactorImg(i) {
-                return require(`./../../assets/images/IntangibleFactors/${i}.png`)
+                return require(`./../../assets/images/IntangibleFactors/icons/${i}.png`)
+            },
+            getByingCriteriaLabel(criteria) {
+                return IntangibleFactors.filter(el => {
+                    return el.name === criteria;
+                })[0].label;
             },
             nextPage() {
                 this.levels.productAssessment.subLevels.successFactors.completed = true;
@@ -90,10 +95,11 @@
 
         &__row {
             display: flex;
+            margin-bottom: 20px;
 
             img {
-                width: 70px;
-                height: 70px;
+                width: 100px;
+                height: 100px;
                 margin-right: 20px;
             }
 
