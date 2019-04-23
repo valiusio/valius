@@ -73,7 +73,7 @@ var levels = levels;
     }
     if(!levels.productAssessment) {
         levels['productAssessment'] = {
-            locked: false,
+            locked: true,
             completed: false,
             subLevels:
                 {
@@ -84,9 +84,32 @@ var levels = levels;
         };
     }
 
-    //TODO reinitialize state response for business and customers
-
     return levels
 };
 
-export default {initMarkets,initLevels}
+
+const initCustomers = (customers) => {
+    if(!customers.customer1.selectedMarketCategoryAnswer) {
+        customers.customer1.selectedMarketCategoryAnswer = '';
+    }
+    if(!customers.customer2.selectedMarketCategoryAnswer) {
+        customers.customer2.selectedMarketCategoryAnswer = '';
+    }
+    if(!customers.customer3.selectedMarketCategoryAnswer) {
+        customers.customer3.selectedMarketCategoryAnswer = '';
+    }
+};
+
+const initBusinesses = (businesses) => {
+    if(!businesses.business1.selectedBusinessCategoryAnswer) {
+        businesses.business1.selectedBusinessCategoryAnswer = '';
+    }
+    if(!businesses.business2.selectedBusinessCategoryAnswer) {
+        businesses.business2.selectedBusinessCategoryAnswer = '';
+    }
+    if(!businesses.business3.selectedBusinessCategoryAnswer) {
+        businesses.business3.selectedBusinessCategoryAnswer = '';
+    }
+};
+
+export default {initMarkets,initLevels, initCustomers, initBusinesses}

@@ -8,10 +8,10 @@ const Initializator = (store) => {
                const convertedState = res.data !== '' && JSON.parse(savedState);
                 if(res.data !== '' && convertedState && typeof convertedState === 'object'){
                     convertedState.business && store.dispatch('updateBusiness', convertedState.business);
-                    convertedState.businesses && store.dispatch('updateBusinesses', convertedState.businesses);
+                    convertedState.businesses && store.dispatch('updateBusinesses', modelReinitializator.initBusinesses(convertedState.businesses));
                     convertedState.competitors && store.dispatch('updateCompetitors', convertedState.competitors);
                     convertedState.currentLevel && store.dispatch('setCurrentLevel', convertedState.currentLevel);
-                    convertedState.customers && store.dispatch('updateCustomers', convertedState.customers);
+                    convertedState.customers && store.dispatch('updateCustomers', modelReinitializator.initCustomers(convertedState.customers));
                     convertedState.levels && store.dispatch('updateLevels', modelReinitializator.initLevels(convertedState.levels));
                     convertedState.marketCategory && store.dispatch('updateMarketCategory', convertedState.marketCategory);
                     convertedState.markets && store.dispatch('updateMarkets', modelReinitializator.initMarkets(convertedState.markets));
@@ -21,6 +21,9 @@ const Initializator = (store) => {
                     convertedState.selectedMarket && store.dispatch('updateSelectedMarket', convertedState.selectedMarket);
                     convertedState.user && store.dispatch('saveUser', convertedState.user);
                     convertedState.marketAssessments && store.dispatch('updateMarketAssessments', convertedState.marketAssessments);
+                    convertedState.customersPurchasingCriteria && store.dispatch('updateCustomersPurchasingCriteria', convertedState.customersPurchasingCriteria);
+                    convertedState.questionnaire && store.dispatch('updateQuestionnaire', convertedState.questionnaire);
+
                     resolve();
                 }
 

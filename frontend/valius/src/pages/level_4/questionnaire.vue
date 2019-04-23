@@ -82,6 +82,8 @@
                 business: this.$store.getters.business,
                 product: this.$store.getters.product,
                 questionnaire: this.$store.getters.questionnaire,
+                businesses: this.$store.getters.businesses,
+                customers: this.$store.getters.customers,
                 questionsObject: {
                     1: '',
                     2: '',
@@ -153,15 +155,15 @@
                 if(this.selectedMarket === 'b2c') {
                     if(spesificCategories.b2c.indexOf(this.marketCategory) === -1) {
                         productAnswers = [
-                            this.$store.getters.customers.customer1.selectedMarketCategoryAnswer,
-                            this.$store.getters.customers.customer2.selectedMarketCategoryAnswer,
-                            this.$store.getters.customers.customer3.selectedMarketCategoryAnswer,
+                            this.customers.customer1.selectedMarketCategoryAnswer,
+                            this.customers.customer2.selectedMarketCategoryAnswer,
+                            this.customers.customer3.selectedMarketCategoryAnswer,
                         ]
                     }else {
                         productAnswers = [
-                            this.$store.getters.customers.customer1.productUsage,
-                            this.$store.getters.customers.customer2.productUsage,
-                            this.$store.getters.customers.customer3.productUsage,
+                            this.customers.customer1.productUsage,
+                            this.customers.customer2.productUsage,
+                            this.customers.customer3.productUsage,
                         ];
                     }
                 }
@@ -169,15 +171,15 @@
                 if(this.selectedMarket === 'b2b') {
                     if(spesificCategories.b2b.indexOf(this.marketCategory) === -1) {
                         productAnswers = [
-                            this.$store.getters.businesses.business1.selectedBusinessCategoryAnswer,
-                            this.$store.getters.businesses.business2.selectedBusinessCategoryAnswer,
-                            this.$store.getters.businesses.business2.selectedBusinessCategoryAnswer,
+                            this.businesses.business1.selectedBusinessCategoryAnswer,
+                            this.businesses.business2.selectedBusinessCategoryAnswer,
+                            this.businesses.business2.selectedBusinessCategoryAnswer,
                         ]
                     }else {
                         productAnswers = [
-                            this.$store.getters.businesses.business1.productUsage,
-                            this.$store.getters.businesses.business2.productUsage,
-                            this.$store.getters.businesses.business3.productUsage,
+                            this.businesses.business1.productUsage,
+                            this.businesses.business2.productUsage,
+                            this.businesses.business3.productUsage,
                         ];
                     }
                 }
