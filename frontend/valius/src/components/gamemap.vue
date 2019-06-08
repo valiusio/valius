@@ -42,8 +42,6 @@
                 return require('../assets/images/gamemapings/game-map__status--' + this.currentStatus + '.png');
             },
             action(name) {
-                console.log(this.$store.getters.levels);
-
                 this.$store.getters.levels[name]
                 && !this.$store.getters.levels[name].locked
                 &&  this.$router.push('/game-navigation/'+ name);
