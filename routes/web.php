@@ -34,6 +34,32 @@ Route::get("/favicon.ico",function(){
     return \Illuminate\Support\Facades\File::get(public_path() . '/../frontend/valius/dist/favicon.ico');
 });
 
+#########################
+#Survey links
+#########################
+Route::get("/survey",function(){
+    $index =  \Illuminate\Support\Facades\File::get(public_path() . '/../frontend/survey/dist/index.html');
+    return   response($index, 200)->header('Content-Type', 'text/html');
+
+});
+
+Route::get("/survey/css/{cssname}",function($cssname){
+    $file =  \Illuminate\Support\Facades\File::get(public_path() . '/../frontend/survey/dist/css/'. $cssname);
+    return   response($file, 200)->header('Content-Type', 'text/css');
+});
+
+Route::get("/survey/js/{jschunk}",function($jschunk){
+    $jschunkFile =  \Illuminate\Support\Facades\File::get(public_path() . '/../frontend/survey/dist/js/'. $jschunk);
+    return   response($jschunkFile, 200)->header('Content-Type', 'text/javascript');
+});
+Route::get("/survey/img/{imgfile}",function($imgfile){
+    $imgFile =  \Illuminate\Support\Facades\File::get(public_path() . '/../frontend/survey/dist/img/'. $imgfile);
+    return   response($imgFile, 200)->header('Content-Type', 'image');
+});
+
+Route::get("/survey/favicon.ico",function(){
+    return \Illuminate\Support\Facades\File::get(public_path() . '/../frontend/survey/dist/favicon.ico');
+});
 
 Route::fallback(function(){
        return redirect('/');

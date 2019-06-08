@@ -1,0 +1,97 @@
+<template>
+    <div class="information-banner">
+        <div
+            class="information-banner__parallelogram"
+            :class="type && 'information-banner__parallelogram--' + type"
+        >
+            <div class="information-banner__text">
+                <slot></slot>
+            </div>
+        </div>
+    </div>
+</template>
+
+
+
+<script>
+    export default {
+        name: 'InformationBanner',
+        props: [
+            "type"
+        ],
+        data(){
+            return {
+                displayed : true
+            }
+        },
+        components:{
+        },
+        methods:{
+
+        }
+    }
+</script>
+
+<style lang="scss" scoped>
+    $information-banner-width: 800px;
+    $information-banner-height: 100px;
+
+
+    .information-banner {
+        width: $information-banner-width;
+        height: $information-banner-height;
+
+
+
+        &__parallelogram {
+            width: calc(95% - 20px);
+            margin: auto;
+            height: 100%;
+            transform: skew(-15deg);
+            border-left: 40px solid #17B6F0;
+            background-color: #F7F7F8;
+
+            &--danger {
+                border-left-color: #EA5C63;
+            }
+            &--info {
+                border-left-color: #FDE6A2;
+            }
+
+            &--success {
+                border-left-color: rgba(73,170,53,0.95);
+            }
+
+            &--blue {
+                border-left-color: #38BBD5;
+            }
+
+        }
+
+
+        &__text {
+            margin-left: 20px;
+            padding-left: 5px;
+            text-align: left;
+            height: 100%;
+            transform: skew(15deg);
+            color: #177CC5;
+            font-weight: 900;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow-y: auto;
+        }
+
+        h1 {
+            font-size: 20px;
+            display: inline-block;
+        }
+
+        p {
+            font-size: 14px;
+            padding: 5px 0 0 0;
+        }
+    }
+
+</style>
