@@ -91,8 +91,7 @@
                 this.levels.productAssessment.locked = false;
                 this.$store.dispatch('updateLevels', this.levels);
                 levelUpdate.levelUpdate(this.$store, 'productAssessment');
-                console.log(this.$store.state)
-                //this.$router.push('/game-navigation/marketAssessment');
+                this.$router.push('/game-navigation/marketAssessment');
             }
         }
     }
