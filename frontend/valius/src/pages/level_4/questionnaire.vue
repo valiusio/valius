@@ -82,7 +82,42 @@
                 business: this.$store.getters.business,
                 product: this.$store.getters.product,
                 questionnaire: this.$store.getters.questionnaire,
-                businesses: this.$store.getters.businesses,
+                businesses: this.$store.getters.businesses ||  {
+                business1 : {
+                    name: '',
+                        category: '',
+                        productUsage: '',
+                        selectedBusinessCategoryAnswer: '',
+                        desiredFeature: '',
+                        brandFidelity: '',
+                        communicationMeans: [],
+                        distributionChannel: '',
+                        businessSize: []
+                },
+                business2 : {
+                    name: '',
+                        category: '',
+                        productUsage: '',
+                        selectedBusinessCategoryAnswer: '',
+                        desiredFeature: '',
+                        brandFidelity: '',
+                        communicationMeans: [],
+                        distributionChannel: '',
+                        businessSize: []
+                },
+                business3 : {
+                    name: '',
+                        category: '',
+                        productUsage: '',
+                        selectedBusinessCategoryAnswer: '',
+                        desiredFeature: '',
+                        brandFidelity: '',
+                        communicationMeans: [],
+                        distributionChannel: '',
+                        businessSize: []
+                },
+
+            },
                 customers: this.$store.getters.customers,
                 questionsObject: {
                     1: '',
