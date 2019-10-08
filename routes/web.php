@@ -61,6 +61,20 @@ Route::get("/survey/favicon.ico",function(){
     return \Illuminate\Support\Facades\File::get(public_path() . '/../frontend/survey/dist/favicon.ico');
 });
 
+
+Route::post("/survey/saveSurvey",function(\Illuminate\Http\Request $request){
+    try {
+        $file = hash("sha256",$request).'.json';
+
+        $myfile = fopen(storage_path()."/surveyData/".$file, "w") or die("Unable to open file!");
+        fwrite($myfile, $request->getContent());
+        fclose($myfile);
+    }catch (Exception $e) {
+        error_log($e);
+    }
+
+});
+
 Route::fallback(function(){
        return redirect('/');
 });
@@ -70,7 +84,7 @@ Route::fallback(function(){
 Route::post("/api/register", function(\Illuminate\Http\Request $request){
 
     try {
-        
+
         DB::beginTransaction();
 
         $newUser = new \App\User();

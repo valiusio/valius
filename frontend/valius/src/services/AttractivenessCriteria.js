@@ -299,6 +299,46 @@ const AttractivenessCriteria =
                     medium: 'normal influence of political system',
                     high: 'strong influence of political system'
                 }
+            },
+            {
+                name:'onlineXP',
+                label: 'Online Εμπειρία',
+                category: "socialFactors",
+                defaultValue: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                }
+            },
+            {
+                name:'innovation',
+                label: 'Καινοτομία',
+                category: "socialFactors",
+                defaultValue: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                }
+            },
+            {
+                name:'appsSoftware',
+                label: 'App',
+                category: "socialFactors",
+                defaultValue: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                }
+            },
+            {
+                name:'customerExperience',
+                label: 'Εμπειρία του πελάτη',
+                category: "socialFactors",
+                defaultValue: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                }
             }
         ];
 

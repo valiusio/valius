@@ -5,48 +5,20 @@
         </information-banner>
 
         <div class="wrapper">
-            <div class="question-raw">
-                <input class="answer" type="text">
-                <div class="samples">
-                    <span>asd</span>
-                    <span>dasasd</span>
-                    <span>asdasd</span>
+
+            <div v-for="question in Object.keys(state.questions)" class="question-raw" >
+                <input
+                    class="answer"
+                    type="text"
+                    v-model="state.questions[question].label">
+                <div v-if="state.questions[question].predefinedAnswers" class="samples">
+                    <span v-for="testAnswer in state.questions[question].predefinedAnswers">
+                        {{ testAnswer }}
+                    </span>
                 </div>
-                <div class="promt-answer">
-                    <input type="checkbox" disabled>Ναι<input type="checkbox" disabled>Οχι
-                </div>
-            </div>
-            <div class="question-raw">
-                <input class="answer" type="text">
-                <div class="samples">
-                    <span>asd</span>
-                    <span>dasasd</span>
-                    <span>asdasd</span>
-                </div>
-                <div class="promt-answer">
-                    <input type="checkbox" disabled>Ναι<input type="checkbox" disabled>Οχι
-                </div>
-            </div>
-            <div class="question-raw">
-                <input class="answer" type="text">
-                <div class="samples">
-                    <span>asd</span>
-                    <span>dasasd</span>
-                    <span>asdasd</span>
-                </div>
-                <div class="promt-answer">
-                    <input type="checkbox" disabled>Ναι<input type="checkbox" disabled>Οχι
-                </div>
-            </div>
-            <div class="question-raw">
-                <input class="answer" type="text">
-                <div class="samples">
-                    <span>asd</span>
-                    <span>dasasd</span>
-                    <span>asdasd</span>
-                </div>
-                <div class="promt-answer">
-                    <input type="checkbox" disabled>Ναι<input type="checkbox" disabled>Οχι
+                <div v-if="state.questions[question].isTypeBoolean" class="prompt-answer">
+                    <input type="checkbox" disabled>Ναι
+                    <input type="checkbox" disabled>Οχι
                 </div>
             </div>
         </div>
@@ -65,9 +37,16 @@
         components: {
             informationBanner: informationBanner
         },
+        data() {
+            return {
+                state: this.$store.getters.state
+            }
+        },
         computed: {},
         methods: {
             next() {
+                this.state.level++;
+                this.$store.dispatch('state', this.state);
                 this.$router.push('/map');
             }
         }
@@ -122,7 +101,7 @@
             }
         }
 
-        .promt-answer {
+        .prompt-answer {
             margin: 10px 0 0 0;
         }
     }

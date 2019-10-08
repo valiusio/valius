@@ -20,14 +20,18 @@
                 return require(`./../assets/map/map__level--${this.level}.png`);
             }
         },
+        created() {
+        },
         data() {
             return {
-                level: 1,
+                level: this.$store.getters.state.level > 4
+                    ? 4
+                    : this.$store.getters.state.level,
                 levelLinks: {
-                    1: '',
-                    2: '',
-                    3: '',
-                    4: '',
+                    1: '/questionnaire',
+                    2: '/marketProfile',
+                    3: '/productProfile',
+                    4: '/marketProductsRating',
                 }
             }
         },

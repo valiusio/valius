@@ -35,15 +35,39 @@
 
 <script>
     import informationBanner from './../components/InformationBanner';
+    import { usersData } from '../usersData';
 
     export default {
         name: 'welcome',
         components: {
             informationBanner: informationBanner
         },
+        created() {
+            this.state = this.$store.getters.state;
+            const email = this.$route.query['email'];
+            const usersState = usersData.find(user => {
+                return user.email === email
+            });
+
+            this.state['brandName'] = usersState['brandName'];
+            this.state['email'] = usersState['email'];
+            this.state['level'] = usersState['level'];
+            this.state['questions'] = usersState['questions'];
+            this.state['marketProfileQuestions'] = usersState['marketProfileQuestions'];
+            this.state['productProfile'] = usersState['productProfile'];
+
+            this.$store.dispatch('state', this.state).then(() => {
+            });
+
+        },
+        date() {
+            return {
+                state: this.$store.getters.state
+            }
+        },
         computed: {
             brandName() {
-                return this.$store.state.brandName
+                return this.state.brandName
             }
         },
         methods: {
