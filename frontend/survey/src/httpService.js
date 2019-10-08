@@ -5,14 +5,14 @@ var headers = {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
 };
-if(token) {
-    headers['Authorization'] = 'Bearer ' + token;
-}
-
-
+// if(token) {
+//     headers['Authorization'] = 'Bearer ' + token;
+// }
+//
+//
 const http = Axios.create({
-        baseURL: process.env.VUE_APP_API_BASE_URL,
-        headers: headers
+//         baseURL: process.env.VUE_APP_API_BASE_URL,
+//         headers: headers
 });
 
 export default http;
