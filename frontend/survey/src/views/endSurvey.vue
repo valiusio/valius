@@ -15,7 +15,7 @@
                 έρευνες μας στο μέλλον!
             </h1>
             <h1>Με εκτίμηση,</h1>
-            <h1>Η ομάδα της ______</h1>
+            <h1>Η ομάδα της {{state.brandName}}</h1>
         </section>
     </div>
 </template>
@@ -28,6 +28,11 @@
         name: 'welcome',
         components: {
             informationBanner
+        },
+        data() {
+            return {
+                state : this.$store.getters.state
+            }
         },
         computed: {
             logo() {

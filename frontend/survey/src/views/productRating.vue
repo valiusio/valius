@@ -3,7 +3,7 @@
         <information-banner
             type="blue"
         >
-            <h1>Πόσο ελκυστική είναι για εσάς η εικόνα της μάρκας των προϊόντων που ακολουθούν;</h1>
+            <h1>Πόσο ελκυστική είναι για εσάς η '{{getFactorName(criteria)}}' των παρακάτω προϊόντων;</h1>
             <p>Σε μια κλίμακα από 1 -10 δώσε ένα σκορ σε κάθε ένα από αυτά</p>
         </information-banner>
 
@@ -122,7 +122,7 @@
         display: flex;
         flex-direction: column;
         width: 900px;
-        margin: 100px auto 0 auto;
+        margin: 10px auto 0 auto;
     }
 
     .criteria-logo {
@@ -182,7 +182,7 @@
         background-color: #17B5F0;
         color: white;
         font-size: 18px;
-        margin: 100px auto 0 auto;
+        margin: 20px auto 0 auto;
         display: block;
     }
 </style>

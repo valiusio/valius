@@ -3,8 +3,7 @@
         <information-banner
             type="success"
         >
-            <h1>Πόσο σημαντικά είναι τα παρακάτω στοιχεία για εσάς,
-                όταν αγοράζετε προϊόντα σαν το {{state.brandName}}</h1>
+            <h1>{{state.productProfile.headerQuestion}}</h1>
         </information-banner>
 
         <div class="wrapper">
@@ -114,7 +113,7 @@
         display: flex;
         flex-direction: column;
         width: 900px;
-        margin: 100px auto 0 auto;
+        margin: 50px auto 0 auto;
     }
 
     .hearts-status {
@@ -228,7 +227,7 @@
         background-color: #17B5F0;
         color: white;
         font-size: 18px;
-        margin: 100px auto 50px auto;
+        margin: 20px auto 50px auto;
         display: block;
     }
 </style>

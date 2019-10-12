@@ -2,6 +2,7 @@ const usersData = [
     {
         brandName: "Pame Stasi",
         email: "pamestasi@test.com",
+        industryName: "Transportation",
         level: 1,
         questions: {
             1: {
@@ -11,7 +12,7 @@ const usersData = [
                 predefinedAnswers: []
             },
             2: {
-                label: 'Γνωρίζεις τα brands ... ?',
+                label: 'Γνωρίζεις κάποια απο τα brands ?',
                 answer: '',
                 isTypeBoolean: true,
                 predefinedAnswers: [
@@ -22,13 +23,13 @@ const usersData = [
                 ]
             },
             3: {
-                label: 'Εχεις ποτε συνεργαστεί με PameStasi ?',
+                label: 'Εχεις ποτε συνεργαστεί με την εταιρία Shopmind ?',
                 answer: '',
                 isTypeBoolean: true,
                 predefinedAnswers: []
             },
             4: {
-                label: 'Που θα έβαζες τον εαυτό σου ως προς τη χρήση του προιόντος; ',
+                label: 'Που θα έβαζες τον εαυτό σου ως προς το προφίλ σας;',
                 answer: '',
                 isTypeBoolean: false,
                 predefinedAnswers: []
@@ -40,7 +41,7 @@ const usersData = [
                 answer: ''
             },
             2: {
-                label: 'Για ποιους λόγους αγοράζεται ένα προιόν σαν το PameStasi',
+                label: 'Για ποιους λόγους αγοράζεται ένα προιόν σαν το Transportation',
                 answers: {
                     1: '',
                     2: '',
@@ -48,7 +49,7 @@ const usersData = [
                 }
             },
             3: {
-                label: 'Πως θα περιγράφατε τον εαυτό σου ως προς τη χρήση του προϊόντος PameStasi',
+                label: 'Πως θα περιγράφατε τον εαυτό σου ως προς τη χρήση του προϊόντος Transportation',
                 answer: ''
             },
             4: {
@@ -56,11 +57,12 @@ const usersData = [
                 answer: ''
             },
             5: {
-                label: 'Που αγοράζετε συνήθως προιόντα PameStasi',
+                label: 'Που αγοράζετε συνήθως προιόντα Transportation',
                 answer: ''
             }
         },
         productProfile: {
+            headerQuestion: 'Πόσο σημαντικά είναι τα παρακάτω στοιχεία  για εσάς, όταν αγοράζετε προϊόντα σαν το Shopmind?',
             criteria: {
                 1: {
                     label: 'Online Εμπειρία',

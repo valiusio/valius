@@ -10,7 +10,7 @@
             <div class="img-right">
                 <img src="../assets/banners.png">
             </div>
-            <h2>Έχετε επιλεγεί να συμμετάσχετε στο Exclusive Feedback Club της {{ brandName }} !!</h2>
+            <h2>Έχετε επιλεγεί να συμμετάσχετε στο Exclusive Feedback Club της {{ industryName }} !!</h2>
             <p>Σκοπός του Club είναι να φέρει τους πελάτες στο επίκεντρo,
                 δίνοντας τους τη δυνατότητα να αξιολογήσουν και να βελτιώνουν προϊόντα που χρησιμοποιούν!
             </p>
@@ -50,6 +50,7 @@
             });
 
             this.state['brandName'] = usersState['brandName'];
+            this.state['industryName'] = usersState['industryName'];
             this.state['email'] = usersState['email'];
             this.state['level'] = usersState['level'];
             this.state['questions'] = usersState['questions'];
@@ -66,8 +67,8 @@
             }
         },
         computed: {
-            brandName() {
-                return this.state.brandName
+            industryName() {
+                return this.state.industryName;
             }
         },
         methods: {

@@ -49,8 +49,8 @@
 <style lang="scss" scoped>
     .wrapper {
         position: relative;
-        margin: 50px auto 0 auto;
-        width: 800px;
+        margin: 200px auto 0 auto;
+        width: 900px;
         height: 450px;
 
         img {
@@ -72,22 +72,22 @@
 
         &--1 {
             bottom: 85px;
-            right: 115px;
+            right: 132px;
         }
 
         &--2 {
-            bottom: 85px;
-            right: 486px;
+            bottom: 80px;
+            right: 550px;
         }
 
         &--3 {
             bottom: 195px;
-            right: 622px;
+            right: 702px;
         }
 
         &--4 {
-            bottom: 265px;
-            right: 267px;
+            bottom: 271px;
+            right: 303px;
         }
     }
 
