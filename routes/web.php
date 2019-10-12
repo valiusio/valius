@@ -70,7 +70,7 @@ Route::post("/survey/saveSurvey",function(\Illuminate\Http\Request $request){
         fwrite($myfile, $request->getContent());
         fclose($myfile);
     }catch (Exception $e) {
-        error_log($e);
+        return $e;
     }
 
 });
