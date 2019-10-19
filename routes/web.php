@@ -66,7 +66,7 @@ Route::post("/survey/saveSurvey",function(\Illuminate\Http\Request $request){
     try {
         $file = hash("sha256",$request).'.json';
 
-        $myfile = fopen('/surveyData/'.$file, "w") or die("Unable to open file!");
+        $myfile = fopen('surveyData/'.$file, "w") or die("Unable to open file!");
         fwrite($myfile, $request->getContent());
         fclose($myfile);
     }catch (Exception $e) {
