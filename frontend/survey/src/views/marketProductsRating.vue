@@ -59,7 +59,7 @@
             },
             next() {
                 this.state.level++;
-                httpService.post('/saveSurvey',this.state);
+                httpService.post('/survey/saveSurvey',this.state);
                 this.$store.dispatch('state', this.state).then(() => {
                     this.$router.push('/completeSurvey');
                 });
