@@ -3,8 +3,7 @@
         <information-banner
             type="blue"
         >
-            <h1>Πόσο ελκυστική είναι για εσάς η '{{getFactorName(criteria)}}' των παρακάτω προϊόντων;</h1>
-            <p>Σε μια κλίμακα από 1 -10 δώσε ένα σκορ σε κάθε ένα από αυτά</p>
+            <p>{{state.productProfile.criteria[criteriaIndex]['questionText']}}</p>
         </information-banner>
 
         <div class="wrapper">
@@ -113,8 +112,8 @@
     }
 </script>
 <style lang="scss" scoped>
-    .information-banner h1 {
-        font-size: 18px;
+    .information-banner p{
+        font-size: 20px;
     }
 
     .wrapper {
@@ -126,11 +125,11 @@
     }
 
     .criteria-logo {
-        width: 50px;
-        height: 50px;
+        width: 150px;
+        height: 150px;
         position: absolute;
-        top: -30px;
-        right: -100px;
+        top: 0;
+        right: -180px;
     }
 
     .ruler {

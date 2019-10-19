@@ -5,6 +5,16 @@
 </template>
 
 <style lang="scss">
+    * {
+        @font-face {
+            font-family:"Name-Of-Font";
+            src: url("/survey/src/assets/fonts/Calibri.ttf") format("truetype");
+        }
+
+        font-family: Calibri;
+    }
+
+
     body {
         margin: 0;
     }

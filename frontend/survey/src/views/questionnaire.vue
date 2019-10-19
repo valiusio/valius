@@ -5,7 +5,7 @@
         </information-banner>
 
         <div class="wrapper">
-
+            <img  class="rocket" :src="rocketimg">
             <div v-for="question in Object.keys(state.questions)" class="question-raw" >
                 <span
                     class="answer"
@@ -27,9 +27,15 @@
                            @change="$event.target.checked ? (state.questions[question].answer = false) : (state.questions[question].answer = true)"
                     >Οχι
                 </div>
-                <div v-if="!state.questions[question].isTypeBoolean" class="textanswer">
+                <div v-if="!state.questions[question].isTypeBoolean && !state.questions[question].isTypeSelect" class="textanswer">
                     <input type="text"
                            v-model="state.questions[question].answer">
+                </div>
+                <div v-if="state.questions[question].isTypeSelect" class="prompt-answer">
+                    <select v-model="state.questions[question].answer">
+                        <option v-for="option in state.questions[question].options" :value="option">{{option}}
+                        </option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -42,6 +48,8 @@
 
 <script>
     import informationBanner from '../components/InformationBanner';
+    import rocketImg from '../assets/rocket.png';
+
 
     export default {
         name: 'questionnaire',
@@ -53,10 +61,13 @@
                 state: this.$store.getters.state
             }
         },
-        computed: {},
+        computed: {
+            rocketimg() {
+                return rocketImg;
+            }
+        },
         methods: {
             handleNoCheckboc(state, event) {
-                console.log(event.target.checked)
                 event.target.checked ? (state = false) : (state = true);
             },
             next() {
@@ -77,6 +88,14 @@
         flex-direction: column;
         width: 700px;
         margin: 100px auto 0 auto;
+    }
+
+    .rocket {
+        width: 150px;
+        height: 150px;
+        position: fixed;
+        left: 10px;
+        bottom: 10px;
     }
 
     .question-raw {

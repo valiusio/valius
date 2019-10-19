@@ -62,7 +62,7 @@
 
     section {
         margin: 50px auto 0 auto;
-        width: 850px;
+        width: 930px;
 
         h1 {
             color: #177cc5;

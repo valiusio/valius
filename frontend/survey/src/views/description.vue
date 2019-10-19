@@ -48,7 +48,7 @@
         computed: {},
         methods: {
             next() {
-                this.$router.push('/map');
+                this.$router.push('/questionnaire');
             }
         }
     }

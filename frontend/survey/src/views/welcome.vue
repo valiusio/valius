@@ -18,13 +18,10 @@
                 Με αυτή τη συμμετοχή σας μπορείτε:
             </p>
             <p>
-                Να παίξετε ένα εικονικό παιχνίδι απατώντας κάποιες ερωτήσεις
+                <img :src="winnerImg()">Να παίξετε ένα εικονικό παιχνίδι απατώντας κάποιες ερωτήσεις
             </p>
             <p>
-                Να εκφράσετε την άποψη σας για τα διάφορα προϊόντα που χρησιμοποιείτε
-            </p>
-            <p>
-                Να λάβετε μοναδικές εκπλήξεις στο τέλος της διαδικασίας!
+                <img :src="handImg()">Να εκφράσετε την άποψη σας για τα διάφορα προϊόντα που χρησιμοποιείτε
             </p>
         </div>
         <div class="button-wrapper">
@@ -36,6 +33,9 @@
 <script>
     import informationBanner from './../components/InformationBanner';
     import { usersData } from '../usersData';
+    import winnerImg from '../assets/winner.png';
+    import handImg from '../assets/thumbs-up.png';
+    import diamondImg from '../assets/diamond.png';
 
     export default {
         name: 'welcome',
@@ -61,19 +61,23 @@
             });
 
         },
-        date() {
-            return {
-                state: this.$store.getters.state
-            }
-        },
         computed: {
             industryName() {
                 return this.state.industryName;
             }
         },
         methods: {
+            winnerImg() {
+              return winnerImg
+            },
+            handImg() {
+              return handImg
+            },
+            diamondImg() {
+              return diamondImg
+            },
             next() {
-                this.$router.push('/description');
+                this.$router.push('/map');
             }
         }
     }
@@ -90,6 +94,17 @@
         h2 {
             font-size: 24px;
             color: #0070C0;
+        }
+
+        p {
+            display: flex;
+            align-items: center;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+            margin: 0 40px 0 0;
         }
     }
 

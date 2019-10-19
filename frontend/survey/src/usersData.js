@@ -2,17 +2,19 @@ const usersData = [
     {
         brandName: "Pame Stasi",
         email: "pamestasi@test.com",
-        industryName: "Transportation",
+        industryName: "Pame Stasi",
         level: 1,
         questions: {
             1: {
-                label: 'Χρησιμοποιείται υπηρεσίες Transportation ?',
+                label: 'Χρησιμοποιείς υπηρεσίες Shopsights Platform;',
                 answer: '',
                 isTypeBoolean: true,
-                predefinedAnswers: []
+                predefinedAnswers: [],
+                isTypeSelect: false,
+                options: []
             },
             2: {
-                label: 'Γνωρίζεις κάποια απο τα brands ?',
+                label: 'Γνωρίζεις κάποια απο τα παρακάτω brands ?',
                 answer: '',
                 isTypeBoolean: true,
                 predefinedAnswers: [
@@ -20,19 +22,25 @@ const usersData = [
                     'OASA',
                     'Google Maps',
                     'Moovit',
-                ]
+                ],
+                isTypeSelect: false,
+                options: []
             },
             3: {
                 label: 'Εχεις ποτε συνεργαστεί με την εταιρία Shopmind ?',
                 answer: '',
                 isTypeBoolean: true,
-                predefinedAnswers: []
+                predefinedAnswers: [],
+                isTypeSelect: false,
+                options: []
             },
             4: {
-                label: 'Που θα έβαζες τον εαυτό σου ως προς το προφίλ σας;',
+                label: 'Που θα κατατάσσατε τον εαυτό σας ως προς το προφίλ σας;',
                 answer: '',
                 isTypeBoolean: false,
-                predefinedAnswers: []
+                predefinedAnswers: [],
+                isTypeSelect: true,
+                options: ['Εργαζόμενοι','Φοιτητές']
             }
         },
         marketProfileQuestions: {
@@ -68,6 +76,7 @@ const usersData = [
                     label: 'Online Εμπειρία',
                     name: 'onlineXP',
                     value: '',
+                    questionText:'Πόσο ελκυστική είναι για εσάς η online εμπειρία των  παρακάτω  προϊόντων; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
                     productsBrandsAttractiveness: {
                         1: {
                             name: 'PameStasi',
@@ -91,6 +100,7 @@ const usersData = [
                     label: 'Καινοτομία',
                     name: 'innovation',
                     value: '',
+                    questionText:'Πόσο καινοτόμα είναι τα αυτά τα προϊόντα; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
                     productsBrandsAttractiveness: {
                         1: {
                             name: 'PameStasi',
@@ -114,6 +124,7 @@ const usersData = [
                     label: 'App',
                     name: 'appsSoftware',
                     value: '',
+                    questionText:'Πόσο ικανοποιήμενοι είστε από την mobile εφαρμογή (app) των παρακάτω προϊόντων; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
                     productsBrandsAttractiveness: {
                         1: {
                             name: 'PameStasi',
@@ -137,6 +148,7 @@ const usersData = [
                     label: 'Εμπειρία του πελάτη',
                     name: 'customerExperience',
                     value: '',
+                    questionText:'Πoιο από τα παρακάτω brand σας προσφέρει πιο ευχάριστη εμπειρία; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
                     productsBrandsAttractiveness: {
                         1: {
                             name: 'PameStasi',

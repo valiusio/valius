@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <button v-if="+totalRated > 0" @click="next">
+        <button v-if="+totalRated == totalHearts" @click="next">
             Επόμενο
         </button>
     </div>
@@ -87,7 +87,6 @@
                 return criteria && criteria.label;
             },
             getFactorImg(i) {
-                console.log(i)
                 let img = '';
                 try {
                     img = require('../../../valius/src/assets/images/attractivenessCriteria/'+i+'.png');

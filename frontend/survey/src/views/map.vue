@@ -2,10 +2,10 @@
     <div class="container container--exlg">
         <div class="wrapper">
             <img :src="getLevelImg">
-            <div class="level level--1" @click="gotoLevel(1)"></div>
-            <div class="level level--2" @click="gotoLevel(2)"></div>
-            <div class="level level--3" @click="gotoLevel(3)"></div>
-            <div class="level level--4" @click="gotoLevel(4)"></div>
+            <div class="level level--1" :class="isLevelAccepted(1)?'level--active':''" @click="gotoLevel(1)"></div>
+            <div class="level level--2" :class="isLevelAccepted(2)?'level--active':''" @click="gotoLevel(2)"></div>
+            <div class="level level--3" :class="isLevelAccepted(3)?'level--active':''" @click="gotoLevel(3)"></div>
+            <div class="level level--4" :class="isLevelAccepted(4)?'level--active':''" @click="gotoLevel(4)"></div>
         </div>
     </div>
 </template>
@@ -28,7 +28,7 @@
                     ? 4
                     : this.$store.getters.state.level,
                 levelLinks: {
-                    1: '/questionnaire',
+                    1: '/description',
                     2: '/marketProfile',
                     3: '/productProfile',
                     4: '/marketProductsRating',
@@ -38,6 +38,9 @@
         methods: {
             next() {
                 this.$router.push('/questionnaire');
+            },
+            isLevelAccepted(level) {
+                return level <= this.level;
             },
             gotoLevel(level) {
                 (level <= this.level)
@@ -49,9 +52,9 @@
 <style lang="scss" scoped>
     .wrapper {
         position: relative;
-        margin: 200px auto 0 auto;
-        width: 900px;
-        height: 450px;
+        margin: 51px auto 0 auto;
+        width: 1000px;
+        height: 737px;
 
         img {
             width: 100%;
@@ -61,33 +64,36 @@
 
     .level {
         position: absolute;
-        width: 50px;
-        height: 50px;
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
 
-        &:hover {
-            cursor: pointer;
-            border: 2px solid yellow;
+        &--active {
+            &:hover {
+                cursor: pointer;
+                border: 2px solid yellow;
+            }
         }
 
+
         &--1 {
-            bottom: 85px;
-            right: 132px;
+            bottom: 143px;
+            right: 799px;
         }
 
         &--2 {
-            bottom: 80px;
-            right: 550px;
+            bottom: 172px;
+            right: 300px;
         }
 
         &--3 {
-            bottom: 195px;
-            right: 702px;
+            bottom: 358px;
+            right: 819px;
         }
 
         &--4 {
-            bottom: 271px;
-            right: 303px;
+            bottom: 398px;
+            right: 227px;
         }
     }
 

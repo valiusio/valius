@@ -50,6 +50,7 @@
                     <input v-model="state.marketProfileQuestions[5].answer">
                 </div>
             </div>
+            <img :src="segmentPng">
         </div>
 
         <button @click="next">
@@ -60,6 +61,7 @@
 
 <script>
     import informationBanner from '../components/InformationBanner';
+    import segmentImg from '../assets/segment.png';
 
     export default {
         name: 'marketProfile',
@@ -72,6 +74,9 @@
             }
         },
         computed: {
+            segmentPng() {
+                return segmentImg;
+            },
             userCategories() {
                 return [
                     "Φοιτητής",
@@ -126,6 +131,15 @@
         flex-direction: row;
         width: 900px;
         margin: 100px auto 0 auto;
+        position: relative;
+
+        img {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: -180px;
+            bottom: 0;
+        }
     }
 
     .input-field {
