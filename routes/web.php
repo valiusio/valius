@@ -9,6 +9,7 @@
 |
 */
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 Route::get("/",function(){
      $index =  \Illuminate\Support\Facades\File::get(public_path() . '/../frontend/valius/dist/index.html');
@@ -66,9 +67,8 @@ Route::post("/survey/saveSurvey",function(\Illuminate\Http\Request $request){
     try {
         $file = hash("sha256",$request).'.json';
 
-        $myfile = fopen('surveyData/'.$file, "w") or die("Unable to open file!");
-        fwrite($myfile, $request->getContent());
-        fclose($myfile);
+        Storage::put($file, $request);
+
     }catch (Exception $e) {
         return $e;
     }
