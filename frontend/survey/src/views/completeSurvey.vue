@@ -31,6 +31,7 @@
 <style lang="scss" scoped>
     .container {
         display: flex;
+        padding: 50px 0 0 0;
         flex-direction: column;
         align-items: center;
 

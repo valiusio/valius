@@ -130,6 +130,10 @@
             border-radius: 4px;
             padding: 10px;
             background-color: #17B5F0;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 

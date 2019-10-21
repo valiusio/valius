@@ -8,7 +8,7 @@
 
         <div class="wrapper">
             <div class="hearts-status">
-                <div>Κατανέμετε 10 ❤️ με βάση τη σημαντικότητα των παρακάτω στοιχείων για εσάς</div>
+                <div>Προσθέστε 10 ❤️ με βάση τη σημαντικότητα των παρακάτω στοιχείων για εσάς</div>
                 <div class="total-hearts">
                     <img v-for="i in (totalHearts - totalRated)" :src="heartImg">
                 </div>
@@ -143,7 +143,7 @@
                 left: 15px;
                 width: 70px;
                 height: 70px;
-                background-color: yellow;
+                background-color: #52AE3F;
                 border-radius: 50%;
                 z-index: 2;
             }

@@ -6,7 +6,7 @@ const usersData = [
         level: 1,
         questions: {
             1: {
-                label: 'Χρησιμοποιείς υπηρεσίες Shopsights Platform;',
+                label: 'Χρησιμοποιείς υπηρεσίες Μεταφοράς;',
                 answer: '',
                 isTypeBoolean: true,
                 predefinedAnswers: [],
@@ -27,7 +27,7 @@ const usersData = [
                 options: []
             },
             3: {
-                label: 'Εχεις ποτε συνεργαστεί με την εταιρία Shopmind ?',
+                label: 'Εχεις ποτε χρησιμοποιήσει το Pame Stasi?',
                 answer: '',
                 isTypeBoolean: true,
                 predefinedAnswers: [],
@@ -49,7 +49,7 @@ const usersData = [
                 answer: ''
             },
             2: {
-                label: 'Για ποιους λόγους αγοράζεται ένα προιόν σαν το Transportation',
+                label: 'Για ποιους λόγους αγοράζεται ένα προιόν σαν το Pame Stasi;',
                 answers: {
                     1: '',
                     2: '',
@@ -57,7 +57,7 @@ const usersData = [
                 }
             },
             3: {
-                label: 'Πως θα περιγράφατε τον εαυτό σου ως προς τη χρήση του προϊόντος Transportation',
+                label: 'Πως θα περιγράφατε τον εαυτό σας ως προς τη χρήση του προϊόντος Pame Stasi;',
                 answer: ''
             },
             4: {
@@ -65,7 +65,7 @@ const usersData = [
                 answer: ''
             },
             5: {
-                label: 'Που αγοράζετε συνήθως προιόντα Transportation',
+                label: 'Που αγοράζετε συνήθως προιόντα Pame stasi;',
                 answer: ''
             }
         },
