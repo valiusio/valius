@@ -339,7 +339,78 @@ const AttractivenessCriteria =
                     medium: '',
                     high: ''
                 }
-            }
+            },
+            {
+                name:'brand',
+                label: 'Brand',
+                category: "socialFactors",
+                defaultValue: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                }
+            },
+            {
+                name:'status',
+                label: 'Κύρος',
+                category: "socialFactors",
+                defaultValue: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                }
+            },
+            {
+                name:'content',
+                label: 'Περιεχόμενο',
+                category: "socialFactors",
+                defaultValue: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                }
+            },
+            {
+                name:'trust',
+                label: 'Εμπιστοσύνη',
+                category: "socialFactors",
+                defaultValue: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                }
+            },
+            {
+                name:'easyToUse',
+                label: 'Ευχρηστία',
+                category: "socialFactors",
+                defaultValue: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                }
+            },
+            {
+                name:'maintenance',
+                label: 'Συντήρηση',
+                category: "socialFactors",
+                defaultValue: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                }
+            },
+            {
+                name:'savingTime',
+                label: 'Εξοικονόμιση χρόνου',
+                category: "socialFactors",
+                defaultValue: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                }
+            },
+
         ];
 
 export default { AttractivenessCriteria : AttractivenessCriteria }

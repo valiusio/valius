@@ -43,6 +43,7 @@
             informationBanner: informationBanner
         },
         created() {
+            console.log(process.env)
             this.state = this.$store.getters.state;
             const email = this.$route.query['email'];
             const usersState = usersData.find(user => {
