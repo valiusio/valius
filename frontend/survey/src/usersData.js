@@ -247,7 +247,7 @@ const usersData = [
                     label: 'Brand',
                     name: 'brand',
                     value: '',
-                    questionText:'Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
+                    questionText:'Πόσο ελκυστική είναι για εσάς η εικόνα της μάρκας των προιόντων; Σε κλίμακα απο 1- 10 δώστε ενα σκορ για κάθε ένα απο αυτά',
                     productsBrandsAttractiveness: {
                         1: {
                             name: 'Mamakita',
@@ -419,7 +419,7 @@ const usersData = [
                     label: 'Εμπιστοσύνη',
                     name: 'trust',
                     value: '',
-                    questionText:'Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
+                    questionText:'Ποιο απο τα παρακάτω brand σας παρέχει καλύτερη αίσθηση εμπιστοσύνης; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
                     productsBrandsAttractiveness: {
                         1: {
                             name: 'Shopmind',
@@ -443,7 +443,7 @@ const usersData = [
                     label: 'Ευχρηστία',
                     name: 'easyToUse',
                     value: '',
-                    questionText:'Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
+                    questionText:'Ποιο απο τα παρακάτω προιόντα έχει μεγαλύτερη ευχρηστία; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
                     productsBrandsAttractiveness: {
                         1: {
                             name: 'Shopmind',
@@ -467,7 +467,7 @@ const usersData = [
                     label: 'Συντήρηση',
                     name: 'maintenance',
                     value: '',
-                    questionText:'Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
+                    questionText:'Πόσο ικονοποιημένοι είστε απο τη δυνατότητα συντήρησης των παρακάτω προιόντων; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
                     productsBrandsAttractiveness: {
                         1: {
                             name: 'Shopmind',
@@ -491,7 +491,7 @@ const usersData = [
                     label: 'Εξοικονόμιση χρόνου',
                     name: 'savingTime',
                     value: '',
-                    questionText:'Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
+                    questionText:'Πόσο ικονοποιημένοι είστε απο την εξοικονόμιση χρόνου που σας παρέχουν τα παρακάτω προιόντα; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
                     productsBrandsAttractiveness: {
                         1: {
                             name: 'Shopmind',
