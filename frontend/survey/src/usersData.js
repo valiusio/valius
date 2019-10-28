@@ -7,7 +7,7 @@ const usersData = [
         questions: {
             1: {
                 label: 'Χρησιμοποιείς υπηρεσίες Μεταφοράς;',
-                answer: '',
+                answer: true,
                 isTypeBoolean: true,
                 predefinedAnswers: [],
                 isTypeSelect: false,
@@ -15,7 +15,7 @@ const usersData = [
             },
             2: {
                 label: 'Γνωρίζεις κάποια απο τα παρακάτω brands ?',
-                answer: '',
+                answer: true,
                 isTypeBoolean: true,
                 predefinedAnswers: [
                     'Pame Stasi',
@@ -28,7 +28,7 @@ const usersData = [
             },
             3: {
                 label: 'Εχεις ποτε χρησιμοποιήσει το Pame Stasi?',
-                answer: '',
+                answer: true,
                 isTypeBoolean: true,
                 predefinedAnswers: [],
                 isTypeSelect: false,
@@ -179,7 +179,7 @@ const usersData = [
         questions: {
             1: {
                 label: 'Χρησιμοποιείς υπηρεσίες Τουρισμού;',
-                answer: '',
+                answer: true,
                 isTypeBoolean: true,
                 predefinedAnswers: [],
                 isTypeSelect: false,
@@ -187,7 +187,7 @@ const usersData = [
             },
             2: {
                 label: 'Γνωρίζεις κάποια απο τα παρακάτω brands ?',
-                answer: '',
+                answer: true,
                 isTypeBoolean: true,
                 predefinedAnswers: [
                     'Mamakita',
@@ -199,7 +199,7 @@ const usersData = [
             },
             3: {
                 label: 'Εχεις ποτε χρησιμοποιήσει το Mamakita;',
-                answer: '',
+                answer: true,
                 isTypeBoolean: true,
                 predefinedAnswers: [],
                 isTypeSelect: false,
@@ -350,7 +350,7 @@ const usersData = [
         questions: {
             1: {
                 label: 'Χρησιμοποιείς υπηρεσίες Analytics;',
-                answer: '',
+                answer: true,
                 isTypeBoolean: true,
                 predefinedAnswers: [],
                 isTypeSelect: false,
@@ -358,7 +358,7 @@ const usersData = [
             },
             2: {
                 label: 'Γνωρίζεις κάποια απο τα παρακάτω brands ?',
-                answer: '',
+                answer: true,
                 isTypeBoolean: true,
                 predefinedAnswers: [
                     'Shopmind',
@@ -371,7 +371,7 @@ const usersData = [
             },
             3: {
                 label: 'Εχεις ποτε χρησιμοποιήσει το Shopmind;',
-                answer: '',
+                answer: true,
                 isTypeBoolean: true,
                 predefinedAnswers: [],
                 isTypeSelect: false,
@@ -514,6 +514,183 @@ const usersData = [
             }
         }
     },
+    {
+        brandName: "PeopleNet",
+        email: "peoplenet@test.com",
+        industryName: "PeopleNet",
+        level: 1,
+        questions: {
+            1: {
+                label: 'Είναι πρώτη σου φορά που ψάχνεις για δουλειά;',
+                answer: true,
+                isTypeBoolean: true,
+                predefinedAnswers: [],
+                isTypeSelect: false,
+                options: []
+            },
+            2: {
+                label: 'Γνωρίζεις κάποια απο τα παρακάτω brands ?',
+                answer: true,
+                isTypeBoolean: true,
+                predefinedAnswers: [
+                    'Get A Job',
+                    'TUV',
+                    'Πρόγραμμα Μαθητείας ΟΑΕΔ',
+                    'Skywalker',
+                ],
+                isTypeSelect: false,
+                options: []
+            },
+            3: {
+                label: 'Εχεις ποτε χρησιμοποιήσει το GetAJob-Customer Services Certification;',
+                answer: true,
+                isTypeBoolean: true,
+                predefinedAnswers: [],
+                isTypeSelect: false,
+                options: []
+            },
+            4: {
+                label: 'Που θα κατατάσσατε τον εαυτό σας ως προς το προφίλ σας;',
+                answer: '',
+                isTypeBoolean: false,
+                predefinedAnswers: [],
+                isTypeSelect: true,
+                options: [
+                    'Απόφοιτος ΙΕΚ/ΕΠΑΛ 18-24',
+                    'Απόφοιτος TEI/AEI 18-24',
+                    'Απόφοιτος ΙΕΚ/ΕΠΑΛ 25-30',
+                    'Αλλο'
+                ]
+            }
+        },
+        marketProfileQuestions: {
+            1: {
+                label: 'Σε ποια από τις παρακάτω κατηγορίες ανήκετε',
+                answer: ''
+            },
+            2: {
+                label: 'Για ποιους λόγους αγοράζεται ένα προιόν σαν το GetAJob - Customer Services Certification',
+                answers: {
+                    1: '',
+                    2: '',
+                    3: '',
+                }
+            },
+            3: {
+                label: 'Πως θα περιγράφατε τον εαυτό σας ως προς τη χρήση του προϊόντος GetAJob - Customer Services Certification;',
+                answer: ''
+            },
+            4: {
+                label: 'Ποιος είναι ο τρόπος που προτιμάτε τα brand να επικοινωνούν μαζί σας?',
+                answer: ''
+            },
+            5: {
+                label: 'Που αγοράζετε συνήθως προιόντα GetAJob - Customer Services Certification;',
+                answer: ''
+            }
+        },
+        productProfile: {
+            headerQuestion: 'Πόσο σημαντικά είναι τα παρακάτω στοιχεία  για εσάς, όταν αγοράζετε προϊόντα σαν το GetAJob - Customer Services Certification;',
+            criteria: {
+                1: {
+                    label: 'Αξιοπιστία',
+                    name: 'reliability',
+                    value: '',
+                    questionText:'Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
+                    productsBrandsAttractiveness: {
+                        1: {
+                            name: 'Get A Job',
+                            value: 0
+                        },
+                        2: {
+                            name: 'TUV',
+                            value: 0
+                        },
+                        3: {
+                            name: 'Πρόγραμμα Μαθητείας ΟΑΕΔ',
+                            value: 0
+                        },
+                        4: {
+                            name: 'Career Websites (ex. Skywalker)',
+                            value: 0
+                        }
+                    }
+                },
+                2: {
+                    label: 'Ευαισθησία ως προς την τιμή',
+                    name: 'priceSensitive',
+                    value: '',
+                    questionText:'Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
+                    productsBrandsAttractiveness: {
+                        1: {
+                            name: 'Get A Job',
+                            value: 0
+                        },
+                        2: {
+                            name: 'TUV',
+                            value: 0
+                        },
+                        3: {
+                            name: 'Πρόγραμμα Μαθητείας ΟΑΕΔ',
+                            value: 0
+                        },
+                        4: {
+                            name: 'Career Websites (ex. Skywalker)',
+                            value: 0
+                        }
+                    }
+                },
+                3: {
+                    label: 'Ποιότητα επιμόρφωσης',
+                    name: 'quality',
+                    value: '',
+                    questionText:'Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
+                    productsBrandsAttractiveness: {
+                        1: {
+                            name: 'Get A Job',
+                            value: 0
+                        },
+                        2: {
+                            name: 'TUV',
+                            value: 0
+                        },
+                        3: {
+                            name: 'Πρόγραμμα Μαθητείας ΟΑΕΔ',
+                            value: 0
+                        },
+                        4: {
+                            name: 'Career Websites (ex. Skywalker)',
+                            value: 0
+                        }
+                    }
+                },
+                4: {
+                    label: 'Αποτέλεσμα',
+                    name: 'result',
+                    value: '',
+                    questionText:'Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
+                    productsBrandsAttractiveness: {
+                        1: {
+                            name: 'Get A Job',
+                            value: 0
+                        },
+                        2: {
+                            name: 'TUV',
+                            value: 0
+                        },
+                        3: {
+                            name: 'Πρόγραμμα Μαθητείας ΟΑΕΔ',
+                            value: 0
+                        },
+                        4: {
+                            name: 'Career Websites (ex. Skywalker)',
+                            value: 0
+                        }
+                    }
+                }
+            }
+        }
+    }
 ];
 
 

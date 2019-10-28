@@ -208,7 +208,7 @@
             justify-content: center;
             align-items: center;
             color: gray;
-            font-size: 12px;
+            font-size: 14px;
         }
     }
 

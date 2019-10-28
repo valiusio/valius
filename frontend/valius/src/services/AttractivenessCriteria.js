@@ -410,6 +410,36 @@ const AttractivenessCriteria =
                     high: ''
                 }
             },
+            {
+                name:'reliability',
+                label: 'Αξιοπιστία',
+                category: "socialFactors",
+                defaultValue: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                }
+            },
+            {
+                name:'quality',
+                label: 'Ποιότητα',
+                category: "socialFactors",
+                defaultValue: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                }
+            },
+            {
+                name:'result',
+                label: 'Αποτέλεσμα',
+                category: "socialFactors",
+                defaultValue: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                }
+            },
 
         ];
 

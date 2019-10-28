@@ -43,24 +43,26 @@
             informationBanner: informationBanner
         },
         created() {
-            console.log(process.env)
             this.state = this.$store.getters.state;
             const email = this.$route.query['email'];
             const usersState = usersData.find(user => {
                 return user.email === email
             });
 
-            this.state['brandName'] = usersState['brandName'];
-            this.state['industryName'] = usersState['industryName'];
-            this.state['email'] = usersState['email'];
-            this.state['level'] = usersState['level'];
-            this.state['questions'] = usersState['questions'];
-            this.state['marketProfileQuestions'] = usersState['marketProfileQuestions'];
-            this.state['productProfile'] = usersState['productProfile'];
+            if(email && usersState) {
+                this.state['brandName'] = usersState['brandName'];
+                this.state['industryName'] = usersState['industryName'];
+                this.state['email'] = usersState['email'];
+                this.state['level'] = usersState['level'];
+                this.state['questions'] = usersState['questions'];
+                this.state['marketProfileQuestions'] = usersState['marketProfileQuestions'];
+                this.state['productProfile'] = usersState['productProfile'];
 
-            this.$store.dispatch('state', this.state).then(() => {
-            });
-
+                this.$store.dispatch('state', this.state).then(() => {
+                });
+            }else {
+                document.querySelector('body').innerHTML = `<h1>404 Page not found</h1>`;
+            }
         },
         computed: {
             industryName() {
