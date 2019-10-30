@@ -59,9 +59,14 @@
             },
             next() {
                 this.state.level++;
-                httpService.post('/saveSurvey',this.state);
-                this.$store.dispatch('state', this.state).then(() => {
-                    this.$router.push('/completeSurvey');
+                let dataToSend = this.state;
+                dataToSend['createdAt'] = new Date();
+
+                httpService.post('/saveSurvey',this.state).then(res => {
+                    console.log(res);
+                    this.$store.dispatch('state', this.state).then(() => {
+                        this.$router.push('/completeSurvey');
+                    });
                 });
             }
         }

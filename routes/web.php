@@ -67,7 +67,7 @@ Route::post("/survey/saveSurvey",function(\Illuminate\Http\Request $request){
     try {
         $file = hash("sha256",$request).'.json';
 
-        Storage::put($file, $request);
+        Storage::put($file, $request->getContent());
 
     }catch (Exception $e) {
         return $e;
