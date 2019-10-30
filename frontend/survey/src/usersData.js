@@ -596,7 +596,7 @@ const usersData = [
                     label: 'Αξιοπιστία',
                     name: 'reliability',
                     value: '',
-                    questionText:'Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
+                    questionText:'Ποιο απο τα παρακάτω brand έχει μεγαλύτερη αξιοπιστία; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
                     productsBrandsAttractiveness: {
                         1: {
                             name: 'Get A Job',
@@ -620,7 +620,7 @@ const usersData = [
                     label: 'Ευαισθησία ως προς την τιμή',
                     name: 'priceSensitive',
                     value: '',
-                    questionText:'Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
+                    questionText:'Πόσο ικανοποιημένοι είστε με την τιμή των παρακάτω προιόντων; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
                     productsBrandsAttractiveness: {
                         1: {
                             name: 'Get A Job',
@@ -644,7 +644,7 @@ const usersData = [
                     label: 'Ποιότητα επιμόρφωσης',
                     name: 'quality',
                     value: '',
-                    questionText:'Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
+                    questionText:'Πόσο ικανοποιημένοι είστε με την ποιότητα επιμόρφωσης που σας παρέχουν τα παρακάτω προιόντα; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
                     productsBrandsAttractiveness: {
                         1: {
                             name: 'Get A Job',
@@ -668,7 +668,7 @@ const usersData = [
                     label: 'Αποτέλεσμα',
                     name: 'result',
                     value: '',
-                    questionText:'Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
+                    questionText:'Πόσο ικανοποιημένοι είστε με τα αποτελέσματα που σας παρέχουν τα παρακάτω brands; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
                     productsBrandsAttractiveness: {
                         1: {
                             name: 'Get A Job',
