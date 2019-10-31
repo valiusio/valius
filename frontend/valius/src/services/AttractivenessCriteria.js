@@ -22,7 +22,7 @@ const AttractivenessCriteria =
             },
             {
                 name: 'priceSensitive',
-                label:'Ευαισθησία ως προς την τιμή',
+                label:'Τιμή',
                 category: "segmentFactors",
                 defaultValue: {
                     low: 'high price elasticity',

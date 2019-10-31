@@ -569,7 +569,7 @@ const usersData = [
                 answer: ''
             },
             2: {
-                label: 'Για ποιους λόγους αγοράζεται ένα προιόν σαν το GetAJob - Customer Services Certification',
+                label: 'Για ποιους λόγους θα αγοράζατε ένα προιόν σαν το GetAJob - Customer Services Certification',
                 answers: {
                     1: '',
                     2: '',
@@ -585,7 +585,7 @@ const usersData = [
                 answer: ''
             },
             5: {
-                label: 'Που αγοράζετε συνήθως προιόντα GetAJob - Customer Services Certification;',
+                label: 'Που θα αγοράζετε συνήθως προιόντα GetAJob - Customer Services Certification;',
                 answer: ''
             }
         },
@@ -617,7 +617,7 @@ const usersData = [
                     }
                 },
                 2: {
-                    label: 'Ευαισθησία ως προς την τιμή',
+                    label: 'Τιμή',
                     name: 'priceSensitive',
                     value: '',
                     questionText:'Πόσο ικανοποιημένοι είστε με την τιμή των παρακάτω προιόντων; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
