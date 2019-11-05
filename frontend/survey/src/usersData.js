@@ -145,10 +145,10 @@ const usersData = [
                     }
                 },
                 4: {
-                    label: 'Εμπειρία του πελάτη',
-                    name: 'customerExperience',
+                    label: 'Απόδοση',
+                    name: 'performance',
                     value: '',
-                    questionText:'Πoιο από τα παρακάτω brand σας προσφέρει πιο ευχάριστη εμπειρία; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
+                    questionText:'Πόσο ευχαριστημένοι είστε απο την απόδοση των παρακάτω υπηρεσιών; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
                     productsBrandsAttractiveness: {
                         1: {
                             name: 'PameStasi',

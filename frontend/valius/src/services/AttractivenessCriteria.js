@@ -440,6 +440,16 @@ const AttractivenessCriteria =
                     high: ''
                 }
             },
+            {
+                name:'performance',
+                label: 'Απόδοση',
+                category: "socialFactors",
+                defaultValue: {
+                    low: '',
+                    medium: '',
+                    high: ''
+                }
+            },
 
         ];
 
