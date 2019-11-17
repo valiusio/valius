@@ -40,7 +40,7 @@ const usersData = [
                 isTypeBoolean: false,
                 predefinedAnswers: [],
                 isTypeSelect: true,
-                options: ['Εργαζόμενοι','Φοιτητές']
+                options: ['Εργαζόμενοι','Φοιτητές', 'Άνεργοι', 'Άλλο']
             }
         },
         marketProfileQuestions: {
@@ -690,7 +690,179 @@ const usersData = [
                 }
             }
         }
-    }
+    },
+    {
+        brandName: "Eurobank",
+        email: "eurobank@test.com",
+        industryName: "Eurobank",
+        level: 1,
+        questions: {
+            1: {
+                label: 'Χρησιμοποιείς υπηρεσίες Τουρισμού;',
+                answer: true,
+                isTypeBoolean: true,
+                predefinedAnswers: [],
+                isTypeSelect: false,
+                options: []
+            },
+            2: {
+                label: 'Γνωρίζεις κάποια απο τα παρακάτω brands ?',
+                answer: true,
+                isTypeBoolean: true,
+                predefinedAnswers: [
+                    'Eurobank',
+                    'Τράπεζα Πειραιώς',
+                    'Εθνική τράπεζα',
+                    'Attica Bank'
+                ],
+                isTypeSelect: false,
+                options: []
+            },
+            3: {
+                label: 'Εχεις ποτε χρησιμοποιήσει την Eurobank;',
+                answer: true,
+                isTypeBoolean: true,
+                predefinedAnswers: [],
+                isTypeSelect: false,
+                options: []
+            },
+            4: {
+                label: 'Που θα κατατάσσατε τον εαυτό σας ως προς το προφίλ σας;',
+                answer: '',
+                isTypeBoolean: false,
+                predefinedAnswers: [],
+                isTypeSelect: true,
+                options: ['Νέοι εργαζόμενοι 25-34','Εργαζόμενοι 35-50','Συνταξιούχοι']
+            }
+        },
+        marketProfileQuestions: {
+            1: {
+                label: 'Σε ποια από τις παρακάτω κατηγορίες ανήκετε',
+                answer: ''
+            },
+            2: {
+                label: 'Για ποιους λόγους χρησιμοποιείται τραπεζικές υπηρεσίες σθναλλαγής Eurobank;',
+                answers: {
+                    1: '',
+                    2: '',
+                    3: '',
+                }
+            },
+            3: {
+                label: 'Πως θα περιγράφατε τον εαυτό σας ως προς τη χρήση του προϊόντος Eurobank;',
+                answer: ''
+            },
+            4: {
+                label: 'Ποιος είναι ο τρόπος που προτιμάτε τα brand να επικοινωνούν μαζί σας?',
+                answer: ''
+            },
+            5: {
+                label: 'Που αγοράζετε συνήθως προιόντα της Eurobank;',
+                answer: ''
+            }
+        },
+        productProfile: {
+            headerQuestion: 'Πόσο σημαντικά είναι τα παρακάτω στοιχεία  για εσάς, όταν χρησιμοποιείτε τραπεζικές υπηρεσίες σθναλλαγής;',
+            criteria: {
+                1: {
+                    label: 'Brand',
+                    name: 'brand',
+                    value: '',
+                    questionText:'Πόσο ελκυστική είναι για εσάς η εικόνα της μάρκας των προιόντων; Σε κλίμακα απο 1- 10 δώστε ενα σκορ για κάθε ένα απο αυτά',
+                    productsBrandsAttractiveness: {
+                        1: {
+                            name: 'Eurobank',
+                            value: 0
+                        },
+                        2: {
+                            name: 'Τράπεζα Πειραιώς',
+                            value: 0
+                        },
+                        3: {
+                            name: 'Εθνική τράπεζα',
+                            value: 0
+                        },
+                        4: {
+                            name: 'Attica Bank',
+                            value: 0
+                        }
+                    }
+                },
+                2: {
+                    label: 'Καινοτομία',
+                    name: 'innovation',
+                    value: '',
+                    questionText:'Πόσο καινοτόμες είναι οι υπηρεσίες που σας προσφέρουν τα παρακάτω brands; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
+                    productsBrandsAttractiveness: {
+                        1: {
+                            name: 'Eurobank',
+                            value: 0
+                        },
+                        2: {
+                            name: 'Τράπεζα Πειραιώς',
+                            value: 0
+                        },
+                        3: {
+                            name: 'Εθνική τράπεζα',
+                            value: 0
+                        },
+                        4: {
+                            name: 'Attica Bank',
+                            value: 0
+                        }
+                    }
+                },
+                3: {
+                    label: 'App',
+                    name: 'appsSoftware',
+                    value: '',
+                    questionText:'Πόσο ικανοποιήμενοι είστε από την mobile εφαρμογή (app) των παρακάτω προϊόντων; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
+                    productsBrandsAttractiveness: {
+                        1: {
+                            name: 'Eurobank',
+                            value: 0
+                        },
+                        2: {
+                            name: 'Τράπεζα Πειραιώς',
+                            value: 0
+                        },
+                        3: {
+                            name: 'Εθνική τράπεζα',
+                            value: 0
+                        },
+                        4: {
+                            name: 'Attica Bank',
+                            value: 0
+                        }
+                    }
+                },
+                4: {
+                    label: 'Εμπειρία του πελάτη',
+                    name: 'customerExperience',
+                    value: '',
+                    questionText:'Πoιο από τα παρακάτω brand σας προσφέρει πιο ευχάριστη εμπειρία; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
+                    productsBrandsAttractiveness: {
+                        1: {
+                            name: 'Eurobank',
+                            value: 0
+                        },
+                        2: {
+                            name: 'Τράπεζα Πειραιώς',
+                            value: 0
+                        },
+                        3: {
+                            name: 'Εθνική τράπεζα',
+                            value: 0
+                        },
+                        4: {
+                            name: 'Attica Bank',
+                            value: 0
+                        }
+                    }
+                }
+            }
+        }
+    },
 ];
 
 
