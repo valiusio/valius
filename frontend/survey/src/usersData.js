@@ -192,7 +192,8 @@ const usersData = [
                 predefinedAnswers: [
                     'Mamakita',
                     'Kids Love Greece',
-                    'Ciao Bambino'
+                    'Ciao Bambino',
+                    'Athens Insiders'
                 ],
                 isTypeSelect: false,
                 options: []
@@ -262,16 +263,16 @@ const usersData = [
                             value: 0
                         },
                         4: {
-                            name: 'Αλλο',
+                            name: 'Athens Insiders',
                             value: 0
                         }
                     }
                 },
                 2: {
-                    label: 'Καινοτομία',
-                    name: 'innovation',
+                    label: 'Value for money',
+                    name: 'quality',
                     value: '',
-                    questionText:'Πόσο καινοτόμα είναι τα αυτά τα προϊόντα; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
+                    questionText:'Πόσο ικανοποιημένοι είστε απο το Value for money των παρακάτω προϊόντων; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
                     productsBrandsAttractiveness: {
                         1: {
                             name: 'Mamakita',
@@ -286,7 +287,7 @@ const usersData = [
                             value: 0
                         },
                         4: {
-                            name: 'Αλλο',
+                            name: 'Athens Insiders',
                             value: 0
                         }
                     }
@@ -310,7 +311,7 @@ const usersData = [
                             value: 0
                         },
                         4: {
-                            name: 'Αλλο',
+                            name: 'Athens Insiders',
                             value: 0
                         }
                     }
@@ -334,7 +335,7 @@ const usersData = [
                             value: 0
                         },
                         4: {
-                            name: 'Αλλο',
+                            name: 'Athens Insiders',
                             value: 0
                         }
                     }
@@ -698,7 +699,7 @@ const usersData = [
         level: 1,
         questions: {
             1: {
-                label: 'Χρησιμοποιείς υπηρεσίες Τουρισμού;',
+                label: 'Χρησιμοποιείς υπηρεσίες Τραπεζικής;',
                 answer: true,
                 isTypeBoolean: true,
                 predefinedAnswers: [],
@@ -762,7 +763,7 @@ const usersData = [
             }
         },
         productProfile: {
-            headerQuestion: 'Πόσο σημαντικά είναι τα παρακάτω στοιχεία  για εσάς, όταν χρησιμοποιείτε τραπεζικές υπηρεσίες σθναλλαγής;',
+            headerQuestion: 'Πόσο σημαντικά είναι τα παρακάτω στοιχεία  για εσάς, όταν χρησιμοποιείτε τραπεζικές υπηρεσίες;',
             criteria: {
                 1: {
                     label: 'Brand',
