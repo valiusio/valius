@@ -28,7 +28,7 @@
                             @click="add(state.productProfile.criteria[item])">+</span>
                         <img class="logo" :src="getFactorImg(state.productProfile.criteria[item].name)"/>
                     </div>
-                    <span class="criteria-label">{{getFactorName(state.productProfile.criteria[item].name)}}</span>
+                    <span class="criteria-label">{{state.productProfile.criteria[item].label}}</span>
                     <div class="item--rating">
                         <img v-for="i in +state.productProfile.criteria[item].value"
                              :src="heartImg"/>
@@ -78,13 +78,6 @@
                 if(+item.value > 0) {
                     item.value = +item.value - 1;
                 }
-            },
-            getFactorName(factorName) {
-                let criteria = AttractiveCriteria.AttractivenessCriteria.filter((factor) => {
-                    return factor.name === factorName
-                })[0];
-
-                return criteria && criteria.label;
             },
             getFactorImg(i) {
                 let img = '';
