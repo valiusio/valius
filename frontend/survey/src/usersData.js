@@ -212,7 +212,7 @@ const usersData = [
                 isTypeBoolean: false,
                 predefinedAnswers: [],
                 isTypeSelect: true,
-                options: ['Οικογένοια','Ανεξάρτητος Ταξιδιώτης','Αλλο']
+                options: ['Οικογένεια','Ανεξάρτητος Ταξιδιώτης','Αλλο']
             }
         },
         marketProfileQuestions: {
