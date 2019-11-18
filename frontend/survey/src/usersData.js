@@ -70,7 +70,7 @@ const usersData = [
             }
         },
         productProfile: {
-            headerQuestion: 'Πόσο σημαντικά είναι τα παρακάτω στοιχεία  για εσάς, όταν αγοράζετε προϊόντα σαν το Pame Stasi?',
+            headerQuestion: 'Πόσο σημαντικά είναι τα παρακάτω στοιχεία  για εσάς, όταν χρησιμοποιείτε προϊόντα σαν το Pame Stasi?',
             criteria: {
                 1: {
                     label: 'Online Εμπειρία',
@@ -100,7 +100,7 @@ const usersData = [
                     label: 'Καινοτομία',
                     name: 'innovation',
                     value: '',
-                    questionText:'Πόσο καινοτόμα είναι τα αυτά τα προϊόντα; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
+                    questionText:'Πόσο καινοτόμα είναι αυτά τα προϊόντα; Σε μια κλίμακα από 1 -10 δώστε ένα σκορ για κάθε ένα από αυτά.',
                     productsBrandsAttractiveness: {
                         1: {
                             name: 'PameStasi',
@@ -212,7 +212,7 @@ const usersData = [
                 isTypeBoolean: false,
                 predefinedAnswers: [],
                 isTypeSelect: true,
-                options: ['Ταξιδιώτης με Οικογένοια','Ανεξάρτητος Ταξιδιώτης','Αλλο']
+                options: ['Οικογένοια','Ανεξάρτητος Ταξιδιώτης','Αλλο']
             }
         },
         marketProfileQuestions: {
@@ -242,7 +242,7 @@ const usersData = [
             }
         },
         productProfile: {
-            headerQuestion: 'Πόσο σημαντικά είναι τα παρακάτω στοιχεία  για εσάς, όταν αγοράζετε προϊόντα σαν το Mamakita;',
+            headerQuestion: 'Πόσο σημαντικά είναι τα παρακάτω στοιχεία  για εσάς, όταν χρησιμοποιείτε προϊόντα σαν το Mamakita;',
             criteria: {
                 1: {
                     label: 'Brand',
