@@ -20,7 +20,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
-        "npm": "^6.5.0",
+        "npm": "^6.13.4",
         "vue-material": "^1.0.0-beta-10.2"
     }
 }
